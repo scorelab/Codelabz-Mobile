@@ -1,6 +1,7 @@
 import 'package:codelabz/application/auth/auth_bloc.dart';
 import 'package:codelabz/presentation/codelabz_app.dart';
 import 'package:codelabz/presentation/routes/routes.dart';
+import 'package:codelabz/presentation/widgets/spinner.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,9 +18,11 @@ class SplashScreen extends StatelessWidget {
               .navigateTo(context, Routes.login, clearStack: true),
         );
       },
-      child: const Scaffold(
+      child: Scaffold(
         body: SafeArea(
-          child: CircularProgressIndicator(),
+          child: Center(
+            child: Spinner(),
+          ),
         ),
       ),
     );
