@@ -1,3 +1,5 @@
+import 'package:codelabz/application/auth/auth_bloc.dart';
+import 'package:codelabz/di/injection.dart';
 import 'package:codelabz/presentation/routes/routes.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +18,12 @@ class CodeLabzApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: const [],
+      providers: [
+        BlocProvider<AuthBloc>(
+          create: (_) =>
+              getIt<AuthBloc>()..add(const AuthEvent.authCheckRequested()),
+        )
+      ],
       child: MaterialApp(
         title: "CodeLabz",
         onGenerateRoute: router.generator,
