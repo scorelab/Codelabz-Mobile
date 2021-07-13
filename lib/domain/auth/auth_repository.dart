@@ -6,6 +6,7 @@ abstract class AuthRepository {
   Future<Option<User>> getSignedInUser();
   Future<Either<AuthFailure, Unit>> signInWithGoogle();
   Future<Either<AuthFailure, Unit>> signInWithFacebook(String url);
-  Future<Either<AuthFailure, Unit>> signInWithInstagram();
+  Future<Either<AuthFailure, Unit>> signInWithGithub();
+  Future<Either<AuthFailure, Unit>> signInWithTwitter();
   Future<void> signout();
 }

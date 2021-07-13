@@ -26,7 +26,6 @@ class CodeLabzApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: "CodeLabz",
-        initialRoute: "/login",
         onGenerateRoute: router.generator,
         debugShowCheckedModeBanner: false,
       ),

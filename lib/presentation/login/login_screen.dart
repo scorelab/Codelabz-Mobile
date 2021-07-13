@@ -20,7 +20,6 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 50),
                 const TextField(
-                  autofocus: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Email',
