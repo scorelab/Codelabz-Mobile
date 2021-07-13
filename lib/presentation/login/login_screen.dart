@@ -1,5 +1,6 @@
 import 'package:codelabz/presentation/widgets/login_button.dart';
 import 'package:codelabz/utils/common.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -12,12 +13,12 @@ class LoginScreen extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             child: Column(
               children: [
-                const SizedBox(height: 60),
+                const SizedBox(height: 50),
                 Text(
                   getBrandName(),
                   style: const TextStyle(fontSize: 26),
                 ),
-                const SizedBox(height: 60),
+                const SizedBox(height: 50),
                 const TextField(
                   autofocus: true,
                   decoration: InputDecoration(
@@ -46,8 +47,24 @@ class LoginScreen extends StatelessWidget {
                     child: const Text("Login"),
                   ),
                 ),
-                const SizedBox(height: 40),
-                const Divider(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                        height: 1,
+                        color: Colors.grey,
+                        width: MediaQuery.of(context).size.width * 0.4),
+                    const Text(
+                      "or",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
+                    Container(
+                        height: 1,
+                        color: Colors.grey,
+                        width: MediaQuery.of(context).size.width * 0.4),
+                  ],
+                ),
                 LoginButton(
                   assetName: "assets/icons/google.png",
                   text: "Signin with Google",
@@ -72,6 +89,30 @@ class LoginScreen extends StatelessWidget {
                   onPress: () => _signInwithFacebook(context),
                   disabled: false,
                 ),
+                const SizedBox(height: 30),
+                RichText(
+                  text: TextSpan(
+                    children: <TextSpan>[
+                      const TextSpan(
+                          text: "New to ",
+                          style: TextStyle(color: Colors.black87)),
+                      const TextSpan(
+                          text: "CodeLabz",
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      const TextSpan(
+                          text: "? ", style: TextStyle(color: Colors.black87)),
+                      TextSpan(
+                          text: "Create an account",
+                          style: const TextStyle(color: Colors.black87),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = _onClickCreateAccount),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 10),
               ],
             ),
           ),
@@ -81,6 +122,8 @@ class LoginScreen extends StatelessWidget {
   }
 
   void _onClickLogin() {}
+
+  void _onClickCreateAccount() {}
 
   void _signInwithFacebook(BuildContext context) {}
 }

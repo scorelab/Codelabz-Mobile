@@ -19,9 +19,9 @@ class LoginButton extends StatelessWidget {
       margin: const EdgeInsets.all(5),
       width: 250,
       child: Material(
-        elevation: 10,
+        elevation: 1,
         color: !disabled ? Colors.grey[200] : Colors.grey[400],
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(2),
         child: InkWell(
           onTap: !disabled ? onPress : null,
           child: Padding(
