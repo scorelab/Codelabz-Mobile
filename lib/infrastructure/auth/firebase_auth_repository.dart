@@ -26,17 +26,19 @@ class FirebaseAuthRepository extends AuthRepository {
 
   @override
   Future<Either<AuthFailure, Unit>> signInWithFacebook(String url) async {
-    try {
-      final params = url.split("access_token=");
-      final endparam = params[1].split("&");
-      final accessToken = endparam[0];
-      final authCredential = FacebookAuthProvider.credential(accessToken);
-      return _firebaseAuth
-          .signInWithCredential(authCredential)
-          .then((r) => right(unit));
-    } on PlatformException catch (_) {
-      return left(const AuthFailure.serverError());
-    }
+    // TODO: implement signInWithFacebook
+    throw UnimplementedError();
+    // try {
+    //   final params = url.split("access_token=");
+    //   final endparam = params[1].split("&");
+    //   final accessToken = endparam[0];
+    //   final authCredential = FacebookAuthProvider.credential(accessToken);
+    //   return _firebaseAuth
+    //       .signInWithCredential(authCredential)
+    //       .then((r) => right(unit));
+    // } on PlatformException catch (_) {
+    //   return left(const AuthFailure.serverError());
+    // }
   }
 
   @override
@@ -63,13 +65,13 @@ class FirebaseAuthRepository extends AuthRepository {
 
   @override
   Future<Either<AuthFailure, Unit>> signInWithGithub() {
-    // TODO: implement signInWithInstagram
+    // TODO: implement signInWithGithub
     throw UnimplementedError();
   }
 
   @override
   Future<Either<AuthFailure, Unit>> signInWithTwitter() {
-    // TODO: implement signInWithInstagram
+    // TODO: implement signInWithTwitter
     throw UnimplementedError();
   }
 
