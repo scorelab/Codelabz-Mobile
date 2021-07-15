@@ -16,6 +16,22 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$LoginEventTearOff {
   const _$LoginEventTearOff();
 
+  EmailChanged emailChanged(String emailStr) {
+    return EmailChanged(
+      emailStr,
+    );
+  }
+
+  PasswordChanged passwordChanged(String passwordStr) {
+    return PasswordChanged(
+      passwordStr,
+    );
+  }
+
+  SignInWithEmailAndPasswordPressed signInWithEmailAndPasswordPressed() {
+    return const SignInWithEmailAndPasswordPressed();
+  }
+
   _SignInWithGoogle signInWithGoogle() {
     return const _SignInWithGoogle();
   }
@@ -62,6 +78,9 @@ const $LoginEvent = _$LoginEventTearOff();
 mixin _$LoginEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGoogle,
     required TResult Function(String url) signInWithFacebook,
     required TResult Function(String url) signInWithGithub,
@@ -74,6 +93,9 @@ mixin _$LoginEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGoogle,
     TResult Function(String url)? signInWithFacebook,
     TResult Function(String url)? signInWithGithub,
@@ -87,6 +109,10 @@ mixin _$LoginEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithFacebook value) signInWithFacebook,
     required TResult Function(_SignInWithGithub value) signInWithGithub,
@@ -102,6 +128,10 @@ mixin _$LoginEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithFacebook value)? signInWithFacebook,
     TResult Function(_SignInWithGithub value)? signInWithGithub,
@@ -130,6 +160,456 @@ class _$LoginEventCopyWithImpl<$Res> implements $LoginEventCopyWith<$Res> {
   final LoginEvent _value;
   // ignore: unused_field
   final $Res Function(LoginEvent) _then;
+}
+
+/// @nodoc
+abstract class $EmailChangedCopyWith<$Res> {
+  factory $EmailChangedCopyWith(
+          EmailChanged value, $Res Function(EmailChanged) then) =
+      _$EmailChangedCopyWithImpl<$Res>;
+  $Res call({String emailStr});
+}
+
+/// @nodoc
+class _$EmailChangedCopyWithImpl<$Res> extends _$LoginEventCopyWithImpl<$Res>
+    implements $EmailChangedCopyWith<$Res> {
+  _$EmailChangedCopyWithImpl(
+      EmailChanged _value, $Res Function(EmailChanged) _then)
+      : super(_value, (v) => _then(v as EmailChanged));
+
+  @override
+  EmailChanged get _value => super._value as EmailChanged;
+
+  @override
+  $Res call({
+    Object? emailStr = freezed,
+  }) {
+    return _then(EmailChanged(
+      emailStr == freezed
+          ? _value.emailStr
+          : emailStr // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EmailChanged implements EmailChanged {
+  const _$EmailChanged(this.emailStr);
+
+  @override
+  final String emailStr;
+
+  @override
+  String toString() {
+    return 'LoginEvent.emailChanged(emailStr: $emailStr)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is EmailChanged &&
+            (identical(other.emailStr, emailStr) ||
+                const DeepCollectionEquality()
+                    .equals(other.emailStr, emailStr)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailStr);
+
+  @JsonKey(ignore: true)
+  @override
+  $EmailChangedCopyWith<EmailChanged> get copyWith =>
+      _$EmailChangedCopyWithImpl<EmailChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function() signInWithEmailAndPasswordPressed,
+    required TResult Function() signInWithGoogle,
+    required TResult Function(String url) signInWithFacebook,
+    required TResult Function(String url) signInWithGithub,
+    required TResult Function(String url) signInWithTwitter,
+    required TResult Function() signInWithFacebookClicked,
+    required TResult Function() signInWithGithubClicked,
+    required TResult Function() signInWithTwitterClicked,
+    required TResult Function() backPressFromWebView,
+  }) {
+    return emailChanged(emailStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signInWithEmailAndPasswordPressed,
+    TResult Function()? signInWithGoogle,
+    TResult Function(String url)? signInWithFacebook,
+    TResult Function(String url)? signInWithGithub,
+    TResult Function(String url)? signInWithTwitter,
+    TResult Function()? signInWithFacebookClicked,
+    TResult Function()? signInWithGithubClicked,
+    TResult Function()? signInWithTwitterClicked,
+    TResult Function()? backPressFromWebView,
+    required TResult orElse(),
+  }) {
+    if (emailChanged != null) {
+      return emailChanged(emailStr);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
+    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
+    required TResult Function(_SignInWithGithub value) signInWithGithub,
+    required TResult Function(_SignInWithTwitter value) signInWithTwitter,
+    required TResult Function(_SignInWithFacebookClicked value)
+        signInWithFacebookClicked,
+    required TResult Function(_SignInWithGithubClicked value)
+        signInWithGithubClicked,
+    required TResult Function(_SignInWithTwitterClicked value)
+        signInWithTwitterClicked,
+    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
+  }) {
+    return emailChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGithub value)? signInWithGithub,
+    TResult Function(_SignInWithTwitter value)? signInWithTwitter,
+    TResult Function(_SignInWithFacebookClicked value)?
+        signInWithFacebookClicked,
+    TResult Function(_SignInWithGithubClicked value)? signInWithGithubClicked,
+    TResult Function(_SignInWithTwitterClicked value)? signInWithTwitterClicked,
+    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
+    required TResult orElse(),
+  }) {
+    if (emailChanged != null) {
+      return emailChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmailChanged implements LoginEvent {
+  const factory EmailChanged(String emailStr) = _$EmailChanged;
+
+  String get emailStr => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $EmailChangedCopyWith<EmailChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PasswordChangedCopyWith<$Res> {
+  factory $PasswordChangedCopyWith(
+          PasswordChanged value, $Res Function(PasswordChanged) then) =
+      _$PasswordChangedCopyWithImpl<$Res>;
+  $Res call({String passwordStr});
+}
+
+/// @nodoc
+class _$PasswordChangedCopyWithImpl<$Res> extends _$LoginEventCopyWithImpl<$Res>
+    implements $PasswordChangedCopyWith<$Res> {
+  _$PasswordChangedCopyWithImpl(
+      PasswordChanged _value, $Res Function(PasswordChanged) _then)
+      : super(_value, (v) => _then(v as PasswordChanged));
+
+  @override
+  PasswordChanged get _value => super._value as PasswordChanged;
+
+  @override
+  $Res call({
+    Object? passwordStr = freezed,
+  }) {
+    return _then(PasswordChanged(
+      passwordStr == freezed
+          ? _value.passwordStr
+          : passwordStr // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PasswordChanged implements PasswordChanged {
+  const _$PasswordChanged(this.passwordStr);
+
+  @override
+  final String passwordStr;
+
+  @override
+  String toString() {
+    return 'LoginEvent.passwordChanged(passwordStr: $passwordStr)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is PasswordChanged &&
+            (identical(other.passwordStr, passwordStr) ||
+                const DeepCollectionEquality()
+                    .equals(other.passwordStr, passwordStr)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordStr);
+
+  @JsonKey(ignore: true)
+  @override
+  $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
+      _$PasswordChangedCopyWithImpl<PasswordChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function() signInWithEmailAndPasswordPressed,
+    required TResult Function() signInWithGoogle,
+    required TResult Function(String url) signInWithFacebook,
+    required TResult Function(String url) signInWithGithub,
+    required TResult Function(String url) signInWithTwitter,
+    required TResult Function() signInWithFacebookClicked,
+    required TResult Function() signInWithGithubClicked,
+    required TResult Function() signInWithTwitterClicked,
+    required TResult Function() backPressFromWebView,
+  }) {
+    return passwordChanged(passwordStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signInWithEmailAndPasswordPressed,
+    TResult Function()? signInWithGoogle,
+    TResult Function(String url)? signInWithFacebook,
+    TResult Function(String url)? signInWithGithub,
+    TResult Function(String url)? signInWithTwitter,
+    TResult Function()? signInWithFacebookClicked,
+    TResult Function()? signInWithGithubClicked,
+    TResult Function()? signInWithTwitterClicked,
+    TResult Function()? backPressFromWebView,
+    required TResult orElse(),
+  }) {
+    if (passwordChanged != null) {
+      return passwordChanged(passwordStr);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
+    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
+    required TResult Function(_SignInWithGithub value) signInWithGithub,
+    required TResult Function(_SignInWithTwitter value) signInWithTwitter,
+    required TResult Function(_SignInWithFacebookClicked value)
+        signInWithFacebookClicked,
+    required TResult Function(_SignInWithGithubClicked value)
+        signInWithGithubClicked,
+    required TResult Function(_SignInWithTwitterClicked value)
+        signInWithTwitterClicked,
+    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
+  }) {
+    return passwordChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGithub value)? signInWithGithub,
+    TResult Function(_SignInWithTwitter value)? signInWithTwitter,
+    TResult Function(_SignInWithFacebookClicked value)?
+        signInWithFacebookClicked,
+    TResult Function(_SignInWithGithubClicked value)? signInWithGithubClicked,
+    TResult Function(_SignInWithTwitterClicked value)? signInWithTwitterClicked,
+    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
+    required TResult orElse(),
+  }) {
+    if (passwordChanged != null) {
+      return passwordChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PasswordChanged implements LoginEvent {
+  const factory PasswordChanged(String passwordStr) = _$PasswordChanged;
+
+  String get passwordStr => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignInWithEmailAndPasswordPressedCopyWith<$Res> {
+  factory $SignInWithEmailAndPasswordPressedCopyWith(
+          SignInWithEmailAndPasswordPressed value,
+          $Res Function(SignInWithEmailAndPasswordPressed) then) =
+      _$SignInWithEmailAndPasswordPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SignInWithEmailAndPasswordPressedCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res>
+    implements $SignInWithEmailAndPasswordPressedCopyWith<$Res> {
+  _$SignInWithEmailAndPasswordPressedCopyWithImpl(
+      SignInWithEmailAndPasswordPressed _value,
+      $Res Function(SignInWithEmailAndPasswordPressed) _then)
+      : super(_value, (v) => _then(v as SignInWithEmailAndPasswordPressed));
+
+  @override
+  SignInWithEmailAndPasswordPressed get _value =>
+      super._value as SignInWithEmailAndPasswordPressed;
+}
+
+/// @nodoc
+
+class _$SignInWithEmailAndPasswordPressed
+    implements SignInWithEmailAndPasswordPressed {
+  const _$SignInWithEmailAndPasswordPressed();
+
+  @override
+  String toString() {
+    return 'LoginEvent.signInWithEmailAndPasswordPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SignInWithEmailAndPasswordPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function() signInWithEmailAndPasswordPressed,
+    required TResult Function() signInWithGoogle,
+    required TResult Function(String url) signInWithFacebook,
+    required TResult Function(String url) signInWithGithub,
+    required TResult Function(String url) signInWithTwitter,
+    required TResult Function() signInWithFacebookClicked,
+    required TResult Function() signInWithGithubClicked,
+    required TResult Function() signInWithTwitterClicked,
+    required TResult Function() backPressFromWebView,
+  }) {
+    return signInWithEmailAndPasswordPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signInWithEmailAndPasswordPressed,
+    TResult Function()? signInWithGoogle,
+    TResult Function(String url)? signInWithFacebook,
+    TResult Function(String url)? signInWithGithub,
+    TResult Function(String url)? signInWithTwitter,
+    TResult Function()? signInWithFacebookClicked,
+    TResult Function()? signInWithGithubClicked,
+    TResult Function()? signInWithTwitterClicked,
+    TResult Function()? backPressFromWebView,
+    required TResult orElse(),
+  }) {
+    if (signInWithEmailAndPasswordPressed != null) {
+      return signInWithEmailAndPasswordPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
+    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
+    required TResult Function(_SignInWithGithub value) signInWithGithub,
+    required TResult Function(_SignInWithTwitter value) signInWithTwitter,
+    required TResult Function(_SignInWithFacebookClicked value)
+        signInWithFacebookClicked,
+    required TResult Function(_SignInWithGithubClicked value)
+        signInWithGithubClicked,
+    required TResult Function(_SignInWithTwitterClicked value)
+        signInWithTwitterClicked,
+    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
+  }) {
+    return signInWithEmailAndPasswordPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGithub value)? signInWithGithub,
+    TResult Function(_SignInWithTwitter value)? signInWithTwitter,
+    TResult Function(_SignInWithFacebookClicked value)?
+        signInWithFacebookClicked,
+    TResult Function(_SignInWithGithubClicked value)? signInWithGithubClicked,
+    TResult Function(_SignInWithTwitterClicked value)? signInWithTwitterClicked,
+    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
+    required TResult orElse(),
+  }) {
+    if (signInWithEmailAndPasswordPressed != null) {
+      return signInWithEmailAndPasswordPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignInWithEmailAndPasswordPressed implements LoginEvent {
+  const factory SignInWithEmailAndPasswordPressed() =
+      _$SignInWithEmailAndPasswordPressed;
 }
 
 /// @nodoc
@@ -172,6 +652,9 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGoogle,
     required TResult Function(String url) signInWithFacebook,
     required TResult Function(String url) signInWithGithub,
@@ -187,6 +670,9 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGoogle,
     TResult Function(String url)? signInWithFacebook,
     TResult Function(String url)? signInWithGithub,
@@ -206,6 +692,10 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithFacebook value) signInWithFacebook,
     required TResult Function(_SignInWithGithub value) signInWithGithub,
@@ -224,6 +714,10 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithFacebook value)? signInWithFacebook,
     TResult Function(_SignInWithGithub value)? signInWithGithub,
@@ -311,6 +805,9 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGoogle,
     required TResult Function(String url) signInWithFacebook,
     required TResult Function(String url) signInWithGithub,
@@ -326,6 +823,9 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGoogle,
     TResult Function(String url)? signInWithFacebook,
     TResult Function(String url)? signInWithGithub,
@@ -345,6 +845,10 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithFacebook value) signInWithFacebook,
     required TResult Function(_SignInWithGithub value) signInWithGithub,
@@ -363,6 +867,10 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithFacebook value)? signInWithFacebook,
     TResult Function(_SignInWithGithub value)? signInWithGithub,
@@ -455,6 +963,9 @@ class _$_SignInWithGithub implements _SignInWithGithub {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGoogle,
     required TResult Function(String url) signInWithFacebook,
     required TResult Function(String url) signInWithGithub,
@@ -470,6 +981,9 @@ class _$_SignInWithGithub implements _SignInWithGithub {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGoogle,
     TResult Function(String url)? signInWithFacebook,
     TResult Function(String url)? signInWithGithub,
@@ -489,6 +1003,10 @@ class _$_SignInWithGithub implements _SignInWithGithub {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithFacebook value) signInWithFacebook,
     required TResult Function(_SignInWithGithub value) signInWithGithub,
@@ -507,6 +1025,10 @@ class _$_SignInWithGithub implements _SignInWithGithub {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithFacebook value)? signInWithFacebook,
     TResult Function(_SignInWithGithub value)? signInWithGithub,
@@ -599,6 +1121,9 @@ class _$_SignInWithTwitter implements _SignInWithTwitter {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGoogle,
     required TResult Function(String url) signInWithFacebook,
     required TResult Function(String url) signInWithGithub,
@@ -614,6 +1139,9 @@ class _$_SignInWithTwitter implements _SignInWithTwitter {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGoogle,
     TResult Function(String url)? signInWithFacebook,
     TResult Function(String url)? signInWithGithub,
@@ -633,6 +1161,10 @@ class _$_SignInWithTwitter implements _SignInWithTwitter {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithFacebook value) signInWithFacebook,
     required TResult Function(_SignInWithGithub value) signInWithGithub,
@@ -651,6 +1183,10 @@ class _$_SignInWithTwitter implements _SignInWithTwitter {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithFacebook value)? signInWithFacebook,
     TResult Function(_SignInWithGithub value)? signInWithGithub,
@@ -719,6 +1255,9 @@ class _$_SignInWithFacebookClicked implements _SignInWithFacebookClicked {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGoogle,
     required TResult Function(String url) signInWithFacebook,
     required TResult Function(String url) signInWithGithub,
@@ -734,6 +1273,9 @@ class _$_SignInWithFacebookClicked implements _SignInWithFacebookClicked {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGoogle,
     TResult Function(String url)? signInWithFacebook,
     TResult Function(String url)? signInWithGithub,
@@ -753,6 +1295,10 @@ class _$_SignInWithFacebookClicked implements _SignInWithFacebookClicked {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithFacebook value) signInWithFacebook,
     required TResult Function(_SignInWithGithub value) signInWithGithub,
@@ -771,6 +1317,10 @@ class _$_SignInWithFacebookClicked implements _SignInWithFacebookClicked {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithFacebook value)? signInWithFacebook,
     TResult Function(_SignInWithGithub value)? signInWithGithub,
@@ -834,6 +1384,9 @@ class _$_SignInWithGithubClicked implements _SignInWithGithubClicked {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGoogle,
     required TResult Function(String url) signInWithFacebook,
     required TResult Function(String url) signInWithGithub,
@@ -849,6 +1402,9 @@ class _$_SignInWithGithubClicked implements _SignInWithGithubClicked {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGoogle,
     TResult Function(String url)? signInWithFacebook,
     TResult Function(String url)? signInWithGithub,
@@ -868,6 +1424,10 @@ class _$_SignInWithGithubClicked implements _SignInWithGithubClicked {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithFacebook value) signInWithFacebook,
     required TResult Function(_SignInWithGithub value) signInWithGithub,
@@ -886,6 +1446,10 @@ class _$_SignInWithGithubClicked implements _SignInWithGithubClicked {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithFacebook value)? signInWithFacebook,
     TResult Function(_SignInWithGithub value)? signInWithGithub,
@@ -949,6 +1513,9 @@ class _$_SignInWithTwitterClicked implements _SignInWithTwitterClicked {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGoogle,
     required TResult Function(String url) signInWithFacebook,
     required TResult Function(String url) signInWithGithub,
@@ -964,6 +1531,9 @@ class _$_SignInWithTwitterClicked implements _SignInWithTwitterClicked {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGoogle,
     TResult Function(String url)? signInWithFacebook,
     TResult Function(String url)? signInWithGithub,
@@ -983,6 +1553,10 @@ class _$_SignInWithTwitterClicked implements _SignInWithTwitterClicked {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithFacebook value) signInWithFacebook,
     required TResult Function(_SignInWithGithub value) signInWithGithub,
@@ -1001,6 +1575,10 @@ class _$_SignInWithTwitterClicked implements _SignInWithTwitterClicked {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithFacebook value)? signInWithFacebook,
     TResult Function(_SignInWithGithub value)? signInWithGithub,
@@ -1063,6 +1641,9 @@ class _$_BackPressFromWebView implements _BackPressFromWebView {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGoogle,
     required TResult Function(String url) signInWithFacebook,
     required TResult Function(String url) signInWithGithub,
@@ -1078,6 +1659,9 @@ class _$_BackPressFromWebView implements _BackPressFromWebView {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGoogle,
     TResult Function(String url)? signInWithFacebook,
     TResult Function(String url)? signInWithGithub,
@@ -1097,6 +1681,10 @@ class _$_BackPressFromWebView implements _BackPressFromWebView {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithFacebook value) signInWithFacebook,
     required TResult Function(_SignInWithGithub value) signInWithGithub,
@@ -1115,6 +1703,10 @@ class _$_BackPressFromWebView implements _BackPressFromWebView {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithFacebook value)? signInWithFacebook,
     TResult Function(_SignInWithGithub value)? signInWithGithub,
@@ -1142,10 +1734,16 @@ class _$LoginStateTearOff {
   const _$LoginStateTearOff();
 
   _LoginState call(
-      {required bool isSubmitting,
+      {required Email emailAddress,
+      required Password password,
+      required bool isSubmitting,
+      required bool showErrorMessages,
       required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption}) {
     return _LoginState(
+      emailAddress: emailAddress,
+      password: password,
       isSubmitting: isSubmitting,
+      showErrorMessages: showErrorMessages,
       authFailureOrSuccessOption: authFailureOrSuccessOption,
     );
   }
@@ -1156,7 +1754,10 @@ const $LoginState = _$LoginStateTearOff();
 
 /// @nodoc
 mixin _$LoginState {
+  Email get emailAddress => throw _privateConstructorUsedError;
+  Password get password => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
 
@@ -1171,7 +1772,10 @@ abstract class $LoginStateCopyWith<$Res> {
           LoginState value, $Res Function(LoginState) then) =
       _$LoginStateCopyWithImpl<$Res>;
   $Res call(
-      {bool isSubmitting,
+      {Email emailAddress,
+      Password password,
+      bool isSubmitting,
+      bool showErrorMessages,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
 }
 
@@ -1185,13 +1789,28 @@ class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? emailAddress = freezed,
+    Object? password = freezed,
     Object? isSubmitting = freezed,
+    Object? showErrorMessages = freezed,
     Object? authFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
+      emailAddress: emailAddress == freezed
+          ? _value.emailAddress
+          : emailAddress // ignore: cast_nullable_to_non_nullable
+              as Email,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as Password,
       isSubmitting: isSubmitting == freezed
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      showErrorMessages: showErrorMessages == freezed
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
       authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
           ? _value.authFailureOrSuccessOption
@@ -1208,7 +1827,10 @@ abstract class _$LoginStateCopyWith<$Res> implements $LoginStateCopyWith<$Res> {
       __$LoginStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool isSubmitting,
+      {Email emailAddress,
+      Password password,
+      bool isSubmitting,
+      bool showErrorMessages,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
 }
 
@@ -1224,13 +1846,28 @@ class __$LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? emailAddress = freezed,
+    Object? password = freezed,
     Object? isSubmitting = freezed,
+    Object? showErrorMessages = freezed,
     Object? authFailureOrSuccessOption = freezed,
   }) {
     return _then(_LoginState(
+      emailAddress: emailAddress == freezed
+          ? _value.emailAddress
+          : emailAddress // ignore: cast_nullable_to_non_nullable
+              as Email,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as Password,
       isSubmitting: isSubmitting == freezed
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      showErrorMessages: showErrorMessages == freezed
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
       authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
           ? _value.authFailureOrSuccessOption
@@ -1244,25 +1881,44 @@ class __$LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
 
 class _$_LoginState implements _LoginState {
   const _$_LoginState(
-      {required this.isSubmitting, required this.authFailureOrSuccessOption});
+      {required this.emailAddress,
+      required this.password,
+      required this.isSubmitting,
+      required this.showErrorMessages,
+      required this.authFailureOrSuccessOption});
 
   @override
+  final Email emailAddress;
+  @override
+  final Password password;
+  @override
   final bool isSubmitting;
+  @override
+  final bool showErrorMessages;
   @override
   final Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'LoginState(isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
+    return 'LoginState(emailAddress: $emailAddress, password: $password, isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LoginState &&
+            (identical(other.emailAddress, emailAddress) ||
+                const DeepCollectionEquality()
+                    .equals(other.emailAddress, emailAddress)) &&
+            (identical(other.password, password) ||
+                const DeepCollectionEquality()
+                    .equals(other.password, password)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality()
                     .equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.authFailureOrSuccessOption,
                     authFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
@@ -1273,7 +1929,10 @@ class _$_LoginState implements _LoginState {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(emailAddress) ^
+      const DeepCollectionEquality().hash(password) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
+      const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(authFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
@@ -1284,12 +1943,21 @@ class _$_LoginState implements _LoginState {
 
 abstract class _LoginState implements LoginState {
   const factory _LoginState(
-      {required bool isSubmitting,
+      {required Email emailAddress,
+      required Password password,
+      required bool isSubmitting,
+      required bool showErrorMessages,
       required Option<Either<AuthFailure, Unit>>
           authFailureOrSuccessOption}) = _$_LoginState;
 
   @override
+  Email get emailAddress => throw _privateConstructorUsedError;
+  @override
+  Password get password => throw _privateConstructorUsedError;
+  @override
   bool get isSubmitting => throw _privateConstructorUsedError;
+  @override
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
       throw _privateConstructorUsedError;

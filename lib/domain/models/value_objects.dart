@@ -1,3 +1,4 @@
+import 'package:codelabz/domain/auth/value_validators.dart';
 import 'package:codelabz/domain/core/value_failure.dart';
 import 'package:codelabz/domain/core/value_object.dart';
 import 'package:dartz/dartz.dart';
@@ -15,9 +16,24 @@ class Email extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory Email(String input) => Email._(right(input));
+  factory Email(String input) => Email._(
+        validateEmailAddress(input),
+      );
 
   const Email._(this.value);
+}
+
+class Password extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory Password(String input) {
+    return Password._(
+      validatePassword(input),
+    );
+  }
+
+  const Password._(this.value);
 }
 
 class PhotoUrl extends ValueObject<String> {

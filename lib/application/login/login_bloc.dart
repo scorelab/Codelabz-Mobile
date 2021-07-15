@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:codelabz/domain/auth/auth_failure.dart';
 import 'package:codelabz/domain/auth/auth_repository.dart';
+import 'package:codelabz/domain/models/value_objects.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -88,6 +89,42 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         yield state.copyWith.call(
           isSubmitting: false,
           authFailureOrSuccessOption: none(),
+        );
+      },
+      emailChanged: (e) async* {
+        yield state.copyWith(
+          emailAddress: Email(e.emailStr),
+          authFailureOrSuccessOption: none(),
+        );
+      },
+      passwordChanged: (e) async* {
+        yield state.copyWith(
+          password: Password(e.passwordStr),
+          authFailureOrSuccessOption: none(),
+        );
+      },
+      signInWithEmailAndPasswordPressed:
+          (SignInWithEmailAndPasswordPressed value) async* {
+        late Either<AuthFailure, Unit> failureOrSuccess;
+
+        final isEmailValid = state.emailAddress.isValid();
+        final isPasswordValid = state.password.isValid();
+
+        if (isEmailValid && isPasswordValid) {
+          yield state.copyWith(
+            isSubmitting: true,
+            authFailureOrSuccessOption: none(),
+          );
+
+          failureOrSuccess = await _authRepository.signInWithEmailAndPassword(
+            emailAddress: state.emailAddress,
+            password: state.password,
+          );
+        }
+        yield state.copyWith(
+          isSubmitting: false,
+          showErrorMessages: true,
+          authFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },
     );
