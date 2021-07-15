@@ -25,6 +25,8 @@ class LoginScreen extends StatelessWidget {
                     cancelledByUser: (_) => "Cancelled by user!",
                     serverError: (_) => "Server Error!",
                     emailAlreadyInUser: (_) => "Email already in use!",
+                    invalidEmailAndPasswordCombination: (_) =>
+                        "Invalid email and password combination",
                   ),
                 ),
               ),

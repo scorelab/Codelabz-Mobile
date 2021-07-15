@@ -10,7 +10,7 @@ class LoginState with _$LoginState {
     required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
   }) = _LoginState;
 
-  factory LoginState.initial() => LoginState(
+  factory LoginState.initial() => _LoginState(
         emailAddress: Email(''),
         password: Password(''),
         showErrorMessages: false,

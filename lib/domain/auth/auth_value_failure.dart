@@ -9,8 +9,8 @@ abstract class AuthValueFailure<T>
     implements ValueFailure<T> {
   const factory AuthValueFailure.invalidEmail({
     required T failedValue,
-  }) = InvalidEmail<T>;
+  }) = _InvalidEmail<T>;
   const factory AuthValueFailure.shortPassword({
     required T failedValue,
-  }) = ShortPassword<T>;
+  }) = _ShortPassword<T>;
 }

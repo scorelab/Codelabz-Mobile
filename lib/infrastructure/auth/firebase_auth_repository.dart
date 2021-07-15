@@ -1,6 +1,7 @@
 import 'package:codelabz/domain/auth/auth_failure.dart';
 import 'package:codelabz/domain/auth/auth_repository.dart';
 import 'package:codelabz/domain/models/user.dart';
+import 'package:codelabz/domain/models/value_objects.dart';
 import 'package:codelabz/infrastructure/auth/firebase_user_mapper.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide User;
@@ -23,6 +24,13 @@ class FirebaseAuthRepository extends AuthRepository {
   @override
   Future<Option<User>> getSignedInUser() async =>
       _firebaseUserMapper.toOptional(_firebaseAuth.currentUser);
+
+  @override
+  Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword(
+      {required Email emailAddress, required Password password}) {
+    // TODO: implement signInWithEmailAndPassword
+    throw UnimplementedError();
+  }
 
   @override
   Future<Either<AuthFailure, Unit>> signInWithFacebook(String url) async {
