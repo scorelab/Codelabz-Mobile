@@ -7,6 +7,7 @@ class LoginState with _$LoginState {
     required Password password,
     required bool isSubmitting,
     required bool showErrorMessages,
+    required bool showPassword,
     required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
   }) = _LoginState;
 
@@ -15,6 +16,7 @@ class LoginState with _$LoginState {
         password: Password(''),
         showErrorMessages: false,
         isSubmitting: false,
+        showPassword: false,
         authFailureOrSuccessOption: none(),
       );
 }

@@ -103,6 +103,12 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           authFailureOrSuccessOption: none(),
         );
       },
+      togglePasswordVisibility: (e) async* {
+        yield state.copyWith(
+          showPassword: !state.showPassword,
+          authFailureOrSuccessOption: none(),
+        );
+      },
       signInWithEmailAndPasswordPressed:
           (SignInWithEmailAndPasswordPressed value) async* {
         Option<Either<AuthFailure, Unit>> failureOrSuccess = none();

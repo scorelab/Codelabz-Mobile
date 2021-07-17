@@ -17,4 +17,6 @@ class LoginEvent with _$LoginEvent {
   const factory LoginEvent.signInWithTwitterClicked() =
       _SignInWithTwitterClicked;
   const factory LoginEvent.backPressFromWebView() = _BackPressFromWebView;
+  const factory LoginEvent.togglePasswordVisibility() =
+      _TogglePasswordVisibility;
 }
