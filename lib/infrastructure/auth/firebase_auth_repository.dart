@@ -26,27 +26,32 @@ class FirebaseAuthRepository extends AuthRepository {
       _firebaseUserMapper.toOptional(_firebaseAuth.currentUser);
 
   @override
-  Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword(
-      {required Email emailAddress, required Password password}) {
-    // TODO: implement signInWithEmailAndPassword
-    throw UnimplementedError();
+  Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword({
+    required Email email,
+    required Password password,
+  }) async {
+    final emailAddress = email.value.getOrElse(() => "Invalid Email");
+    final passwordStr = password.value.getOrElse(() => "Invalid Password");
+
+    try {
+      return await _firebaseAuth
+          .signInWithEmailAndPassword(
+            email: emailAddress,
+            password: passwordStr,
+          )
+          .then((_) => right(unit));
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "wrong-password" || e.code == "user-not-found") {
+        return left(const AuthFailure.invalidEmailAndPasswordCombination());
+      }
+      return left(const AuthFailure.serverError());
+    }
   }
 
   @override
   Future<Either<AuthFailure, Unit>> signInWithFacebook(String url) async {
     // TODO: implement signInWithFacebook
     throw UnimplementedError();
-    // try {
-    //   final params = url.split("access_token=");
-    //   final endparam = params[1].split("&");
-    //   final accessToken = endparam[0];
-    //   final authCredential = FacebookAuthProvider.credential(accessToken);
-    //   return _firebaseAuth
-    //       .signInWithCredential(authCredential)
-    //       .then((r) => right(unit));
-    // } on PlatformException catch (_) {
-    //   return left(const AuthFailure.serverError());
-    // }
   }
 
   @override

@@ -33,4 +33,10 @@ class _SpinnerState extends State<Spinner> with SingleTickerProviderStateMixin {
       ),
     );
   }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
 }

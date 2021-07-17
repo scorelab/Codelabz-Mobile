@@ -1,8 +1,7 @@
 import 'package:codelabz/domain/auth/auth_value_failure.dart';
-import 'package:codelabz/domain/core/value_failure.dart';
 import 'package:dartz/dartz.dart';
 
-Either<ValueFailure<String>, String> validateEmailAddress(String input) {
+Either<AuthValueFailure<String>, String> validateEmailAddress(String input) {
   const emailRegex =
       r"""^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+""";
   if (RegExp(emailRegex).hasMatch(input)) {
@@ -12,7 +11,7 @@ Either<ValueFailure<String>, String> validateEmailAddress(String input) {
   }
 }
 
-Either<ValueFailure<String>, String> validatePassword(String input) {
+Either<AuthValueFailure<String>, String> validatePassword(String input) {
   if (input.length >= 6) {
     return right(input);
   } else {

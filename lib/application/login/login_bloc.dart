@@ -105,7 +105,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       },
       signInWithEmailAndPasswordPressed:
           (SignInWithEmailAndPasswordPressed value) async* {
-        late Either<AuthFailure, Unit> failureOrSuccess;
+        Option<Either<AuthFailure, Unit>> failureOrSuccess = none();
 
         final isEmailValid = state.emailAddress.isValid();
         final isPasswordValid = state.password.isValid();
@@ -116,15 +116,17 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
             authFailureOrSuccessOption: none(),
           );
 
-          failureOrSuccess = await _authRepository.signInWithEmailAndPassword(
-            emailAddress: state.emailAddress,
-            password: state.password,
+          failureOrSuccess = some(
+            await _authRepository.signInWithEmailAndPassword(
+              email: state.emailAddress,
+              password: state.password,
+            ),
           );
         }
         yield state.copyWith(
           isSubmitting: false,
           showErrorMessages: true,
-          authFailureOrSuccessOption: optionOf(failureOrSuccess),
+          authFailureOrSuccessOption: failureOrSuccess,
         );
       },
     );

@@ -6,7 +6,7 @@ import 'package:dartz/dartz.dart';
 abstract class AuthRepository {
   Future<Option<User>> getSignedInUser();
   Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword({
-    required Email emailAddress,
+    required Email email,
     required Password password,
   });
   Future<Either<AuthFailure, Unit>> signInWithGoogle();

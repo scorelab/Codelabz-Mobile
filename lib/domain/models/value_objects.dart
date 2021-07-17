@@ -1,3 +1,4 @@
+import 'package:codelabz/domain/auth/auth_value_failure.dart';
 import 'package:codelabz/domain/auth/value_validators.dart';
 import 'package:codelabz/domain/core/value_failure.dart';
 import 'package:codelabz/domain/core/value_object.dart';
@@ -14,7 +15,7 @@ class DisplayName extends ValueObject<String> {
 
 class Email extends ValueObject<String> {
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Either<AuthValueFailure<String>, String> value;
 
   factory Email(String input) => Email._(
         validateEmailAddress(input),
@@ -25,7 +26,7 @@ class Email extends ValueObject<String> {
 
 class Password extends ValueObject<String> {
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Either<AuthValueFailure<String>, String> value;
 
   factory Password(String input) {
     return Password._(
