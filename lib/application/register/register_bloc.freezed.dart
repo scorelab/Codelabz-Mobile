@@ -81,6 +81,10 @@ class _$RegisterEventTearOff {
   _TogglePasswordVisibility togglePasswordVisibility() {
     return const _TogglePasswordVisibility();
   }
+
+  _ToggleConfirmPasswordVisibility toggleConfirmPasswordVisibility() {
+    return const _ToggleConfirmPasswordVisibility();
+  }
 }
 
 /// @nodoc
@@ -104,6 +108,7 @@ mixin _$RegisterEvent {
     required TResult Function() signUpWithTwitterClicked,
     required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
+    required TResult Function() toggleConfirmPasswordVisibility,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -122,6 +127,7 @@ mixin _$RegisterEvent {
     TResult Function()? signUpWithTwitterClicked,
     TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
+    TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -146,6 +152,8 @@ mixin _$RegisterEvent {
     required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
+    required TResult Function(_ToggleConfirmPasswordVisibility value)
+        toggleConfirmPasswordVisibility,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -165,6 +173,8 @@ mixin _$RegisterEvent {
     TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
     TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
+    TResult Function(_ToggleConfirmPasswordVisibility value)?
+        toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -267,6 +277,7 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function() signUpWithTwitterClicked,
     required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
+    required TResult Function() toggleConfirmPasswordVisibility,
   }) {
     return emailChanged(emailStr);
   }
@@ -288,6 +299,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function()? signUpWithTwitterClicked,
     TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
+    TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (emailChanged != null) {
@@ -318,6 +330,8 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
+    required TResult Function(_ToggleConfirmPasswordVisibility value)
+        toggleConfirmPasswordVisibility,
   }) {
     return emailChanged(this);
   }
@@ -340,6 +354,8 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
     TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
+    TResult Function(_ToggleConfirmPasswordVisibility value)?
+        toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (emailChanged != null) {
@@ -438,6 +454,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function() signUpWithTwitterClicked,
     required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
+    required TResult Function() toggleConfirmPasswordVisibility,
   }) {
     return passwordChanged(passwordStr);
   }
@@ -459,6 +476,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function()? signUpWithTwitterClicked,
     TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
+    TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -489,6 +507,8 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
+    required TResult Function(_ToggleConfirmPasswordVisibility value)
+        toggleConfirmPasswordVisibility,
   }) {
     return passwordChanged(this);
   }
@@ -511,6 +531,8 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
     TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
+    TResult Function(_ToggleConfirmPasswordVisibility value)?
+        toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -622,6 +644,7 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
     required TResult Function() signUpWithTwitterClicked,
     required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
+    required TResult Function() toggleConfirmPasswordVisibility,
   }) {
     return confirmPasswordChanged(passwordStr, mainPasswordStr);
   }
@@ -643,6 +666,7 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
     TResult Function()? signUpWithTwitterClicked,
     TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
+    TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (confirmPasswordChanged != null) {
@@ -673,6 +697,8 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
     required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
+    required TResult Function(_ToggleConfirmPasswordVisibility value)
+        toggleConfirmPasswordVisibility,
   }) {
     return confirmPasswordChanged(this);
   }
@@ -695,6 +721,8 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
     TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
     TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
+    TResult Function(_ToggleConfirmPasswordVisibility value)?
+        toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (confirmPasswordChanged != null) {
@@ -774,6 +802,7 @@ class _$_SignUpWithEmailAndPasswordPressed
     required TResult Function() signUpWithTwitterClicked,
     required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
+    required TResult Function() toggleConfirmPasswordVisibility,
   }) {
     return signUpWithEmailAndPasswordPressed();
   }
@@ -795,6 +824,7 @@ class _$_SignUpWithEmailAndPasswordPressed
     TResult Function()? signUpWithTwitterClicked,
     TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
+    TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (signUpWithEmailAndPasswordPressed != null) {
@@ -825,6 +855,8 @@ class _$_SignUpWithEmailAndPasswordPressed
     required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
+    required TResult Function(_ToggleConfirmPasswordVisibility value)
+        toggleConfirmPasswordVisibility,
   }) {
     return signUpWithEmailAndPasswordPressed(this);
   }
@@ -847,6 +879,8 @@ class _$_SignUpWithEmailAndPasswordPressed
     TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
     TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
+    TResult Function(_ToggleConfirmPasswordVisibility value)?
+        toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (signUpWithEmailAndPasswordPressed != null) {
@@ -915,6 +949,7 @@ class _$_SignUpWithGoogle implements _SignUpWithGoogle {
     required TResult Function() signUpWithTwitterClicked,
     required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
+    required TResult Function() toggleConfirmPasswordVisibility,
   }) {
     return signUpWithGoogle();
   }
@@ -936,6 +971,7 @@ class _$_SignUpWithGoogle implements _SignUpWithGoogle {
     TResult Function()? signUpWithTwitterClicked,
     TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
+    TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (signUpWithGoogle != null) {
@@ -966,6 +1002,8 @@ class _$_SignUpWithGoogle implements _SignUpWithGoogle {
     required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
+    required TResult Function(_ToggleConfirmPasswordVisibility value)
+        toggleConfirmPasswordVisibility,
   }) {
     return signUpWithGoogle(this);
   }
@@ -988,6 +1026,8 @@ class _$_SignUpWithGoogle implements _SignUpWithGoogle {
     TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
     TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
+    TResult Function(_ToggleConfirmPasswordVisibility value)?
+        toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (signUpWithGoogle != null) {
@@ -1080,6 +1120,7 @@ class _$_SignUpWithFacebook implements _SignUpWithFacebook {
     required TResult Function() signUpWithTwitterClicked,
     required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
+    required TResult Function() toggleConfirmPasswordVisibility,
   }) {
     return signUpWithFacebook(url);
   }
@@ -1101,6 +1142,7 @@ class _$_SignUpWithFacebook implements _SignUpWithFacebook {
     TResult Function()? signUpWithTwitterClicked,
     TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
+    TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (signUpWithFacebook != null) {
@@ -1131,6 +1173,8 @@ class _$_SignUpWithFacebook implements _SignUpWithFacebook {
     required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
+    required TResult Function(_ToggleConfirmPasswordVisibility value)
+        toggleConfirmPasswordVisibility,
   }) {
     return signUpWithFacebook(this);
   }
@@ -1153,6 +1197,8 @@ class _$_SignUpWithFacebook implements _SignUpWithFacebook {
     TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
     TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
+    TResult Function(_ToggleConfirmPasswordVisibility value)?
+        toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (signUpWithFacebook != null) {
@@ -1250,6 +1296,7 @@ class _$_SignUpWithGithub implements _SignUpWithGithub {
     required TResult Function() signUpWithTwitterClicked,
     required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
+    required TResult Function() toggleConfirmPasswordVisibility,
   }) {
     return signUpWithGithub(url);
   }
@@ -1271,6 +1318,7 @@ class _$_SignUpWithGithub implements _SignUpWithGithub {
     TResult Function()? signUpWithTwitterClicked,
     TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
+    TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (signUpWithGithub != null) {
@@ -1301,6 +1349,8 @@ class _$_SignUpWithGithub implements _SignUpWithGithub {
     required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
+    required TResult Function(_ToggleConfirmPasswordVisibility value)
+        toggleConfirmPasswordVisibility,
   }) {
     return signUpWithGithub(this);
   }
@@ -1323,6 +1373,8 @@ class _$_SignUpWithGithub implements _SignUpWithGithub {
     TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
     TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
+    TResult Function(_ToggleConfirmPasswordVisibility value)?
+        toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (signUpWithGithub != null) {
@@ -1420,6 +1472,7 @@ class _$_SignUpWithTwitter implements _SignUpWithTwitter {
     required TResult Function() signUpWithTwitterClicked,
     required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
+    required TResult Function() toggleConfirmPasswordVisibility,
   }) {
     return signUpWithTwitter(url);
   }
@@ -1441,6 +1494,7 @@ class _$_SignUpWithTwitter implements _SignUpWithTwitter {
     TResult Function()? signUpWithTwitterClicked,
     TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
+    TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (signUpWithTwitter != null) {
@@ -1471,6 +1525,8 @@ class _$_SignUpWithTwitter implements _SignUpWithTwitter {
     required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
+    required TResult Function(_ToggleConfirmPasswordVisibility value)
+        toggleConfirmPasswordVisibility,
   }) {
     return signUpWithTwitter(this);
   }
@@ -1493,6 +1549,8 @@ class _$_SignUpWithTwitter implements _SignUpWithTwitter {
     TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
     TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
+    TResult Function(_ToggleConfirmPasswordVisibility value)?
+        toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (signUpWithTwitter != null) {
@@ -1566,6 +1624,7 @@ class _$_SignUpWithFacebookClicked implements _SignUpWithFacebookClicked {
     required TResult Function() signUpWithTwitterClicked,
     required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
+    required TResult Function() toggleConfirmPasswordVisibility,
   }) {
     return signUpWithFacebookClicked();
   }
@@ -1587,6 +1646,7 @@ class _$_SignUpWithFacebookClicked implements _SignUpWithFacebookClicked {
     TResult Function()? signUpWithTwitterClicked,
     TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
+    TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (signUpWithFacebookClicked != null) {
@@ -1617,6 +1677,8 @@ class _$_SignUpWithFacebookClicked implements _SignUpWithFacebookClicked {
     required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
+    required TResult Function(_ToggleConfirmPasswordVisibility value)
+        toggleConfirmPasswordVisibility,
   }) {
     return signUpWithFacebookClicked(this);
   }
@@ -1639,6 +1701,8 @@ class _$_SignUpWithFacebookClicked implements _SignUpWithFacebookClicked {
     TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
     TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
+    TResult Function(_ToggleConfirmPasswordVisibility value)?
+        toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (signUpWithFacebookClicked != null) {
@@ -1707,6 +1771,7 @@ class _$_SignUpWithGithubClicked implements _SignUpWithGithubClicked {
     required TResult Function() signUpWithTwitterClicked,
     required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
+    required TResult Function() toggleConfirmPasswordVisibility,
   }) {
     return signUpWithGithubClicked();
   }
@@ -1728,6 +1793,7 @@ class _$_SignUpWithGithubClicked implements _SignUpWithGithubClicked {
     TResult Function()? signUpWithTwitterClicked,
     TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
+    TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (signUpWithGithubClicked != null) {
@@ -1758,6 +1824,8 @@ class _$_SignUpWithGithubClicked implements _SignUpWithGithubClicked {
     required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
+    required TResult Function(_ToggleConfirmPasswordVisibility value)
+        toggleConfirmPasswordVisibility,
   }) {
     return signUpWithGithubClicked(this);
   }
@@ -1780,6 +1848,8 @@ class _$_SignUpWithGithubClicked implements _SignUpWithGithubClicked {
     TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
     TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
+    TResult Function(_ToggleConfirmPasswordVisibility value)?
+        toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (signUpWithGithubClicked != null) {
@@ -1848,6 +1918,7 @@ class _$_SignUpWithTwitterClicked implements _SignUpWithTwitterClicked {
     required TResult Function() signUpWithTwitterClicked,
     required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
+    required TResult Function() toggleConfirmPasswordVisibility,
   }) {
     return signUpWithTwitterClicked();
   }
@@ -1869,6 +1940,7 @@ class _$_SignUpWithTwitterClicked implements _SignUpWithTwitterClicked {
     TResult Function()? signUpWithTwitterClicked,
     TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
+    TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (signUpWithTwitterClicked != null) {
@@ -1899,6 +1971,8 @@ class _$_SignUpWithTwitterClicked implements _SignUpWithTwitterClicked {
     required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
+    required TResult Function(_ToggleConfirmPasswordVisibility value)
+        toggleConfirmPasswordVisibility,
   }) {
     return signUpWithTwitterClicked(this);
   }
@@ -1921,6 +1995,8 @@ class _$_SignUpWithTwitterClicked implements _SignUpWithTwitterClicked {
     TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
     TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
+    TResult Function(_ToggleConfirmPasswordVisibility value)?
+        toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (signUpWithTwitterClicked != null) {
@@ -1988,6 +2064,7 @@ class _$_BackPressFromWebView implements _BackPressFromWebView {
     required TResult Function() signUpWithTwitterClicked,
     required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
+    required TResult Function() toggleConfirmPasswordVisibility,
   }) {
     return backPressFromWebView();
   }
@@ -2009,6 +2086,7 @@ class _$_BackPressFromWebView implements _BackPressFromWebView {
     TResult Function()? signUpWithTwitterClicked,
     TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
+    TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (backPressFromWebView != null) {
@@ -2039,6 +2117,8 @@ class _$_BackPressFromWebView implements _BackPressFromWebView {
     required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
+    required TResult Function(_ToggleConfirmPasswordVisibility value)
+        toggleConfirmPasswordVisibility,
   }) {
     return backPressFromWebView(this);
   }
@@ -2061,6 +2141,8 @@ class _$_BackPressFromWebView implements _BackPressFromWebView {
     TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
     TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
+    TResult Function(_ToggleConfirmPasswordVisibility value)?
+        toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (backPressFromWebView != null) {
@@ -2129,6 +2211,7 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
     required TResult Function() signUpWithTwitterClicked,
     required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
+    required TResult Function() toggleConfirmPasswordVisibility,
   }) {
     return togglePasswordVisibility();
   }
@@ -2150,6 +2233,7 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
     TResult Function()? signUpWithTwitterClicked,
     TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
+    TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (togglePasswordVisibility != null) {
@@ -2180,6 +2264,8 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
     required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
+    required TResult Function(_ToggleConfirmPasswordVisibility value)
+        toggleConfirmPasswordVisibility,
   }) {
     return togglePasswordVisibility(this);
   }
@@ -2202,6 +2288,8 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
     TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
     TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
+    TResult Function(_ToggleConfirmPasswordVisibility value)?
+        toggleConfirmPasswordVisibility,
     required TResult orElse(),
   }) {
     if (togglePasswordVisibility != null) {
@@ -2216,6 +2304,158 @@ abstract class _TogglePasswordVisibility implements RegisterEvent {
 }
 
 /// @nodoc
+abstract class _$ToggleConfirmPasswordVisibilityCopyWith<$Res> {
+  factory _$ToggleConfirmPasswordVisibilityCopyWith(
+          _ToggleConfirmPasswordVisibility value,
+          $Res Function(_ToggleConfirmPasswordVisibility) then) =
+      __$ToggleConfirmPasswordVisibilityCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ToggleConfirmPasswordVisibilityCopyWithImpl<$Res>
+    extends _$RegisterEventCopyWithImpl<$Res>
+    implements _$ToggleConfirmPasswordVisibilityCopyWith<$Res> {
+  __$ToggleConfirmPasswordVisibilityCopyWithImpl(
+      _ToggleConfirmPasswordVisibility _value,
+      $Res Function(_ToggleConfirmPasswordVisibility) _then)
+      : super(_value, (v) => _then(v as _ToggleConfirmPasswordVisibility));
+
+  @override
+  _ToggleConfirmPasswordVisibility get _value =>
+      super._value as _ToggleConfirmPasswordVisibility;
+}
+
+/// @nodoc
+
+class _$_ToggleConfirmPasswordVisibility
+    implements _ToggleConfirmPasswordVisibility {
+  const _$_ToggleConfirmPasswordVisibility();
+
+  @override
+  String toString() {
+    return 'RegisterEvent.toggleConfirmPasswordVisibility()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ToggleConfirmPasswordVisibility);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String passwordStr, String mainPasswordStr)
+        confirmPasswordChanged,
+    required TResult Function() signUpWithEmailAndPasswordPressed,
+    required TResult Function() signUpWithGoogle,
+    required TResult Function(String url) signUpWithFacebook,
+    required TResult Function(String url) signUpWithGithub,
+    required TResult Function(String url) signUpWithTwitter,
+    required TResult Function() signUpWithFacebookClicked,
+    required TResult Function() signUpWithGithubClicked,
+    required TResult Function() signUpWithTwitterClicked,
+    required TResult Function() backPressFromWebView,
+    required TResult Function() togglePasswordVisibility,
+    required TResult Function() toggleConfirmPasswordVisibility,
+  }) {
+    return toggleConfirmPasswordVisibility();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String passwordStr, String mainPasswordStr)?
+        confirmPasswordChanged,
+    TResult Function()? signUpWithEmailAndPasswordPressed,
+    TResult Function()? signUpWithGoogle,
+    TResult Function(String url)? signUpWithFacebook,
+    TResult Function(String url)? signUpWithGithub,
+    TResult Function(String url)? signUpWithTwitter,
+    TResult Function()? signUpWithFacebookClicked,
+    TResult Function()? signUpWithGithubClicked,
+    TResult Function()? signUpWithTwitterClicked,
+    TResult Function()? backPressFromWebView,
+    TResult Function()? togglePasswordVisibility,
+    TResult Function()? toggleConfirmPasswordVisibility,
+    required TResult orElse(),
+  }) {
+    if (toggleConfirmPasswordVisibility != null) {
+      return toggleConfirmPasswordVisibility();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_ConfirmPasswordChanged value)
+        confirmPasswordChanged,
+    required TResult Function(_SignUpWithEmailAndPasswordPressed value)
+        signUpWithEmailAndPasswordPressed,
+    required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
+    required TResult Function(_SignUpWithFacebook value) signUpWithFacebook,
+    required TResult Function(_SignUpWithGithub value) signUpWithGithub,
+    required TResult Function(_SignUpWithTwitter value) signUpWithTwitter,
+    required TResult Function(_SignUpWithFacebookClicked value)
+        signUpWithFacebookClicked,
+    required TResult Function(_SignUpWithGithubClicked value)
+        signUpWithGithubClicked,
+    required TResult Function(_SignUpWithTwitterClicked value)
+        signUpWithTwitterClicked,
+    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
+    required TResult Function(_TogglePasswordVisibility value)
+        togglePasswordVisibility,
+    required TResult Function(_ToggleConfirmPasswordVisibility value)
+        toggleConfirmPasswordVisibility,
+  }) {
+    return toggleConfirmPasswordVisibility(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(_SignUpWithEmailAndPasswordPressed value)?
+        signUpWithEmailAndPasswordPressed,
+    TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
+    TResult Function(_SignUpWithFacebook value)? signUpWithFacebook,
+    TResult Function(_SignUpWithGithub value)? signUpWithGithub,
+    TResult Function(_SignUpWithTwitter value)? signUpWithTwitter,
+    TResult Function(_SignUpWithFacebookClicked value)?
+        signUpWithFacebookClicked,
+    TResult Function(_SignUpWithGithubClicked value)? signUpWithGithubClicked,
+    TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
+    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
+    TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
+    TResult Function(_ToggleConfirmPasswordVisibility value)?
+        toggleConfirmPasswordVisibility,
+    required TResult orElse(),
+  }) {
+    if (toggleConfirmPasswordVisibility != null) {
+      return toggleConfirmPasswordVisibility(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ToggleConfirmPasswordVisibility implements RegisterEvent {
+  const factory _ToggleConfirmPasswordVisibility() =
+      _$_ToggleConfirmPasswordVisibility;
+}
+
+/// @nodoc
 class _$RegisterStateTearOff {
   const _$RegisterStateTearOff();
 
@@ -2226,6 +2466,7 @@ class _$RegisterStateTearOff {
       required bool isSubmitting,
       required bool showErrorMessages,
       required bool showPassword,
+      required bool showConfirmPassword,
       required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption}) {
     return _RegisterState(
       emailAddress: emailAddress,
@@ -2234,6 +2475,7 @@ class _$RegisterStateTearOff {
       isSubmitting: isSubmitting,
       showErrorMessages: showErrorMessages,
       showPassword: showPassword,
+      showConfirmPassword: showConfirmPassword,
       authFailureOrSuccessOption: authFailureOrSuccessOption,
     );
   }
@@ -2250,6 +2492,7 @@ mixin _$RegisterState {
   bool get isSubmitting => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get showPassword => throw _privateConstructorUsedError;
+  bool get showConfirmPassword => throw _privateConstructorUsedError;
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
 
@@ -2270,6 +2513,7 @@ abstract class $RegisterStateCopyWith<$Res> {
       bool isSubmitting,
       bool showErrorMessages,
       bool showPassword,
+      bool showConfirmPassword,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
 }
 
@@ -2290,6 +2534,7 @@ class _$RegisterStateCopyWithImpl<$Res>
     Object? isSubmitting = freezed,
     Object? showErrorMessages = freezed,
     Object? showPassword = freezed,
+    Object? showConfirmPassword = freezed,
     Object? authFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
@@ -2317,6 +2562,10 @@ class _$RegisterStateCopyWithImpl<$Res>
           ? _value.showPassword
           : showPassword // ignore: cast_nullable_to_non_nullable
               as bool,
+      showConfirmPassword: showConfirmPassword == freezed
+          ? _value.showConfirmPassword
+          : showConfirmPassword // ignore: cast_nullable_to_non_nullable
+              as bool,
       authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
           ? _value.authFailureOrSuccessOption
           : authFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
@@ -2339,6 +2588,7 @@ abstract class _$RegisterStateCopyWith<$Res>
       bool isSubmitting,
       bool showErrorMessages,
       bool showPassword,
+      bool showConfirmPassword,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption});
 }
 
@@ -2361,6 +2611,7 @@ class __$RegisterStateCopyWithImpl<$Res>
     Object? isSubmitting = freezed,
     Object? showErrorMessages = freezed,
     Object? showPassword = freezed,
+    Object? showConfirmPassword = freezed,
     Object? authFailureOrSuccessOption = freezed,
   }) {
     return _then(_RegisterState(
@@ -2388,6 +2639,10 @@ class __$RegisterStateCopyWithImpl<$Res>
           ? _value.showPassword
           : showPassword // ignore: cast_nullable_to_non_nullable
               as bool,
+      showConfirmPassword: showConfirmPassword == freezed
+          ? _value.showConfirmPassword
+          : showConfirmPassword // ignore: cast_nullable_to_non_nullable
+              as bool,
       authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
           ? _value.authFailureOrSuccessOption
           : authFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
@@ -2406,6 +2661,7 @@ class _$_RegisterState implements _RegisterState {
       required this.isSubmitting,
       required this.showErrorMessages,
       required this.showPassword,
+      required this.showConfirmPassword,
       required this.authFailureOrSuccessOption});
 
   @override
@@ -2421,11 +2677,13 @@ class _$_RegisterState implements _RegisterState {
   @override
   final bool showPassword;
   @override
+  final bool showConfirmPassword;
+  @override
   final Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'RegisterState(emailAddress: $emailAddress, password: $password, confirmPassword: $confirmPassword, isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, showPassword: $showPassword, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
+    return 'RegisterState(emailAddress: $emailAddress, password: $password, confirmPassword: $confirmPassword, isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, showPassword: $showPassword, showConfirmPassword: $showConfirmPassword, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
   }
 
   @override
@@ -2450,6 +2708,9 @@ class _$_RegisterState implements _RegisterState {
             (identical(other.showPassword, showPassword) ||
                 const DeepCollectionEquality()
                     .equals(other.showPassword, showPassword)) &&
+            (identical(other.showConfirmPassword, showConfirmPassword) ||
+                const DeepCollectionEquality()
+                    .equals(other.showConfirmPassword, showConfirmPassword)) &&
             (identical(other.authFailureOrSuccessOption,
                     authFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
@@ -2466,6 +2727,7 @@ class _$_RegisterState implements _RegisterState {
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(showPassword) ^
+      const DeepCollectionEquality().hash(showConfirmPassword) ^
       const DeepCollectionEquality().hash(authFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
@@ -2482,6 +2744,7 @@ abstract class _RegisterState implements RegisterState {
       required bool isSubmitting,
       required bool showErrorMessages,
       required bool showPassword,
+      required bool showConfirmPassword,
       required Option<Either<AuthFailure, Unit>>
           authFailureOrSuccessOption}) = _$_RegisterState;
 
@@ -2497,6 +2760,8 @@ abstract class _RegisterState implements RegisterState {
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
   bool get showPassword => throw _privateConstructorUsedError;
+  @override
+  bool get showConfirmPassword => throw _privateConstructorUsedError;
   @override
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
       throw _privateConstructorUsedError;

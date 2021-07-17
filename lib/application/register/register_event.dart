@@ -24,4 +24,6 @@ class RegisterEvent with _$RegisterEvent {
   const factory RegisterEvent.backPressFromWebView() = _BackPressFromWebView;
   const factory RegisterEvent.togglePasswordVisibility() =
       _TogglePasswordVisibility;
+  const factory RegisterEvent.toggleConfirmPasswordVisibility() =
+      _ToggleConfirmPasswordVisibility;
 }

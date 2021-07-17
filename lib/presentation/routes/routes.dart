@@ -4,11 +4,13 @@ import 'package:fluro/fluro.dart';
 class Routes {
   static const splash = "/";
   static const login = "/login";
+  static const register = "/register";
   static const home = "/home";
 
   static void configureRouter(FluroRouter router) {
     router.define(splash, handler: mainHandler);
     router.define(login, handler: loginHandler);
+    router.define(register, handler: registerHandler);
     router.define(home, handler: homeHandler);
   }
 

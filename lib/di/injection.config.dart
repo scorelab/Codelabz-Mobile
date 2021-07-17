@@ -32,9 +32,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       get<_i3.FirebaseAuth>(),
       get<_i6.GoogleSignIn>(),
       get<_i5.FirebaseUserMapper>()));
-  gh.lazySingleton<_i9.LoginBloc>(
-      () => _i9.LoginBloc(get<_i7.AuthRepository>()));
-  gh.lazySingleton<_i10.RegisterBloc>(
+  gh.factory<_i9.LoginBloc>(() => _i9.LoginBloc(get<_i7.AuthRepository>()));
+  gh.factory<_i10.RegisterBloc>(
       () => _i10.RegisterBloc(get<_i7.AuthRepository>()));
   gh.factory<_i11.AuthBloc>(() => _i11.AuthBloc(get<_i7.AuthRepository>()));
   return get;

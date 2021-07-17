@@ -12,7 +12,7 @@ part 'register_bloc.freezed.dart';
 part 'register_event.dart';
 part 'register_state.dart';
 
-@LazySingleton()
+@Injectable()
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   final AuthRepository _authRepository;
   RegisterBloc(this._authRepository) : super(RegisterState.initial());
@@ -112,6 +112,12 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       togglePasswordVisibility: (_) async* {
         yield state.copyWith(
           showPassword: !state.showPassword,
+          authFailureOrSuccessOption: none(),
+        );
+      },
+      toggleConfirmPasswordVisibility: (_) async* {
+        yield state.copyWith(
+          showConfirmPassword: !state.showConfirmPassword,
           authFailureOrSuccessOption: none(),
         );
       },

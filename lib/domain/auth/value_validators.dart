@@ -24,6 +24,6 @@ Either<AuthValueFailure<String>, String> confirmPasswords(
   if (input == old) {
     return right(input);
   } else {
-    return left(AuthValueFailure.shortPassword(failedValue: input));
+    return left(AuthValueFailure.unmatchPasswords(failedValue: input));
   }
 }

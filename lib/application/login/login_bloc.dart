@@ -12,7 +12,7 @@ part 'login_bloc.freezed.dart';
 part 'login_event.dart';
 part 'login_state.dart';
 
-@LazySingleton()
+@Injectable()
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final AuthRepository _authRepository;
   LoginBloc(this._authRepository) : super(LoginState.initial());

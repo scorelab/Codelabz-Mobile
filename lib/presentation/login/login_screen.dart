@@ -139,7 +139,7 @@ class LoginScreen extends StatelessWidget {
                                 foregroundColor:
                                     MaterialStateProperty.all(Colors.white),
                               ),
-                              child: const Text("Login"),
+                              child: const Text("Log in"),
                             ),
                           ),
                           Row(
@@ -196,15 +196,19 @@ class LoginScreen extends StatelessWidget {
                                 const TextSpan(
                                     text: "CodeLabz",
                                     style: TextStyle(
-                                      color: Colors.black54,
+                                      color: Colors.black,
                                       fontWeight: FontWeight.bold,
                                     )),
+                                const TextSpan(
+                                    text: "? ",
+                                    style: TextStyle(color: Colors.black87)),
                                 TextSpan(
-                                    text: "? Create an account",
-                                    style:
-                                        const TextStyle(color: Colors.black87),
-                                    recognizer: TapGestureRecognizer()
-                                      ..onTap = _onClickCreateAccount),
+                                  text: "Create an account",
+                                  style: const TextStyle(color: Colors.black87),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap =
+                                        () => _onClickCreateAccount(context),
+                                ),
                               ],
                             ),
                           ),
@@ -228,7 +232,9 @@ class LoginScreen extends StatelessWidget {
         .add(const LoginEvent.signInWithEmailAndPasswordPressed());
   }
 
-  void _onClickCreateAccount() {}
+  void _onClickCreateAccount(BuildContext context) {
+    CodeLabzApp.router.navigateTo(context, Routes.register);
+  }
 
   void _signInWithGoogle(BuildContext context) {
     Provider.of<LoginBloc>(context, listen: false)

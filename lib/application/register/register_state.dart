@@ -9,6 +9,7 @@ class RegisterState with _$RegisterState {
     required bool isSubmitting,
     required bool showErrorMessages,
     required bool showPassword,
+    required bool showConfirmPassword,
     required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
   }) = _RegisterState;
 
@@ -19,6 +20,7 @@ class RegisterState with _$RegisterState {
         showErrorMessages: false,
         isSubmitting: false,
         showPassword: false,
+        showConfirmPassword: false,
         authFailureOrSuccessOption: none(),
       );
 }

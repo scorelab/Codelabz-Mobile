@@ -29,7 +29,7 @@ class RegisterScreen extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             child: Column(
               children: [
-                const SizedBox(height: 50),
+                const SizedBox(height: 20),
                 BlocConsumer<RegisterBloc, RegisterState>(
                   listener: (context, state) {
                     state.authFailureOrSuccessOption.fold(
@@ -126,8 +126,9 @@ class RegisterScreen extends StatelessWidget {
                                   (_) => null,
                                 ),
                           ),
+                          const SizedBox(height: 5),
                           TextFormField(
-                            obscureText: !state.showPassword,
+                            obscureText: !state.showConfirmPassword,
                             decoration: InputDecoration(
                               border: const OutlineInputBorder(),
                               prefixIcon:
@@ -137,9 +138,9 @@ class RegisterScreen extends StatelessWidget {
                                         context,
                                         listen: false)
                                     .add(const RegisterEvent
-                                        .togglePasswordVisibility()),
+                                        .toggleConfirmPasswordVisibility()),
                                 icon: Icon(
-                                  state.showPassword
+                                  state.showConfirmPassword
                                       ? FontAwesomeIcons.eye
                                       : FontAwesomeIcons.eyeSlash,
                                 ),
@@ -149,26 +150,35 @@ class RegisterScreen extends StatelessWidget {
                             onChanged: (text) => Provider.of<RegisterBloc>(
                                     context,
                                     listen: false)
-                                .add(RegisterEvent.passwordChanged(text)),
+                                .add(RegisterEvent.confirmPasswordChanged(
+                                    text,
+                                    state.password.value
+                                        .getOrElse(() => "No Password"))),
                             validator: (_) => Provider.of<RegisterBloc>(context)
                                 .state
-                                .password
+                                .confirmPassword
                                 .value
                                 .fold(
                                   (f) => f.maybeMap(
-                                    shortPassword: (_) => "Short Password",
+                                    unmatchPasswords: (_) =>
+                                        "Passwords are not matching!",
                                     orElse: () => null,
                                   ),
                                   (_) => null,
                                 ),
                           ),
-                          const SizedBox(height: 20),
+                          const SizedBox(height: 15),
+                          Text(
+                            "By creating an account, you agree to our terms and conditions.",
+                            style: TextStyle(color: Colors.grey[800]),
+                          ),
+                          const SizedBox(height: 5),
                           SizedBox(
                             width: double.maxFinite,
                             child: TextButton(
                               onPressed: state.isSubmitting
                                   ? null
-                                  : () => _onClickLogin(context),
+                                  : () => _onClickCreateAccount(context),
                               style: ButtonStyle(
                                 backgroundColor:
                                     MaterialStateProperty.all<Color>(
@@ -178,7 +188,7 @@ class RegisterScreen extends StatelessWidget {
                                 foregroundColor:
                                     MaterialStateProperty.all(Colors.white),
                               ),
-                              child: const Text("Register"),
+                              child: const Text("Create an account"),
                             ),
                           ),
                           Row(
@@ -225,7 +235,7 @@ class RegisterScreen extends StatelessWidget {
                             onPress: () => _signInwithFacebook(context),
                             disabled: state.isSubmitting,
                           ),
-                          const SizedBox(height: 30),
+                          const SizedBox(height: 10),
                           RichText(
                             text: TextSpan(
                               children: <TextSpan>[
@@ -244,11 +254,10 @@ class RegisterScreen extends StatelessWidget {
                                     style:
                                         const TextStyle(color: Colors.black87),
                                     recognizer: TapGestureRecognizer()
-                                      ..onTap = _onClickCreateAccount),
+                                      ..onTap = () => _onClickLogin(context)),
                               ],
                             ),
                           ),
-                          const SizedBox(height: 10),
                         ],
                       ),
                     );
@@ -262,13 +271,15 @@ class RegisterScreen extends StatelessWidget {
     );
   }
 
-  void _onClickLogin(BuildContext context) {
+  void _onClickCreateAccount(BuildContext context) {
     FocusScope.of(context).unfocus();
     Provider.of<RegisterBloc>(context, listen: false)
         .add(const RegisterEvent.signUpWithEmailAndPasswordPressed());
   }
 
-  void _onClickCreateAccount() {}
+  void _onClickLogin(BuildContext context) {
+    CodeLabzApp.router.pop(context);
+  }
 
   void _signInWithGoogle(BuildContext context) {
     Provider.of<RegisterBloc>(context, listen: false)
