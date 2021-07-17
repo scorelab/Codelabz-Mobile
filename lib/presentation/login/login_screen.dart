@@ -39,13 +39,12 @@ class LoginScreen extends StatelessWidget {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text(
-                                failure.map(
-                                  cancelledByUser: (_) => "Cancelled by user!",
+                                failure.maybeMap(
+                                  cancelledByUser: (_) => "Cancelled!",
                                   serverError: (_) => "Server Error!",
-                                  emailAlreadyInUser: (_) =>
-                                      "Email already in use!",
                                   invalidEmailAndPasswordCombination: (_) =>
                                       "Invalid email and password combination",
+                                  orElse: () => "",
                                 ),
                               ),
                             ),
