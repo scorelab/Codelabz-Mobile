@@ -1,5 +1,5 @@
 import 'package:codelabz/application/auth/auth_bloc.dart';
-import 'package:codelabz/application/login/login_bloc.dart';
+import 'package:codelabz/application/register/register_bloc.dart';
 import 'package:codelabz/di/injection.dart';
 import 'package:codelabz/presentation/codelabz_app.dart';
 import 'package:codelabz/presentation/routes/routes.dart';
@@ -11,7 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
-class LoginScreen extends StatelessWidget {
+class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,7 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: 50),
-                BlocConsumer<LoginBloc, LoginState>(
+                BlocConsumer<RegisterBloc, RegisterState>(
                   listener: (context, state) {
                     state.authFailureOrSuccessOption.fold(
                       () => {},
@@ -73,10 +73,11 @@ class LoginScreen extends StatelessWidget {
                               labelText: 'Email',
                             ),
                             autocorrect: false,
-                            onChanged: (text) =>
-                                Provider.of<LoginBloc>(context, listen: false)
-                                    .add(LoginEvent.emailChanged(text)),
-                            validator: (_) => Provider.of<LoginBloc>(context)
+                            onChanged: (text) => Provider.of<RegisterBloc>(
+                                    context,
+                                    listen: false)
+                                .add(RegisterEvent.emailChanged(text)),
+                            validator: (_) => Provider.of<RegisterBloc>(context)
                                 .state
                                 .emailAddress
                                 .value
@@ -96,9 +97,10 @@ class LoginScreen extends StatelessWidget {
                               prefixIcon:
                                   const Icon(Icons.lock, color: Colors.grey),
                               suffixIcon: IconButton(
-                                onPressed: () => Provider.of<LoginBloc>(context,
+                                onPressed: () => Provider.of<RegisterBloc>(
+                                        context,
                                         listen: false)
-                                    .add(const LoginEvent
+                                    .add(const RegisterEvent
                                         .togglePasswordVisibility()),
                                 icon: Icon(
                                   state.showPassword
@@ -108,10 +110,47 @@ class LoginScreen extends StatelessWidget {
                               ),
                               labelText: 'Password',
                             ),
-                            onChanged: (text) =>
-                                Provider.of<LoginBloc>(context, listen: false)
-                                    .add(LoginEvent.passwordChanged(text)),
-                            validator: (_) => Provider.of<LoginBloc>(context)
+                            onChanged: (text) => Provider.of<RegisterBloc>(
+                                    context,
+                                    listen: false)
+                                .add(RegisterEvent.passwordChanged(text)),
+                            validator: (_) => Provider.of<RegisterBloc>(context)
+                                .state
+                                .password
+                                .value
+                                .fold(
+                                  (f) => f.maybeMap(
+                                    shortPassword: (_) => "Short Password",
+                                    orElse: () => null,
+                                  ),
+                                  (_) => null,
+                                ),
+                          ),
+                          TextFormField(
+                            obscureText: !state.showPassword,
+                            decoration: InputDecoration(
+                              border: const OutlineInputBorder(),
+                              prefixIcon:
+                                  const Icon(Icons.lock, color: Colors.grey),
+                              suffixIcon: IconButton(
+                                onPressed: () => Provider.of<RegisterBloc>(
+                                        context,
+                                        listen: false)
+                                    .add(const RegisterEvent
+                                        .togglePasswordVisibility()),
+                                icon: Icon(
+                                  state.showPassword
+                                      ? FontAwesomeIcons.eye
+                                      : FontAwesomeIcons.eyeSlash,
+                                ),
+                              ),
+                              labelText: 'Confirm password',
+                            ),
+                            onChanged: (text) => Provider.of<RegisterBloc>(
+                                    context,
+                                    listen: false)
+                                .add(RegisterEvent.passwordChanged(text)),
+                            validator: (_) => Provider.of<RegisterBloc>(context)
                                 .state
                                 .password
                                 .value
@@ -139,7 +178,7 @@ class LoginScreen extends StatelessWidget {
                                 foregroundColor:
                                     MaterialStateProperty.all(Colors.white),
                               ),
-                              child: const Text("Login"),
+                              child: const Text("Register"),
                             ),
                           ),
                           Row(
@@ -164,25 +203,25 @@ class LoginScreen extends StatelessWidget {
                           ),
                           LoginButton(
                             assetName: "assets/icons/google.png",
-                            text: "Signin with Google",
+                            text: "Signup with Google",
                             onPress: () => _signInWithGoogle(context),
                             disabled: state.isSubmitting,
                           ),
                           LoginButton(
                             assetName: "assets/icons/facebook.png",
-                            text: "Signin with Facebook",
+                            text: "Signup with Facebook",
                             onPress: () => _signInwithFacebook(context),
                             disabled: state.isSubmitting,
                           ),
                           LoginButton(
                             assetName: "assets/icons/github.png",
-                            text: "Signin with Github",
+                            text: "Signup with Github",
                             onPress: () => _signInwithFacebook(context),
                             disabled: state.isSubmitting,
                           ),
                           LoginButton(
                             assetName: "assets/icons/twitter.png",
-                            text: "Signin with Twitter",
+                            text: "Signup with Twitter",
                             onPress: () => _signInwithFacebook(context),
                             disabled: state.isSubmitting,
                           ),
@@ -191,16 +230,17 @@ class LoginScreen extends StatelessWidget {
                             text: TextSpan(
                               children: <TextSpan>[
                                 const TextSpan(
-                                    text: "New to ",
+                                    text: "Already have a ",
                                     style: TextStyle(color: Colors.black87)),
                                 const TextSpan(
-                                    text: "CodeLabz",
-                                    style: TextStyle(
-                                      color: Colors.black54,
-                                      fontWeight: FontWeight.bold,
-                                    )),
+                                  text: "CodeLabz",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
                                 TextSpan(
-                                    text: "? Create an account",
+                                    text: "account? Log In",
                                     style:
                                         const TextStyle(color: Colors.black87),
                                     recognizer: TapGestureRecognizer()
@@ -224,15 +264,15 @@ class LoginScreen extends StatelessWidget {
 
   void _onClickLogin(BuildContext context) {
     FocusScope.of(context).unfocus();
-    Provider.of<LoginBloc>(context, listen: false)
-        .add(const LoginEvent.signInWithEmailAndPasswordPressed());
+    Provider.of<RegisterBloc>(context, listen: false)
+        .add(const RegisterEvent.signUpWithEmailAndPasswordPressed());
   }
 
   void _onClickCreateAccount() {}
 
   void _signInWithGoogle(BuildContext context) {
-    Provider.of<LoginBloc>(context, listen: false)
-        .add(const LoginEvent.signInWithGoogle());
+    Provider.of<RegisterBloc>(context, listen: false)
+        .add(const RegisterEvent.signUpWithGoogle());
   }
 
   void _signInwithFacebook(BuildContext context) {}

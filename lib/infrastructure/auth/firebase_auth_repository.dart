@@ -93,4 +93,11 @@ class FirebaseAuthRepository extends AuthRepository {
     await _googleSignIn.signOut();
     await _firebaseAuth.signOut();
   }
+
+  @override
+  Future<Either<AuthFailure, Unit>> signUpWithEmailAndPassword(
+      {required Email email, required Password password}) {
+    // TODO: implement signUpWithEmailAndPassword
+    throw UnimplementedError();
+  }
 }

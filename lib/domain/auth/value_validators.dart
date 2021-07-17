@@ -18,3 +18,12 @@ Either<AuthValueFailure<String>, String> validatePassword(String input) {
     return left(AuthValueFailure.shortPassword(failedValue: input));
   }
 }
+
+Either<AuthValueFailure<String>, String> confirmPasswords(
+    String input, String old) {
+  if (input == old) {
+    return right(input);
+  } else {
+    return left(AuthValueFailure.shortPassword(failedValue: input));
+  }
+}

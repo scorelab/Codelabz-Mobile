@@ -37,6 +37,19 @@ class Password extends ValueObject<String> {
   const Password._(this.value);
 }
 
+class ConfirmPassword extends ValueObject<String> {
+  @override
+  final Either<AuthValueFailure<String>, String> value;
+
+  factory ConfirmPassword(String input, String old) {
+    return ConfirmPassword._(
+      confirmPasswords(input, old),
+    );
+  }
+
+  const ConfirmPassword._(this.value);
+}
+
 class PhotoUrl extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
