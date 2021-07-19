@@ -44,40 +44,6 @@ class _$RegisterEventTearOff {
     return const _SignUpWithGoogle();
   }
 
-  _SignUpWithFacebook signUpWithFacebook(String url) {
-    return _SignUpWithFacebook(
-      url,
-    );
-  }
-
-  _SignUpWithGithub signUpWithGithub(String url) {
-    return _SignUpWithGithub(
-      url,
-    );
-  }
-
-  _SignUpWithTwitter signUpWithTwitter(String url) {
-    return _SignUpWithTwitter(
-      url,
-    );
-  }
-
-  _SignUpWithFacebookClicked signUpWithFacebookClicked() {
-    return const _SignUpWithFacebookClicked();
-  }
-
-  _SignUpWithGithubClicked signUpWithGithubClicked() {
-    return const _SignUpWithGithubClicked();
-  }
-
-  _SignUpWithTwitterClicked signUpWithTwitterClicked() {
-    return const _SignUpWithTwitterClicked();
-  }
-
-  _BackPressFromWebView backPressFromWebView() {
-    return const _BackPressFromWebView();
-  }
-
   _TogglePasswordVisibility togglePasswordVisibility() {
     return const _TogglePasswordVisibility();
   }
@@ -100,13 +66,6 @@ mixin _$RegisterEvent {
         confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
-    required TResult Function(String url) signUpWithFacebook,
-    required TResult Function(String url) signUpWithGithub,
-    required TResult Function(String url) signUpWithTwitter,
-    required TResult Function() signUpWithFacebookClicked,
-    required TResult Function() signUpWithGithubClicked,
-    required TResult Function() signUpWithTwitterClicked,
-    required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
     required TResult Function() toggleConfirmPasswordVisibility,
   }) =>
@@ -119,13 +78,6 @@ mixin _$RegisterEvent {
         confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
-    TResult Function(String url)? signUpWithFacebook,
-    TResult Function(String url)? signUpWithGithub,
-    TResult Function(String url)? signUpWithTwitter,
-    TResult Function()? signUpWithFacebookClicked,
-    TResult Function()? signUpWithGithubClicked,
-    TResult Function()? signUpWithTwitterClicked,
-    TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
     TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
@@ -140,16 +92,6 @@ mixin _$RegisterEvent {
     required TResult Function(_SignUpWithEmailAndPasswordPressed value)
         signUpWithEmailAndPasswordPressed,
     required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
-    required TResult Function(_SignUpWithFacebook value) signUpWithFacebook,
-    required TResult Function(_SignUpWithGithub value) signUpWithGithub,
-    required TResult Function(_SignUpWithTwitter value) signUpWithTwitter,
-    required TResult Function(_SignUpWithFacebookClicked value)
-        signUpWithFacebookClicked,
-    required TResult Function(_SignUpWithGithubClicked value)
-        signUpWithGithubClicked,
-    required TResult Function(_SignUpWithTwitterClicked value)
-        signUpWithTwitterClicked,
-    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
     required TResult Function(_ToggleConfirmPasswordVisibility value)
@@ -164,14 +106,6 @@ mixin _$RegisterEvent {
     TResult Function(_SignUpWithEmailAndPasswordPressed value)?
         signUpWithEmailAndPasswordPressed,
     TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(_SignUpWithFacebook value)? signUpWithFacebook,
-    TResult Function(_SignUpWithGithub value)? signUpWithGithub,
-    TResult Function(_SignUpWithTwitter value)? signUpWithTwitter,
-    TResult Function(_SignUpWithFacebookClicked value)?
-        signUpWithFacebookClicked,
-    TResult Function(_SignUpWithGithubClicked value)? signUpWithGithubClicked,
-    TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
-    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     TResult Function(_ToggleConfirmPasswordVisibility value)?
         toggleConfirmPasswordVisibility,
@@ -269,13 +203,6 @@ class _$_EmailChanged implements _EmailChanged {
         confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
-    required TResult Function(String url) signUpWithFacebook,
-    required TResult Function(String url) signUpWithGithub,
-    required TResult Function(String url) signUpWithTwitter,
-    required TResult Function() signUpWithFacebookClicked,
-    required TResult Function() signUpWithGithubClicked,
-    required TResult Function() signUpWithTwitterClicked,
-    required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
     required TResult Function() toggleConfirmPasswordVisibility,
   }) {
@@ -291,13 +218,6 @@ class _$_EmailChanged implements _EmailChanged {
         confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
-    TResult Function(String url)? signUpWithFacebook,
-    TResult Function(String url)? signUpWithGithub,
-    TResult Function(String url)? signUpWithTwitter,
-    TResult Function()? signUpWithFacebookClicked,
-    TResult Function()? signUpWithGithubClicked,
-    TResult Function()? signUpWithTwitterClicked,
-    TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
     TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
@@ -318,16 +238,6 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(_SignUpWithEmailAndPasswordPressed value)
         signUpWithEmailAndPasswordPressed,
     required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
-    required TResult Function(_SignUpWithFacebook value) signUpWithFacebook,
-    required TResult Function(_SignUpWithGithub value) signUpWithGithub,
-    required TResult Function(_SignUpWithTwitter value) signUpWithTwitter,
-    required TResult Function(_SignUpWithFacebookClicked value)
-        signUpWithFacebookClicked,
-    required TResult Function(_SignUpWithGithubClicked value)
-        signUpWithGithubClicked,
-    required TResult Function(_SignUpWithTwitterClicked value)
-        signUpWithTwitterClicked,
-    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
     required TResult Function(_ToggleConfirmPasswordVisibility value)
@@ -345,14 +255,6 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_SignUpWithEmailAndPasswordPressed value)?
         signUpWithEmailAndPasswordPressed,
     TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(_SignUpWithFacebook value)? signUpWithFacebook,
-    TResult Function(_SignUpWithGithub value)? signUpWithGithub,
-    TResult Function(_SignUpWithTwitter value)? signUpWithTwitter,
-    TResult Function(_SignUpWithFacebookClicked value)?
-        signUpWithFacebookClicked,
-    TResult Function(_SignUpWithGithubClicked value)? signUpWithGithubClicked,
-    TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
-    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     TResult Function(_ToggleConfirmPasswordVisibility value)?
         toggleConfirmPasswordVisibility,
@@ -446,13 +348,6 @@ class _$_PasswordChanged implements _PasswordChanged {
         confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
-    required TResult Function(String url) signUpWithFacebook,
-    required TResult Function(String url) signUpWithGithub,
-    required TResult Function(String url) signUpWithTwitter,
-    required TResult Function() signUpWithFacebookClicked,
-    required TResult Function() signUpWithGithubClicked,
-    required TResult Function() signUpWithTwitterClicked,
-    required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
     required TResult Function() toggleConfirmPasswordVisibility,
   }) {
@@ -468,13 +363,6 @@ class _$_PasswordChanged implements _PasswordChanged {
         confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
-    TResult Function(String url)? signUpWithFacebook,
-    TResult Function(String url)? signUpWithGithub,
-    TResult Function(String url)? signUpWithTwitter,
-    TResult Function()? signUpWithFacebookClicked,
-    TResult Function()? signUpWithGithubClicked,
-    TResult Function()? signUpWithTwitterClicked,
-    TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
     TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
@@ -495,16 +383,6 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(_SignUpWithEmailAndPasswordPressed value)
         signUpWithEmailAndPasswordPressed,
     required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
-    required TResult Function(_SignUpWithFacebook value) signUpWithFacebook,
-    required TResult Function(_SignUpWithGithub value) signUpWithGithub,
-    required TResult Function(_SignUpWithTwitter value) signUpWithTwitter,
-    required TResult Function(_SignUpWithFacebookClicked value)
-        signUpWithFacebookClicked,
-    required TResult Function(_SignUpWithGithubClicked value)
-        signUpWithGithubClicked,
-    required TResult Function(_SignUpWithTwitterClicked value)
-        signUpWithTwitterClicked,
-    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
     required TResult Function(_ToggleConfirmPasswordVisibility value)
@@ -522,14 +400,6 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(_SignUpWithEmailAndPasswordPressed value)?
         signUpWithEmailAndPasswordPressed,
     TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(_SignUpWithFacebook value)? signUpWithFacebook,
-    TResult Function(_SignUpWithGithub value)? signUpWithGithub,
-    TResult Function(_SignUpWithTwitter value)? signUpWithTwitter,
-    TResult Function(_SignUpWithFacebookClicked value)?
-        signUpWithFacebookClicked,
-    TResult Function(_SignUpWithGithubClicked value)? signUpWithGithubClicked,
-    TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
-    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     TResult Function(_ToggleConfirmPasswordVisibility value)?
         toggleConfirmPasswordVisibility,
@@ -636,13 +506,6 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
         confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
-    required TResult Function(String url) signUpWithFacebook,
-    required TResult Function(String url) signUpWithGithub,
-    required TResult Function(String url) signUpWithTwitter,
-    required TResult Function() signUpWithFacebookClicked,
-    required TResult Function() signUpWithGithubClicked,
-    required TResult Function() signUpWithTwitterClicked,
-    required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
     required TResult Function() toggleConfirmPasswordVisibility,
   }) {
@@ -658,13 +521,6 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
         confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
-    TResult Function(String url)? signUpWithFacebook,
-    TResult Function(String url)? signUpWithGithub,
-    TResult Function(String url)? signUpWithTwitter,
-    TResult Function()? signUpWithFacebookClicked,
-    TResult Function()? signUpWithGithubClicked,
-    TResult Function()? signUpWithTwitterClicked,
-    TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
     TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
@@ -685,16 +541,6 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
     required TResult Function(_SignUpWithEmailAndPasswordPressed value)
         signUpWithEmailAndPasswordPressed,
     required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
-    required TResult Function(_SignUpWithFacebook value) signUpWithFacebook,
-    required TResult Function(_SignUpWithGithub value) signUpWithGithub,
-    required TResult Function(_SignUpWithTwitter value) signUpWithTwitter,
-    required TResult Function(_SignUpWithFacebookClicked value)
-        signUpWithFacebookClicked,
-    required TResult Function(_SignUpWithGithubClicked value)
-        signUpWithGithubClicked,
-    required TResult Function(_SignUpWithTwitterClicked value)
-        signUpWithTwitterClicked,
-    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
     required TResult Function(_ToggleConfirmPasswordVisibility value)
@@ -712,14 +558,6 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
     TResult Function(_SignUpWithEmailAndPasswordPressed value)?
         signUpWithEmailAndPasswordPressed,
     TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(_SignUpWithFacebook value)? signUpWithFacebook,
-    TResult Function(_SignUpWithGithub value)? signUpWithGithub,
-    TResult Function(_SignUpWithTwitter value)? signUpWithTwitter,
-    TResult Function(_SignUpWithFacebookClicked value)?
-        signUpWithFacebookClicked,
-    TResult Function(_SignUpWithGithubClicked value)? signUpWithGithubClicked,
-    TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
-    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     TResult Function(_ToggleConfirmPasswordVisibility value)?
         toggleConfirmPasswordVisibility,
@@ -794,13 +632,6 @@ class _$_SignUpWithEmailAndPasswordPressed
         confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
-    required TResult Function(String url) signUpWithFacebook,
-    required TResult Function(String url) signUpWithGithub,
-    required TResult Function(String url) signUpWithTwitter,
-    required TResult Function() signUpWithFacebookClicked,
-    required TResult Function() signUpWithGithubClicked,
-    required TResult Function() signUpWithTwitterClicked,
-    required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
     required TResult Function() toggleConfirmPasswordVisibility,
   }) {
@@ -816,13 +647,6 @@ class _$_SignUpWithEmailAndPasswordPressed
         confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
-    TResult Function(String url)? signUpWithFacebook,
-    TResult Function(String url)? signUpWithGithub,
-    TResult Function(String url)? signUpWithTwitter,
-    TResult Function()? signUpWithFacebookClicked,
-    TResult Function()? signUpWithGithubClicked,
-    TResult Function()? signUpWithTwitterClicked,
-    TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
     TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
@@ -843,16 +667,6 @@ class _$_SignUpWithEmailAndPasswordPressed
     required TResult Function(_SignUpWithEmailAndPasswordPressed value)
         signUpWithEmailAndPasswordPressed,
     required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
-    required TResult Function(_SignUpWithFacebook value) signUpWithFacebook,
-    required TResult Function(_SignUpWithGithub value) signUpWithGithub,
-    required TResult Function(_SignUpWithTwitter value) signUpWithTwitter,
-    required TResult Function(_SignUpWithFacebookClicked value)
-        signUpWithFacebookClicked,
-    required TResult Function(_SignUpWithGithubClicked value)
-        signUpWithGithubClicked,
-    required TResult Function(_SignUpWithTwitterClicked value)
-        signUpWithTwitterClicked,
-    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
     required TResult Function(_ToggleConfirmPasswordVisibility value)
@@ -870,14 +684,6 @@ class _$_SignUpWithEmailAndPasswordPressed
     TResult Function(_SignUpWithEmailAndPasswordPressed value)?
         signUpWithEmailAndPasswordPressed,
     TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(_SignUpWithFacebook value)? signUpWithFacebook,
-    TResult Function(_SignUpWithGithub value)? signUpWithGithub,
-    TResult Function(_SignUpWithTwitter value)? signUpWithTwitter,
-    TResult Function(_SignUpWithFacebookClicked value)?
-        signUpWithFacebookClicked,
-    TResult Function(_SignUpWithGithubClicked value)? signUpWithGithubClicked,
-    TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
-    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     TResult Function(_ToggleConfirmPasswordVisibility value)?
         toggleConfirmPasswordVisibility,
@@ -941,13 +747,6 @@ class _$_SignUpWithGoogle implements _SignUpWithGoogle {
         confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
-    required TResult Function(String url) signUpWithFacebook,
-    required TResult Function(String url) signUpWithGithub,
-    required TResult Function(String url) signUpWithTwitter,
-    required TResult Function() signUpWithFacebookClicked,
-    required TResult Function() signUpWithGithubClicked,
-    required TResult Function() signUpWithTwitterClicked,
-    required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
     required TResult Function() toggleConfirmPasswordVisibility,
   }) {
@@ -963,13 +762,6 @@ class _$_SignUpWithGoogle implements _SignUpWithGoogle {
         confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
-    TResult Function(String url)? signUpWithFacebook,
-    TResult Function(String url)? signUpWithGithub,
-    TResult Function(String url)? signUpWithTwitter,
-    TResult Function()? signUpWithFacebookClicked,
-    TResult Function()? signUpWithGithubClicked,
-    TResult Function()? signUpWithTwitterClicked,
-    TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
     TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
@@ -990,16 +782,6 @@ class _$_SignUpWithGoogle implements _SignUpWithGoogle {
     required TResult Function(_SignUpWithEmailAndPasswordPressed value)
         signUpWithEmailAndPasswordPressed,
     required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
-    required TResult Function(_SignUpWithFacebook value) signUpWithFacebook,
-    required TResult Function(_SignUpWithGithub value) signUpWithGithub,
-    required TResult Function(_SignUpWithTwitter value) signUpWithTwitter,
-    required TResult Function(_SignUpWithFacebookClicked value)
-        signUpWithFacebookClicked,
-    required TResult Function(_SignUpWithGithubClicked value)
-        signUpWithGithubClicked,
-    required TResult Function(_SignUpWithTwitterClicked value)
-        signUpWithTwitterClicked,
-    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
     required TResult Function(_ToggleConfirmPasswordVisibility value)
@@ -1017,14 +799,6 @@ class _$_SignUpWithGoogle implements _SignUpWithGoogle {
     TResult Function(_SignUpWithEmailAndPasswordPressed value)?
         signUpWithEmailAndPasswordPressed,
     TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(_SignUpWithFacebook value)? signUpWithFacebook,
-    TResult Function(_SignUpWithGithub value)? signUpWithGithub,
-    TResult Function(_SignUpWithTwitter value)? signUpWithTwitter,
-    TResult Function(_SignUpWithFacebookClicked value)?
-        signUpWithFacebookClicked,
-    TResult Function(_SignUpWithGithubClicked value)? signUpWithGithubClicked,
-    TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
-    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     TResult Function(_ToggleConfirmPasswordVisibility value)?
         toggleConfirmPasswordVisibility,
@@ -1039,1121 +813,6 @@ class _$_SignUpWithGoogle implements _SignUpWithGoogle {
 
 abstract class _SignUpWithGoogle implements RegisterEvent {
   const factory _SignUpWithGoogle() = _$_SignUpWithGoogle;
-}
-
-/// @nodoc
-abstract class _$SignUpWithFacebookCopyWith<$Res> {
-  factory _$SignUpWithFacebookCopyWith(
-          _SignUpWithFacebook value, $Res Function(_SignUpWithFacebook) then) =
-      __$SignUpWithFacebookCopyWithImpl<$Res>;
-  $Res call({String url});
-}
-
-/// @nodoc
-class __$SignUpWithFacebookCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
-    implements _$SignUpWithFacebookCopyWith<$Res> {
-  __$SignUpWithFacebookCopyWithImpl(
-      _SignUpWithFacebook _value, $Res Function(_SignUpWithFacebook) _then)
-      : super(_value, (v) => _then(v as _SignUpWithFacebook));
-
-  @override
-  _SignUpWithFacebook get _value => super._value as _SignUpWithFacebook;
-
-  @override
-  $Res call({
-    Object? url = freezed,
-  }) {
-    return _then(_SignUpWithFacebook(
-      url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_SignUpWithFacebook implements _SignUpWithFacebook {
-  const _$_SignUpWithFacebook(this.url);
-
-  @override
-  final String url;
-
-  @override
-  String toString() {
-    return 'RegisterEvent.signUpWithFacebook(url: $url)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SignUpWithFacebook &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(url);
-
-  @JsonKey(ignore: true)
-  @override
-  _$SignUpWithFacebookCopyWith<_SignUpWithFacebook> get copyWith =>
-      __$SignUpWithFacebookCopyWithImpl<_SignUpWithFacebook>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String passwordStr, String mainPasswordStr)
-        confirmPasswordChanged,
-    required TResult Function() signUpWithEmailAndPasswordPressed,
-    required TResult Function() signUpWithGoogle,
-    required TResult Function(String url) signUpWithFacebook,
-    required TResult Function(String url) signUpWithGithub,
-    required TResult Function(String url) signUpWithTwitter,
-    required TResult Function() signUpWithFacebookClicked,
-    required TResult Function() signUpWithGithubClicked,
-    required TResult Function() signUpWithTwitterClicked,
-    required TResult Function() backPressFromWebView,
-    required TResult Function() togglePasswordVisibility,
-    required TResult Function() toggleConfirmPasswordVisibility,
-  }) {
-    return signUpWithFacebook(url);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String emailStr)? emailChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String passwordStr, String mainPasswordStr)?
-        confirmPasswordChanged,
-    TResult Function()? signUpWithEmailAndPasswordPressed,
-    TResult Function()? signUpWithGoogle,
-    TResult Function(String url)? signUpWithFacebook,
-    TResult Function(String url)? signUpWithGithub,
-    TResult Function(String url)? signUpWithTwitter,
-    TResult Function()? signUpWithFacebookClicked,
-    TResult Function()? signUpWithGithubClicked,
-    TResult Function()? signUpWithTwitterClicked,
-    TResult Function()? backPressFromWebView,
-    TResult Function()? togglePasswordVisibility,
-    TResult Function()? toggleConfirmPasswordVisibility,
-    required TResult orElse(),
-  }) {
-    if (signUpWithFacebook != null) {
-      return signUpWithFacebook(url);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_EmailChanged value) emailChanged,
-    required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_ConfirmPasswordChanged value)
-        confirmPasswordChanged,
-    required TResult Function(_SignUpWithEmailAndPasswordPressed value)
-        signUpWithEmailAndPasswordPressed,
-    required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
-    required TResult Function(_SignUpWithFacebook value) signUpWithFacebook,
-    required TResult Function(_SignUpWithGithub value) signUpWithGithub,
-    required TResult Function(_SignUpWithTwitter value) signUpWithTwitter,
-    required TResult Function(_SignUpWithFacebookClicked value)
-        signUpWithFacebookClicked,
-    required TResult Function(_SignUpWithGithubClicked value)
-        signUpWithGithubClicked,
-    required TResult Function(_SignUpWithTwitterClicked value)
-        signUpWithTwitterClicked,
-    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
-    required TResult Function(_TogglePasswordVisibility value)
-        togglePasswordVisibility,
-    required TResult Function(_ToggleConfirmPasswordVisibility value)
-        toggleConfirmPasswordVisibility,
-  }) {
-    return signUpWithFacebook(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(_SignUpWithEmailAndPasswordPressed value)?
-        signUpWithEmailAndPasswordPressed,
-    TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(_SignUpWithFacebook value)? signUpWithFacebook,
-    TResult Function(_SignUpWithGithub value)? signUpWithGithub,
-    TResult Function(_SignUpWithTwitter value)? signUpWithTwitter,
-    TResult Function(_SignUpWithFacebookClicked value)?
-        signUpWithFacebookClicked,
-    TResult Function(_SignUpWithGithubClicked value)? signUpWithGithubClicked,
-    TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
-    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
-    TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
-    TResult Function(_ToggleConfirmPasswordVisibility value)?
-        toggleConfirmPasswordVisibility,
-    required TResult orElse(),
-  }) {
-    if (signUpWithFacebook != null) {
-      return signUpWithFacebook(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignUpWithFacebook implements RegisterEvent {
-  const factory _SignUpWithFacebook(String url) = _$_SignUpWithFacebook;
-
-  String get url => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$SignUpWithFacebookCopyWith<_SignUpWithFacebook> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$SignUpWithGithubCopyWith<$Res> {
-  factory _$SignUpWithGithubCopyWith(
-          _SignUpWithGithub value, $Res Function(_SignUpWithGithub) then) =
-      __$SignUpWithGithubCopyWithImpl<$Res>;
-  $Res call({String url});
-}
-
-/// @nodoc
-class __$SignUpWithGithubCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
-    implements _$SignUpWithGithubCopyWith<$Res> {
-  __$SignUpWithGithubCopyWithImpl(
-      _SignUpWithGithub _value, $Res Function(_SignUpWithGithub) _then)
-      : super(_value, (v) => _then(v as _SignUpWithGithub));
-
-  @override
-  _SignUpWithGithub get _value => super._value as _SignUpWithGithub;
-
-  @override
-  $Res call({
-    Object? url = freezed,
-  }) {
-    return _then(_SignUpWithGithub(
-      url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_SignUpWithGithub implements _SignUpWithGithub {
-  const _$_SignUpWithGithub(this.url);
-
-  @override
-  final String url;
-
-  @override
-  String toString() {
-    return 'RegisterEvent.signUpWithGithub(url: $url)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SignUpWithGithub &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(url);
-
-  @JsonKey(ignore: true)
-  @override
-  _$SignUpWithGithubCopyWith<_SignUpWithGithub> get copyWith =>
-      __$SignUpWithGithubCopyWithImpl<_SignUpWithGithub>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String passwordStr, String mainPasswordStr)
-        confirmPasswordChanged,
-    required TResult Function() signUpWithEmailAndPasswordPressed,
-    required TResult Function() signUpWithGoogle,
-    required TResult Function(String url) signUpWithFacebook,
-    required TResult Function(String url) signUpWithGithub,
-    required TResult Function(String url) signUpWithTwitter,
-    required TResult Function() signUpWithFacebookClicked,
-    required TResult Function() signUpWithGithubClicked,
-    required TResult Function() signUpWithTwitterClicked,
-    required TResult Function() backPressFromWebView,
-    required TResult Function() togglePasswordVisibility,
-    required TResult Function() toggleConfirmPasswordVisibility,
-  }) {
-    return signUpWithGithub(url);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String emailStr)? emailChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String passwordStr, String mainPasswordStr)?
-        confirmPasswordChanged,
-    TResult Function()? signUpWithEmailAndPasswordPressed,
-    TResult Function()? signUpWithGoogle,
-    TResult Function(String url)? signUpWithFacebook,
-    TResult Function(String url)? signUpWithGithub,
-    TResult Function(String url)? signUpWithTwitter,
-    TResult Function()? signUpWithFacebookClicked,
-    TResult Function()? signUpWithGithubClicked,
-    TResult Function()? signUpWithTwitterClicked,
-    TResult Function()? backPressFromWebView,
-    TResult Function()? togglePasswordVisibility,
-    TResult Function()? toggleConfirmPasswordVisibility,
-    required TResult orElse(),
-  }) {
-    if (signUpWithGithub != null) {
-      return signUpWithGithub(url);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_EmailChanged value) emailChanged,
-    required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_ConfirmPasswordChanged value)
-        confirmPasswordChanged,
-    required TResult Function(_SignUpWithEmailAndPasswordPressed value)
-        signUpWithEmailAndPasswordPressed,
-    required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
-    required TResult Function(_SignUpWithFacebook value) signUpWithFacebook,
-    required TResult Function(_SignUpWithGithub value) signUpWithGithub,
-    required TResult Function(_SignUpWithTwitter value) signUpWithTwitter,
-    required TResult Function(_SignUpWithFacebookClicked value)
-        signUpWithFacebookClicked,
-    required TResult Function(_SignUpWithGithubClicked value)
-        signUpWithGithubClicked,
-    required TResult Function(_SignUpWithTwitterClicked value)
-        signUpWithTwitterClicked,
-    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
-    required TResult Function(_TogglePasswordVisibility value)
-        togglePasswordVisibility,
-    required TResult Function(_ToggleConfirmPasswordVisibility value)
-        toggleConfirmPasswordVisibility,
-  }) {
-    return signUpWithGithub(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(_SignUpWithEmailAndPasswordPressed value)?
-        signUpWithEmailAndPasswordPressed,
-    TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(_SignUpWithFacebook value)? signUpWithFacebook,
-    TResult Function(_SignUpWithGithub value)? signUpWithGithub,
-    TResult Function(_SignUpWithTwitter value)? signUpWithTwitter,
-    TResult Function(_SignUpWithFacebookClicked value)?
-        signUpWithFacebookClicked,
-    TResult Function(_SignUpWithGithubClicked value)? signUpWithGithubClicked,
-    TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
-    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
-    TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
-    TResult Function(_ToggleConfirmPasswordVisibility value)?
-        toggleConfirmPasswordVisibility,
-    required TResult orElse(),
-  }) {
-    if (signUpWithGithub != null) {
-      return signUpWithGithub(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignUpWithGithub implements RegisterEvent {
-  const factory _SignUpWithGithub(String url) = _$_SignUpWithGithub;
-
-  String get url => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$SignUpWithGithubCopyWith<_SignUpWithGithub> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$SignUpWithTwitterCopyWith<$Res> {
-  factory _$SignUpWithTwitterCopyWith(
-          _SignUpWithTwitter value, $Res Function(_SignUpWithTwitter) then) =
-      __$SignUpWithTwitterCopyWithImpl<$Res>;
-  $Res call({String url});
-}
-
-/// @nodoc
-class __$SignUpWithTwitterCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
-    implements _$SignUpWithTwitterCopyWith<$Res> {
-  __$SignUpWithTwitterCopyWithImpl(
-      _SignUpWithTwitter _value, $Res Function(_SignUpWithTwitter) _then)
-      : super(_value, (v) => _then(v as _SignUpWithTwitter));
-
-  @override
-  _SignUpWithTwitter get _value => super._value as _SignUpWithTwitter;
-
-  @override
-  $Res call({
-    Object? url = freezed,
-  }) {
-    return _then(_SignUpWithTwitter(
-      url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_SignUpWithTwitter implements _SignUpWithTwitter {
-  const _$_SignUpWithTwitter(this.url);
-
-  @override
-  final String url;
-
-  @override
-  String toString() {
-    return 'RegisterEvent.signUpWithTwitter(url: $url)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SignUpWithTwitter &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(url);
-
-  @JsonKey(ignore: true)
-  @override
-  _$SignUpWithTwitterCopyWith<_SignUpWithTwitter> get copyWith =>
-      __$SignUpWithTwitterCopyWithImpl<_SignUpWithTwitter>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String passwordStr, String mainPasswordStr)
-        confirmPasswordChanged,
-    required TResult Function() signUpWithEmailAndPasswordPressed,
-    required TResult Function() signUpWithGoogle,
-    required TResult Function(String url) signUpWithFacebook,
-    required TResult Function(String url) signUpWithGithub,
-    required TResult Function(String url) signUpWithTwitter,
-    required TResult Function() signUpWithFacebookClicked,
-    required TResult Function() signUpWithGithubClicked,
-    required TResult Function() signUpWithTwitterClicked,
-    required TResult Function() backPressFromWebView,
-    required TResult Function() togglePasswordVisibility,
-    required TResult Function() toggleConfirmPasswordVisibility,
-  }) {
-    return signUpWithTwitter(url);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String emailStr)? emailChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String passwordStr, String mainPasswordStr)?
-        confirmPasswordChanged,
-    TResult Function()? signUpWithEmailAndPasswordPressed,
-    TResult Function()? signUpWithGoogle,
-    TResult Function(String url)? signUpWithFacebook,
-    TResult Function(String url)? signUpWithGithub,
-    TResult Function(String url)? signUpWithTwitter,
-    TResult Function()? signUpWithFacebookClicked,
-    TResult Function()? signUpWithGithubClicked,
-    TResult Function()? signUpWithTwitterClicked,
-    TResult Function()? backPressFromWebView,
-    TResult Function()? togglePasswordVisibility,
-    TResult Function()? toggleConfirmPasswordVisibility,
-    required TResult orElse(),
-  }) {
-    if (signUpWithTwitter != null) {
-      return signUpWithTwitter(url);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_EmailChanged value) emailChanged,
-    required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_ConfirmPasswordChanged value)
-        confirmPasswordChanged,
-    required TResult Function(_SignUpWithEmailAndPasswordPressed value)
-        signUpWithEmailAndPasswordPressed,
-    required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
-    required TResult Function(_SignUpWithFacebook value) signUpWithFacebook,
-    required TResult Function(_SignUpWithGithub value) signUpWithGithub,
-    required TResult Function(_SignUpWithTwitter value) signUpWithTwitter,
-    required TResult Function(_SignUpWithFacebookClicked value)
-        signUpWithFacebookClicked,
-    required TResult Function(_SignUpWithGithubClicked value)
-        signUpWithGithubClicked,
-    required TResult Function(_SignUpWithTwitterClicked value)
-        signUpWithTwitterClicked,
-    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
-    required TResult Function(_TogglePasswordVisibility value)
-        togglePasswordVisibility,
-    required TResult Function(_ToggleConfirmPasswordVisibility value)
-        toggleConfirmPasswordVisibility,
-  }) {
-    return signUpWithTwitter(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(_SignUpWithEmailAndPasswordPressed value)?
-        signUpWithEmailAndPasswordPressed,
-    TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(_SignUpWithFacebook value)? signUpWithFacebook,
-    TResult Function(_SignUpWithGithub value)? signUpWithGithub,
-    TResult Function(_SignUpWithTwitter value)? signUpWithTwitter,
-    TResult Function(_SignUpWithFacebookClicked value)?
-        signUpWithFacebookClicked,
-    TResult Function(_SignUpWithGithubClicked value)? signUpWithGithubClicked,
-    TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
-    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
-    TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
-    TResult Function(_ToggleConfirmPasswordVisibility value)?
-        toggleConfirmPasswordVisibility,
-    required TResult orElse(),
-  }) {
-    if (signUpWithTwitter != null) {
-      return signUpWithTwitter(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignUpWithTwitter implements RegisterEvent {
-  const factory _SignUpWithTwitter(String url) = _$_SignUpWithTwitter;
-
-  String get url => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$SignUpWithTwitterCopyWith<_SignUpWithTwitter> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$SignUpWithFacebookClickedCopyWith<$Res> {
-  factory _$SignUpWithFacebookClickedCopyWith(_SignUpWithFacebookClicked value,
-          $Res Function(_SignUpWithFacebookClicked) then) =
-      __$SignUpWithFacebookClickedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SignUpWithFacebookClickedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
-    implements _$SignUpWithFacebookClickedCopyWith<$Res> {
-  __$SignUpWithFacebookClickedCopyWithImpl(_SignUpWithFacebookClicked _value,
-      $Res Function(_SignUpWithFacebookClicked) _then)
-      : super(_value, (v) => _then(v as _SignUpWithFacebookClicked));
-
-  @override
-  _SignUpWithFacebookClicked get _value =>
-      super._value as _SignUpWithFacebookClicked;
-}
-
-/// @nodoc
-
-class _$_SignUpWithFacebookClicked implements _SignUpWithFacebookClicked {
-  const _$_SignUpWithFacebookClicked();
-
-  @override
-  String toString() {
-    return 'RegisterEvent.signUpWithFacebookClicked()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SignUpWithFacebookClicked);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String passwordStr, String mainPasswordStr)
-        confirmPasswordChanged,
-    required TResult Function() signUpWithEmailAndPasswordPressed,
-    required TResult Function() signUpWithGoogle,
-    required TResult Function(String url) signUpWithFacebook,
-    required TResult Function(String url) signUpWithGithub,
-    required TResult Function(String url) signUpWithTwitter,
-    required TResult Function() signUpWithFacebookClicked,
-    required TResult Function() signUpWithGithubClicked,
-    required TResult Function() signUpWithTwitterClicked,
-    required TResult Function() backPressFromWebView,
-    required TResult Function() togglePasswordVisibility,
-    required TResult Function() toggleConfirmPasswordVisibility,
-  }) {
-    return signUpWithFacebookClicked();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String emailStr)? emailChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String passwordStr, String mainPasswordStr)?
-        confirmPasswordChanged,
-    TResult Function()? signUpWithEmailAndPasswordPressed,
-    TResult Function()? signUpWithGoogle,
-    TResult Function(String url)? signUpWithFacebook,
-    TResult Function(String url)? signUpWithGithub,
-    TResult Function(String url)? signUpWithTwitter,
-    TResult Function()? signUpWithFacebookClicked,
-    TResult Function()? signUpWithGithubClicked,
-    TResult Function()? signUpWithTwitterClicked,
-    TResult Function()? backPressFromWebView,
-    TResult Function()? togglePasswordVisibility,
-    TResult Function()? toggleConfirmPasswordVisibility,
-    required TResult orElse(),
-  }) {
-    if (signUpWithFacebookClicked != null) {
-      return signUpWithFacebookClicked();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_EmailChanged value) emailChanged,
-    required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_ConfirmPasswordChanged value)
-        confirmPasswordChanged,
-    required TResult Function(_SignUpWithEmailAndPasswordPressed value)
-        signUpWithEmailAndPasswordPressed,
-    required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
-    required TResult Function(_SignUpWithFacebook value) signUpWithFacebook,
-    required TResult Function(_SignUpWithGithub value) signUpWithGithub,
-    required TResult Function(_SignUpWithTwitter value) signUpWithTwitter,
-    required TResult Function(_SignUpWithFacebookClicked value)
-        signUpWithFacebookClicked,
-    required TResult Function(_SignUpWithGithubClicked value)
-        signUpWithGithubClicked,
-    required TResult Function(_SignUpWithTwitterClicked value)
-        signUpWithTwitterClicked,
-    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
-    required TResult Function(_TogglePasswordVisibility value)
-        togglePasswordVisibility,
-    required TResult Function(_ToggleConfirmPasswordVisibility value)
-        toggleConfirmPasswordVisibility,
-  }) {
-    return signUpWithFacebookClicked(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(_SignUpWithEmailAndPasswordPressed value)?
-        signUpWithEmailAndPasswordPressed,
-    TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(_SignUpWithFacebook value)? signUpWithFacebook,
-    TResult Function(_SignUpWithGithub value)? signUpWithGithub,
-    TResult Function(_SignUpWithTwitter value)? signUpWithTwitter,
-    TResult Function(_SignUpWithFacebookClicked value)?
-        signUpWithFacebookClicked,
-    TResult Function(_SignUpWithGithubClicked value)? signUpWithGithubClicked,
-    TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
-    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
-    TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
-    TResult Function(_ToggleConfirmPasswordVisibility value)?
-        toggleConfirmPasswordVisibility,
-    required TResult orElse(),
-  }) {
-    if (signUpWithFacebookClicked != null) {
-      return signUpWithFacebookClicked(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignUpWithFacebookClicked implements RegisterEvent {
-  const factory _SignUpWithFacebookClicked() = _$_SignUpWithFacebookClicked;
-}
-
-/// @nodoc
-abstract class _$SignUpWithGithubClickedCopyWith<$Res> {
-  factory _$SignUpWithGithubClickedCopyWith(_SignUpWithGithubClicked value,
-          $Res Function(_SignUpWithGithubClicked) then) =
-      __$SignUpWithGithubClickedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SignUpWithGithubClickedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
-    implements _$SignUpWithGithubClickedCopyWith<$Res> {
-  __$SignUpWithGithubClickedCopyWithImpl(_SignUpWithGithubClicked _value,
-      $Res Function(_SignUpWithGithubClicked) _then)
-      : super(_value, (v) => _then(v as _SignUpWithGithubClicked));
-
-  @override
-  _SignUpWithGithubClicked get _value =>
-      super._value as _SignUpWithGithubClicked;
-}
-
-/// @nodoc
-
-class _$_SignUpWithGithubClicked implements _SignUpWithGithubClicked {
-  const _$_SignUpWithGithubClicked();
-
-  @override
-  String toString() {
-    return 'RegisterEvent.signUpWithGithubClicked()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SignUpWithGithubClicked);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String passwordStr, String mainPasswordStr)
-        confirmPasswordChanged,
-    required TResult Function() signUpWithEmailAndPasswordPressed,
-    required TResult Function() signUpWithGoogle,
-    required TResult Function(String url) signUpWithFacebook,
-    required TResult Function(String url) signUpWithGithub,
-    required TResult Function(String url) signUpWithTwitter,
-    required TResult Function() signUpWithFacebookClicked,
-    required TResult Function() signUpWithGithubClicked,
-    required TResult Function() signUpWithTwitterClicked,
-    required TResult Function() backPressFromWebView,
-    required TResult Function() togglePasswordVisibility,
-    required TResult Function() toggleConfirmPasswordVisibility,
-  }) {
-    return signUpWithGithubClicked();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String emailStr)? emailChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String passwordStr, String mainPasswordStr)?
-        confirmPasswordChanged,
-    TResult Function()? signUpWithEmailAndPasswordPressed,
-    TResult Function()? signUpWithGoogle,
-    TResult Function(String url)? signUpWithFacebook,
-    TResult Function(String url)? signUpWithGithub,
-    TResult Function(String url)? signUpWithTwitter,
-    TResult Function()? signUpWithFacebookClicked,
-    TResult Function()? signUpWithGithubClicked,
-    TResult Function()? signUpWithTwitterClicked,
-    TResult Function()? backPressFromWebView,
-    TResult Function()? togglePasswordVisibility,
-    TResult Function()? toggleConfirmPasswordVisibility,
-    required TResult orElse(),
-  }) {
-    if (signUpWithGithubClicked != null) {
-      return signUpWithGithubClicked();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_EmailChanged value) emailChanged,
-    required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_ConfirmPasswordChanged value)
-        confirmPasswordChanged,
-    required TResult Function(_SignUpWithEmailAndPasswordPressed value)
-        signUpWithEmailAndPasswordPressed,
-    required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
-    required TResult Function(_SignUpWithFacebook value) signUpWithFacebook,
-    required TResult Function(_SignUpWithGithub value) signUpWithGithub,
-    required TResult Function(_SignUpWithTwitter value) signUpWithTwitter,
-    required TResult Function(_SignUpWithFacebookClicked value)
-        signUpWithFacebookClicked,
-    required TResult Function(_SignUpWithGithubClicked value)
-        signUpWithGithubClicked,
-    required TResult Function(_SignUpWithTwitterClicked value)
-        signUpWithTwitterClicked,
-    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
-    required TResult Function(_TogglePasswordVisibility value)
-        togglePasswordVisibility,
-    required TResult Function(_ToggleConfirmPasswordVisibility value)
-        toggleConfirmPasswordVisibility,
-  }) {
-    return signUpWithGithubClicked(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(_SignUpWithEmailAndPasswordPressed value)?
-        signUpWithEmailAndPasswordPressed,
-    TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(_SignUpWithFacebook value)? signUpWithFacebook,
-    TResult Function(_SignUpWithGithub value)? signUpWithGithub,
-    TResult Function(_SignUpWithTwitter value)? signUpWithTwitter,
-    TResult Function(_SignUpWithFacebookClicked value)?
-        signUpWithFacebookClicked,
-    TResult Function(_SignUpWithGithubClicked value)? signUpWithGithubClicked,
-    TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
-    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
-    TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
-    TResult Function(_ToggleConfirmPasswordVisibility value)?
-        toggleConfirmPasswordVisibility,
-    required TResult orElse(),
-  }) {
-    if (signUpWithGithubClicked != null) {
-      return signUpWithGithubClicked(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignUpWithGithubClicked implements RegisterEvent {
-  const factory _SignUpWithGithubClicked() = _$_SignUpWithGithubClicked;
-}
-
-/// @nodoc
-abstract class _$SignUpWithTwitterClickedCopyWith<$Res> {
-  factory _$SignUpWithTwitterClickedCopyWith(_SignUpWithTwitterClicked value,
-          $Res Function(_SignUpWithTwitterClicked) then) =
-      __$SignUpWithTwitterClickedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SignUpWithTwitterClickedCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
-    implements _$SignUpWithTwitterClickedCopyWith<$Res> {
-  __$SignUpWithTwitterClickedCopyWithImpl(_SignUpWithTwitterClicked _value,
-      $Res Function(_SignUpWithTwitterClicked) _then)
-      : super(_value, (v) => _then(v as _SignUpWithTwitterClicked));
-
-  @override
-  _SignUpWithTwitterClicked get _value =>
-      super._value as _SignUpWithTwitterClicked;
-}
-
-/// @nodoc
-
-class _$_SignUpWithTwitterClicked implements _SignUpWithTwitterClicked {
-  const _$_SignUpWithTwitterClicked();
-
-  @override
-  String toString() {
-    return 'RegisterEvent.signUpWithTwitterClicked()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SignUpWithTwitterClicked);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String passwordStr, String mainPasswordStr)
-        confirmPasswordChanged,
-    required TResult Function() signUpWithEmailAndPasswordPressed,
-    required TResult Function() signUpWithGoogle,
-    required TResult Function(String url) signUpWithFacebook,
-    required TResult Function(String url) signUpWithGithub,
-    required TResult Function(String url) signUpWithTwitter,
-    required TResult Function() signUpWithFacebookClicked,
-    required TResult Function() signUpWithGithubClicked,
-    required TResult Function() signUpWithTwitterClicked,
-    required TResult Function() backPressFromWebView,
-    required TResult Function() togglePasswordVisibility,
-    required TResult Function() toggleConfirmPasswordVisibility,
-  }) {
-    return signUpWithTwitterClicked();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String emailStr)? emailChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String passwordStr, String mainPasswordStr)?
-        confirmPasswordChanged,
-    TResult Function()? signUpWithEmailAndPasswordPressed,
-    TResult Function()? signUpWithGoogle,
-    TResult Function(String url)? signUpWithFacebook,
-    TResult Function(String url)? signUpWithGithub,
-    TResult Function(String url)? signUpWithTwitter,
-    TResult Function()? signUpWithFacebookClicked,
-    TResult Function()? signUpWithGithubClicked,
-    TResult Function()? signUpWithTwitterClicked,
-    TResult Function()? backPressFromWebView,
-    TResult Function()? togglePasswordVisibility,
-    TResult Function()? toggleConfirmPasswordVisibility,
-    required TResult orElse(),
-  }) {
-    if (signUpWithTwitterClicked != null) {
-      return signUpWithTwitterClicked();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_EmailChanged value) emailChanged,
-    required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_ConfirmPasswordChanged value)
-        confirmPasswordChanged,
-    required TResult Function(_SignUpWithEmailAndPasswordPressed value)
-        signUpWithEmailAndPasswordPressed,
-    required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
-    required TResult Function(_SignUpWithFacebook value) signUpWithFacebook,
-    required TResult Function(_SignUpWithGithub value) signUpWithGithub,
-    required TResult Function(_SignUpWithTwitter value) signUpWithTwitter,
-    required TResult Function(_SignUpWithFacebookClicked value)
-        signUpWithFacebookClicked,
-    required TResult Function(_SignUpWithGithubClicked value)
-        signUpWithGithubClicked,
-    required TResult Function(_SignUpWithTwitterClicked value)
-        signUpWithTwitterClicked,
-    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
-    required TResult Function(_TogglePasswordVisibility value)
-        togglePasswordVisibility,
-    required TResult Function(_ToggleConfirmPasswordVisibility value)
-        toggleConfirmPasswordVisibility,
-  }) {
-    return signUpWithTwitterClicked(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(_SignUpWithEmailAndPasswordPressed value)?
-        signUpWithEmailAndPasswordPressed,
-    TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(_SignUpWithFacebook value)? signUpWithFacebook,
-    TResult Function(_SignUpWithGithub value)? signUpWithGithub,
-    TResult Function(_SignUpWithTwitter value)? signUpWithTwitter,
-    TResult Function(_SignUpWithFacebookClicked value)?
-        signUpWithFacebookClicked,
-    TResult Function(_SignUpWithGithubClicked value)? signUpWithGithubClicked,
-    TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
-    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
-    TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
-    TResult Function(_ToggleConfirmPasswordVisibility value)?
-        toggleConfirmPasswordVisibility,
-    required TResult orElse(),
-  }) {
-    if (signUpWithTwitterClicked != null) {
-      return signUpWithTwitterClicked(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignUpWithTwitterClicked implements RegisterEvent {
-  const factory _SignUpWithTwitterClicked() = _$_SignUpWithTwitterClicked;
-}
-
-/// @nodoc
-abstract class _$BackPressFromWebViewCopyWith<$Res> {
-  factory _$BackPressFromWebViewCopyWith(_BackPressFromWebView value,
-          $Res Function(_BackPressFromWebView) then) =
-      __$BackPressFromWebViewCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$BackPressFromWebViewCopyWithImpl<$Res>
-    extends _$RegisterEventCopyWithImpl<$Res>
-    implements _$BackPressFromWebViewCopyWith<$Res> {
-  __$BackPressFromWebViewCopyWithImpl(
-      _BackPressFromWebView _value, $Res Function(_BackPressFromWebView) _then)
-      : super(_value, (v) => _then(v as _BackPressFromWebView));
-
-  @override
-  _BackPressFromWebView get _value => super._value as _BackPressFromWebView;
-}
-
-/// @nodoc
-
-class _$_BackPressFromWebView implements _BackPressFromWebView {
-  const _$_BackPressFromWebView();
-
-  @override
-  String toString() {
-    return 'RegisterEvent.backPressFromWebView()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _BackPressFromWebView);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String passwordStr, String mainPasswordStr)
-        confirmPasswordChanged,
-    required TResult Function() signUpWithEmailAndPasswordPressed,
-    required TResult Function() signUpWithGoogle,
-    required TResult Function(String url) signUpWithFacebook,
-    required TResult Function(String url) signUpWithGithub,
-    required TResult Function(String url) signUpWithTwitter,
-    required TResult Function() signUpWithFacebookClicked,
-    required TResult Function() signUpWithGithubClicked,
-    required TResult Function() signUpWithTwitterClicked,
-    required TResult Function() backPressFromWebView,
-    required TResult Function() togglePasswordVisibility,
-    required TResult Function() toggleConfirmPasswordVisibility,
-  }) {
-    return backPressFromWebView();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String emailStr)? emailChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String passwordStr, String mainPasswordStr)?
-        confirmPasswordChanged,
-    TResult Function()? signUpWithEmailAndPasswordPressed,
-    TResult Function()? signUpWithGoogle,
-    TResult Function(String url)? signUpWithFacebook,
-    TResult Function(String url)? signUpWithGithub,
-    TResult Function(String url)? signUpWithTwitter,
-    TResult Function()? signUpWithFacebookClicked,
-    TResult Function()? signUpWithGithubClicked,
-    TResult Function()? signUpWithTwitterClicked,
-    TResult Function()? backPressFromWebView,
-    TResult Function()? togglePasswordVisibility,
-    TResult Function()? toggleConfirmPasswordVisibility,
-    required TResult orElse(),
-  }) {
-    if (backPressFromWebView != null) {
-      return backPressFromWebView();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_EmailChanged value) emailChanged,
-    required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_ConfirmPasswordChanged value)
-        confirmPasswordChanged,
-    required TResult Function(_SignUpWithEmailAndPasswordPressed value)
-        signUpWithEmailAndPasswordPressed,
-    required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
-    required TResult Function(_SignUpWithFacebook value) signUpWithFacebook,
-    required TResult Function(_SignUpWithGithub value) signUpWithGithub,
-    required TResult Function(_SignUpWithTwitter value) signUpWithTwitter,
-    required TResult Function(_SignUpWithFacebookClicked value)
-        signUpWithFacebookClicked,
-    required TResult Function(_SignUpWithGithubClicked value)
-        signUpWithGithubClicked,
-    required TResult Function(_SignUpWithTwitterClicked value)
-        signUpWithTwitterClicked,
-    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
-    required TResult Function(_TogglePasswordVisibility value)
-        togglePasswordVisibility,
-    required TResult Function(_ToggleConfirmPasswordVisibility value)
-        toggleConfirmPasswordVisibility,
-  }) {
-    return backPressFromWebView(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_ConfirmPasswordChanged value)? confirmPasswordChanged,
-    TResult Function(_SignUpWithEmailAndPasswordPressed value)?
-        signUpWithEmailAndPasswordPressed,
-    TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(_SignUpWithFacebook value)? signUpWithFacebook,
-    TResult Function(_SignUpWithGithub value)? signUpWithGithub,
-    TResult Function(_SignUpWithTwitter value)? signUpWithTwitter,
-    TResult Function(_SignUpWithFacebookClicked value)?
-        signUpWithFacebookClicked,
-    TResult Function(_SignUpWithGithubClicked value)? signUpWithGithubClicked,
-    TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
-    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
-    TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
-    TResult Function(_ToggleConfirmPasswordVisibility value)?
-        toggleConfirmPasswordVisibility,
-    required TResult orElse(),
-  }) {
-    if (backPressFromWebView != null) {
-      return backPressFromWebView(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _BackPressFromWebView implements RegisterEvent {
-  const factory _BackPressFromWebView() = _$_BackPressFromWebView;
 }
 
 /// @nodoc
@@ -2203,13 +862,6 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
         confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
-    required TResult Function(String url) signUpWithFacebook,
-    required TResult Function(String url) signUpWithGithub,
-    required TResult Function(String url) signUpWithTwitter,
-    required TResult Function() signUpWithFacebookClicked,
-    required TResult Function() signUpWithGithubClicked,
-    required TResult Function() signUpWithTwitterClicked,
-    required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
     required TResult Function() toggleConfirmPasswordVisibility,
   }) {
@@ -2225,13 +877,6 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
         confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
-    TResult Function(String url)? signUpWithFacebook,
-    TResult Function(String url)? signUpWithGithub,
-    TResult Function(String url)? signUpWithTwitter,
-    TResult Function()? signUpWithFacebookClicked,
-    TResult Function()? signUpWithGithubClicked,
-    TResult Function()? signUpWithTwitterClicked,
-    TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
     TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
@@ -2252,16 +897,6 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
     required TResult Function(_SignUpWithEmailAndPasswordPressed value)
         signUpWithEmailAndPasswordPressed,
     required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
-    required TResult Function(_SignUpWithFacebook value) signUpWithFacebook,
-    required TResult Function(_SignUpWithGithub value) signUpWithGithub,
-    required TResult Function(_SignUpWithTwitter value) signUpWithTwitter,
-    required TResult Function(_SignUpWithFacebookClicked value)
-        signUpWithFacebookClicked,
-    required TResult Function(_SignUpWithGithubClicked value)
-        signUpWithGithubClicked,
-    required TResult Function(_SignUpWithTwitterClicked value)
-        signUpWithTwitterClicked,
-    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
     required TResult Function(_ToggleConfirmPasswordVisibility value)
@@ -2279,14 +914,6 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
     TResult Function(_SignUpWithEmailAndPasswordPressed value)?
         signUpWithEmailAndPasswordPressed,
     TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(_SignUpWithFacebook value)? signUpWithFacebook,
-    TResult Function(_SignUpWithGithub value)? signUpWithGithub,
-    TResult Function(_SignUpWithTwitter value)? signUpWithTwitter,
-    TResult Function(_SignUpWithFacebookClicked value)?
-        signUpWithFacebookClicked,
-    TResult Function(_SignUpWithGithubClicked value)? signUpWithGithubClicked,
-    TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
-    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     TResult Function(_ToggleConfirmPasswordVisibility value)?
         toggleConfirmPasswordVisibility,
@@ -2354,13 +981,6 @@ class _$_ToggleConfirmPasswordVisibility
         confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
-    required TResult Function(String url) signUpWithFacebook,
-    required TResult Function(String url) signUpWithGithub,
-    required TResult Function(String url) signUpWithTwitter,
-    required TResult Function() signUpWithFacebookClicked,
-    required TResult Function() signUpWithGithubClicked,
-    required TResult Function() signUpWithTwitterClicked,
-    required TResult Function() backPressFromWebView,
     required TResult Function() togglePasswordVisibility,
     required TResult Function() toggleConfirmPasswordVisibility,
   }) {
@@ -2376,13 +996,6 @@ class _$_ToggleConfirmPasswordVisibility
         confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
-    TResult Function(String url)? signUpWithFacebook,
-    TResult Function(String url)? signUpWithGithub,
-    TResult Function(String url)? signUpWithTwitter,
-    TResult Function()? signUpWithFacebookClicked,
-    TResult Function()? signUpWithGithubClicked,
-    TResult Function()? signUpWithTwitterClicked,
-    TResult Function()? backPressFromWebView,
     TResult Function()? togglePasswordVisibility,
     TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
@@ -2403,16 +1016,6 @@ class _$_ToggleConfirmPasswordVisibility
     required TResult Function(_SignUpWithEmailAndPasswordPressed value)
         signUpWithEmailAndPasswordPressed,
     required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
-    required TResult Function(_SignUpWithFacebook value) signUpWithFacebook,
-    required TResult Function(_SignUpWithGithub value) signUpWithGithub,
-    required TResult Function(_SignUpWithTwitter value) signUpWithTwitter,
-    required TResult Function(_SignUpWithFacebookClicked value)
-        signUpWithFacebookClicked,
-    required TResult Function(_SignUpWithGithubClicked value)
-        signUpWithGithubClicked,
-    required TResult Function(_SignUpWithTwitterClicked value)
-        signUpWithTwitterClicked,
-    required TResult Function(_BackPressFromWebView value) backPressFromWebView,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
     required TResult Function(_ToggleConfirmPasswordVisibility value)
@@ -2430,14 +1033,6 @@ class _$_ToggleConfirmPasswordVisibility
     TResult Function(_SignUpWithEmailAndPasswordPressed value)?
         signUpWithEmailAndPasswordPressed,
     TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
-    TResult Function(_SignUpWithFacebook value)? signUpWithFacebook,
-    TResult Function(_SignUpWithGithub value)? signUpWithGithub,
-    TResult Function(_SignUpWithTwitter value)? signUpWithTwitter,
-    TResult Function(_SignUpWithFacebookClicked value)?
-        signUpWithFacebookClicked,
-    TResult Function(_SignUpWithGithubClicked value)? signUpWithGithubClicked,
-    TResult Function(_SignUpWithTwitterClicked value)? signUpWithTwitterClicked,
-    TResult Function(_BackPressFromWebView value)? backPressFromWebView,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     TResult Function(_ToggleConfirmPasswordVisibility value)?
         toggleConfirmPasswordVisibility,

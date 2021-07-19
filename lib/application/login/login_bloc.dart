@@ -33,64 +33,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           authFailureOrSuccessOption: some(failureOrSuccess),
         );
       },
-      signInWithFacebook: (e) async* {
-        yield state.copyWith.call(
-          isSubmitting: true,
-          authFailureOrSuccessOption: none(),
-        );
-        final failureOrSuccess =
-            await _authRepository.signInWithFacebook(e.url);
-        yield state.copyWith.call(
-          isSubmitting: false,
-          authFailureOrSuccessOption: some(failureOrSuccess),
-        );
-      },
-      signInWithGithub: (_) async* {
-        yield state.copyWith.call(
-          isSubmitting: true,
-          authFailureOrSuccessOption: none(),
-        );
-        final failureOrSuccess = await _authRepository.signInWithGithub();
-        yield state.copyWith.call(
-          isSubmitting: false,
-          authFailureOrSuccessOption: some(failureOrSuccess),
-        );
-      },
-      signInWithTwitter: (_) async* {
-        yield state.copyWith.call(
-          isSubmitting: true,
-          authFailureOrSuccessOption: none(),
-        );
-        final failureOrSuccess = await _authRepository.signInWithTwitter();
-        yield state.copyWith.call(
-          isSubmitting: false,
-          authFailureOrSuccessOption: some(failureOrSuccess),
-        );
-      },
-      signInWithFacebookClicked: (_) async* {
-        yield state.copyWith.call(
-          isSubmitting: false,
-          authFailureOrSuccessOption: none(),
-        );
-      },
-      signInWithGithubClicked: (_) async* {
-        yield state.copyWith.call(
-          isSubmitting: false,
-          authFailureOrSuccessOption: none(),
-        );
-      },
-      signInWithTwitterClicked: (_) async* {
-        yield state.copyWith.call(
-          isSubmitting: false,
-          authFailureOrSuccessOption: none(),
-        );
-      },
-      backPressFromWebView: (_) async* {
-        yield state.copyWith.call(
-          isSubmitting: false,
-          authFailureOrSuccessOption: none(),
-        );
-      },
       emailChanged: (e) async* {
         yield state.copyWith(
           emailAddress: Email(e.emailStr),
