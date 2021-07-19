@@ -155,10 +155,9 @@ class RegisterScreen extends StatelessWidget {
                             onChanged: (text) => Provider.of<RegisterBloc>(
                                     context,
                                     listen: false)
-                                .add(RegisterEvent.confirmPasswordChanged(
-                                    text,
-                                    state.password.value
-                                        .getOrElse(() => "No Password"))),
+                                .add(
+                              RegisterEvent.confirmPasswordChanged(text),
+                            ),
                             validator: (_) => Provider.of<RegisterBloc>(context)
                                 .state
                                 .confirmPassword

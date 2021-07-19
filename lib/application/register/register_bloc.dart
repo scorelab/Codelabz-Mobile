@@ -47,7 +47,8 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       },
       confirmPasswordChanged: (e) async* {
         yield state.copyWith(
-          confirmPassword: ConfirmPassword(e.passwordStr, e.mainPasswordStr),
+          confirmPassword: ConfirmPassword(
+              e.passwordStr, state.password.value.getOrElse(() => '')),
           authFailureOrSuccessOption: none(),
         );
       },

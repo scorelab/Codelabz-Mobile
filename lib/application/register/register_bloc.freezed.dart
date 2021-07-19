@@ -28,11 +28,9 @@ class _$RegisterEventTearOff {
     );
   }
 
-  _ConfirmPasswordChanged confirmPasswordChanged(
-      String passwordStr, String mainPasswordStr) {
+  _ConfirmPasswordChanged confirmPasswordChanged(String passwordStr) {
     return _ConfirmPasswordChanged(
       passwordStr,
-      mainPasswordStr,
     );
   }
 
@@ -62,8 +60,7 @@ mixin _$RegisterEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String passwordStr, String mainPasswordStr)
-        confirmPasswordChanged,
+    required TResult Function(String passwordStr) confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
     required TResult Function() togglePasswordVisibility,
@@ -74,8 +71,7 @@ mixin _$RegisterEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String passwordStr, String mainPasswordStr)?
-        confirmPasswordChanged,
+    TResult Function(String passwordStr)? confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
     TResult Function()? togglePasswordVisibility,
@@ -199,8 +195,7 @@ class _$_EmailChanged implements _EmailChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String passwordStr, String mainPasswordStr)
-        confirmPasswordChanged,
+    required TResult Function(String passwordStr) confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
     required TResult Function() togglePasswordVisibility,
@@ -214,8 +209,7 @@ class _$_EmailChanged implements _EmailChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String passwordStr, String mainPasswordStr)?
-        confirmPasswordChanged,
+    TResult Function(String passwordStr)? confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
     TResult Function()? togglePasswordVisibility,
@@ -344,8 +338,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String passwordStr, String mainPasswordStr)
-        confirmPasswordChanged,
+    required TResult Function(String passwordStr) confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
     required TResult Function() togglePasswordVisibility,
@@ -359,8 +352,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String passwordStr, String mainPasswordStr)?
-        confirmPasswordChanged,
+    TResult Function(String passwordStr)? confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
     TResult Function()? togglePasswordVisibility,
@@ -426,7 +418,7 @@ abstract class _$ConfirmPasswordChangedCopyWith<$Res> {
   factory _$ConfirmPasswordChangedCopyWith(_ConfirmPasswordChanged value,
           $Res Function(_ConfirmPasswordChanged) then) =
       __$ConfirmPasswordChangedCopyWithImpl<$Res>;
-  $Res call({String passwordStr, String mainPasswordStr});
+  $Res call({String passwordStr});
 }
 
 /// @nodoc
@@ -443,16 +435,11 @@ class __$ConfirmPasswordChangedCopyWithImpl<$Res>
   @override
   $Res call({
     Object? passwordStr = freezed,
-    Object? mainPasswordStr = freezed,
   }) {
     return _then(_ConfirmPasswordChanged(
       passwordStr == freezed
           ? _value.passwordStr
           : passwordStr // ignore: cast_nullable_to_non_nullable
-              as String,
-      mainPasswordStr == freezed
-          ? _value.mainPasswordStr
-          : mainPasswordStr // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -461,16 +448,14 @@ class __$ConfirmPasswordChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
-  const _$_ConfirmPasswordChanged(this.passwordStr, this.mainPasswordStr);
+  const _$_ConfirmPasswordChanged(this.passwordStr);
 
   @override
   final String passwordStr;
-  @override
-  final String mainPasswordStr;
 
   @override
   String toString() {
-    return 'RegisterEvent.confirmPasswordChanged(passwordStr: $passwordStr, mainPasswordStr: $mainPasswordStr)';
+    return 'RegisterEvent.confirmPasswordChanged(passwordStr: $passwordStr)';
   }
 
   @override
@@ -479,17 +464,12 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
         (other is _ConfirmPasswordChanged &&
             (identical(other.passwordStr, passwordStr) ||
                 const DeepCollectionEquality()
-                    .equals(other.passwordStr, passwordStr)) &&
-            (identical(other.mainPasswordStr, mainPasswordStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.mainPasswordStr, mainPasswordStr)));
+                    .equals(other.passwordStr, passwordStr)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(passwordStr) ^
-      const DeepCollectionEquality().hash(mainPasswordStr);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordStr);
 
   @JsonKey(ignore: true)
   @override
@@ -502,14 +482,13 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String passwordStr, String mainPasswordStr)
-        confirmPasswordChanged,
+    required TResult Function(String passwordStr) confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
     required TResult Function() togglePasswordVisibility,
     required TResult Function() toggleConfirmPasswordVisibility,
   }) {
-    return confirmPasswordChanged(passwordStr, mainPasswordStr);
+    return confirmPasswordChanged(passwordStr);
   }
 
   @override
@@ -517,8 +496,7 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String passwordStr, String mainPasswordStr)?
-        confirmPasswordChanged,
+    TResult Function(String passwordStr)? confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
     TResult Function()? togglePasswordVisibility,
@@ -526,7 +504,7 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
     required TResult orElse(),
   }) {
     if (confirmPasswordChanged != null) {
-      return confirmPasswordChanged(passwordStr, mainPasswordStr);
+      return confirmPasswordChanged(passwordStr);
     }
     return orElse();
   }
@@ -571,11 +549,10 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
 }
 
 abstract class _ConfirmPasswordChanged implements RegisterEvent {
-  const factory _ConfirmPasswordChanged(
-      String passwordStr, String mainPasswordStr) = _$_ConfirmPasswordChanged;
+  const factory _ConfirmPasswordChanged(String passwordStr) =
+      _$_ConfirmPasswordChanged;
 
   String get passwordStr => throw _privateConstructorUsedError;
-  String get mainPasswordStr => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$ConfirmPasswordChangedCopyWith<_ConfirmPasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -628,8 +605,7 @@ class _$_SignUpWithEmailAndPasswordPressed
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String passwordStr, String mainPasswordStr)
-        confirmPasswordChanged,
+    required TResult Function(String passwordStr) confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
     required TResult Function() togglePasswordVisibility,
@@ -643,8 +619,7 @@ class _$_SignUpWithEmailAndPasswordPressed
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String passwordStr, String mainPasswordStr)?
-        confirmPasswordChanged,
+    TResult Function(String passwordStr)? confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
     TResult Function()? togglePasswordVisibility,
@@ -743,8 +718,7 @@ class _$_SignUpWithGoogle implements _SignUpWithGoogle {
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String passwordStr, String mainPasswordStr)
-        confirmPasswordChanged,
+    required TResult Function(String passwordStr) confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
     required TResult Function() togglePasswordVisibility,
@@ -758,8 +732,7 @@ class _$_SignUpWithGoogle implements _SignUpWithGoogle {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String passwordStr, String mainPasswordStr)?
-        confirmPasswordChanged,
+    TResult Function(String passwordStr)? confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
     TResult Function()? togglePasswordVisibility,
@@ -858,8 +831,7 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String passwordStr, String mainPasswordStr)
-        confirmPasswordChanged,
+    required TResult Function(String passwordStr) confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
     required TResult Function() togglePasswordVisibility,
@@ -873,8 +845,7 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String passwordStr, String mainPasswordStr)?
-        confirmPasswordChanged,
+    TResult Function(String passwordStr)? confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
     TResult Function()? togglePasswordVisibility,
@@ -977,8 +948,7 @@ class _$_ToggleConfirmPasswordVisibility
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(String passwordStr, String mainPasswordStr)
-        confirmPasswordChanged,
+    required TResult Function(String passwordStr) confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
     required TResult Function() togglePasswordVisibility,
@@ -992,8 +962,7 @@ class _$_ToggleConfirmPasswordVisibility
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(String passwordStr, String mainPasswordStr)?
-        confirmPasswordChanged,
+    TResult Function(String passwordStr)? confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
     TResult Function()? togglePasswordVisibility,
