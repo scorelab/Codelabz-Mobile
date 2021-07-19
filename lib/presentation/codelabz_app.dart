@@ -9,12 +9,15 @@ class CodeLabzApp extends StatelessWidget {
   static late FluroRouter _router;
   static FluroRouter get router => _router;
 
+  /// defines [router] on Create new [CodeLabzApp] instance
   CodeLabzApp() {
     final router = FluroRouter();
     Routes.configureRouter(router);
     _router = router;
   }
 
+  /// Create a MaterialApp and initiate a Authentication Check Request
+  /// Until auth is completed, we show a splash screen
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(

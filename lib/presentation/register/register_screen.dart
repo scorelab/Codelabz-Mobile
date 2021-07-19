@@ -245,7 +245,7 @@ class RegisterScreen extends StatelessWidget {
                     );
                   },
                 ),
-                const Spacer(),
+                const SizedBox(height: 10),
                 RichText(
                   text: TextSpan(
                     children: <TextSpan>[
@@ -255,12 +255,12 @@ class RegisterScreen extends StatelessWidget {
                       const TextSpan(
                         text: "CodeLabz",
                         style: TextStyle(
-                          color: Colors.black54,
+                          color: Colors.black,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       TextSpan(
-                          text: "account? Log In",
+                          text: " account? Log In",
                           style: const TextStyle(color: Colors.black87),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () => _onClickLogin(context)),
