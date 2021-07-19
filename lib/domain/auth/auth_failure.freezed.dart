@@ -28,6 +28,14 @@ class _$AuthFailureTearOff {
     return const _EmailAlreadyInUser();
   }
 
+  _WeakPassword weakPassword() {
+    return const _WeakPassword();
+  }
+
+  _InvalidEmail invalidEmail() {
+    return const _InvalidEmail();
+  }
+
   _InvalidEmailAndPasswordCombination invalidEmailAndPasswordCombination() {
     return const _InvalidEmailAndPasswordCombination();
   }
@@ -43,6 +51,8 @@ mixin _$AuthFailure {
     required TResult Function() cancelledByUser,
     required TResult Function() serverError,
     required TResult Function() emailAlreadyInUser,
+    required TResult Function() weakPassword,
+    required TResult Function() invalidEmail,
     required TResult Function() invalidEmailAndPasswordCombination,
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +61,8 @@ mixin _$AuthFailure {
     TResult Function()? cancelledByUser,
     TResult Function()? serverError,
     TResult Function()? emailAlreadyInUser,
+    TResult Function()? weakPassword,
+    TResult Function()? invalidEmail,
     TResult Function()? invalidEmailAndPasswordCombination,
     required TResult orElse(),
   }) =>
@@ -60,6 +72,8 @@ mixin _$AuthFailure {
     required TResult Function(_CancelledByUser value) cancelledByUser,
     required TResult Function(_ServerError value) serverError,
     required TResult Function(_EmailAlreadyInUser value) emailAlreadyInUser,
+    required TResult Function(_WeakPassword value) weakPassword,
+    required TResult Function(_InvalidEmail value) invalidEmail,
     required TResult Function(_InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
   }) =>
@@ -69,6 +83,8 @@ mixin _$AuthFailure {
     TResult Function(_CancelledByUser value)? cancelledByUser,
     TResult Function(_ServerError value)? serverError,
     TResult Function(_EmailAlreadyInUser value)? emailAlreadyInUser,
+    TResult Function(_WeakPassword value)? weakPassword,
+    TResult Function(_InvalidEmail value)? invalidEmail,
     TResult Function(_InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     required TResult orElse(),
@@ -135,6 +151,8 @@ class _$_CancelledByUser implements _CancelledByUser {
     required TResult Function() cancelledByUser,
     required TResult Function() serverError,
     required TResult Function() emailAlreadyInUser,
+    required TResult Function() weakPassword,
+    required TResult Function() invalidEmail,
     required TResult Function() invalidEmailAndPasswordCombination,
   }) {
     return cancelledByUser();
@@ -146,6 +164,8 @@ class _$_CancelledByUser implements _CancelledByUser {
     TResult Function()? cancelledByUser,
     TResult Function()? serverError,
     TResult Function()? emailAlreadyInUser,
+    TResult Function()? weakPassword,
+    TResult Function()? invalidEmail,
     TResult Function()? invalidEmailAndPasswordCombination,
     required TResult orElse(),
   }) {
@@ -161,6 +181,8 @@ class _$_CancelledByUser implements _CancelledByUser {
     required TResult Function(_CancelledByUser value) cancelledByUser,
     required TResult Function(_ServerError value) serverError,
     required TResult Function(_EmailAlreadyInUser value) emailAlreadyInUser,
+    required TResult Function(_WeakPassword value) weakPassword,
+    required TResult Function(_InvalidEmail value) invalidEmail,
     required TResult Function(_InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
   }) {
@@ -173,6 +195,8 @@ class _$_CancelledByUser implements _CancelledByUser {
     TResult Function(_CancelledByUser value)? cancelledByUser,
     TResult Function(_ServerError value)? serverError,
     TResult Function(_EmailAlreadyInUser value)? emailAlreadyInUser,
+    TResult Function(_WeakPassword value)? weakPassword,
+    TResult Function(_InvalidEmail value)? invalidEmail,
     TResult Function(_InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     required TResult orElse(),
@@ -230,6 +254,8 @@ class _$_ServerError implements _ServerError {
     required TResult Function() cancelledByUser,
     required TResult Function() serverError,
     required TResult Function() emailAlreadyInUser,
+    required TResult Function() weakPassword,
+    required TResult Function() invalidEmail,
     required TResult Function() invalidEmailAndPasswordCombination,
   }) {
     return serverError();
@@ -241,6 +267,8 @@ class _$_ServerError implements _ServerError {
     TResult Function()? cancelledByUser,
     TResult Function()? serverError,
     TResult Function()? emailAlreadyInUser,
+    TResult Function()? weakPassword,
+    TResult Function()? invalidEmail,
     TResult Function()? invalidEmailAndPasswordCombination,
     required TResult orElse(),
   }) {
@@ -256,6 +284,8 @@ class _$_ServerError implements _ServerError {
     required TResult Function(_CancelledByUser value) cancelledByUser,
     required TResult Function(_ServerError value) serverError,
     required TResult Function(_EmailAlreadyInUser value) emailAlreadyInUser,
+    required TResult Function(_WeakPassword value) weakPassword,
+    required TResult Function(_InvalidEmail value) invalidEmail,
     required TResult Function(_InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
   }) {
@@ -268,6 +298,8 @@ class _$_ServerError implements _ServerError {
     TResult Function(_CancelledByUser value)? cancelledByUser,
     TResult Function(_ServerError value)? serverError,
     TResult Function(_EmailAlreadyInUser value)? emailAlreadyInUser,
+    TResult Function(_WeakPassword value)? weakPassword,
+    TResult Function(_InvalidEmail value)? invalidEmail,
     TResult Function(_InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     required TResult orElse(),
@@ -326,6 +358,8 @@ class _$_EmailAlreadyInUser implements _EmailAlreadyInUser {
     required TResult Function() cancelledByUser,
     required TResult Function() serverError,
     required TResult Function() emailAlreadyInUser,
+    required TResult Function() weakPassword,
+    required TResult Function() invalidEmail,
     required TResult Function() invalidEmailAndPasswordCombination,
   }) {
     return emailAlreadyInUser();
@@ -337,6 +371,8 @@ class _$_EmailAlreadyInUser implements _EmailAlreadyInUser {
     TResult Function()? cancelledByUser,
     TResult Function()? serverError,
     TResult Function()? emailAlreadyInUser,
+    TResult Function()? weakPassword,
+    TResult Function()? invalidEmail,
     TResult Function()? invalidEmailAndPasswordCombination,
     required TResult orElse(),
   }) {
@@ -352,6 +388,8 @@ class _$_EmailAlreadyInUser implements _EmailAlreadyInUser {
     required TResult Function(_CancelledByUser value) cancelledByUser,
     required TResult Function(_ServerError value) serverError,
     required TResult Function(_EmailAlreadyInUser value) emailAlreadyInUser,
+    required TResult Function(_WeakPassword value) weakPassword,
+    required TResult Function(_InvalidEmail value) invalidEmail,
     required TResult Function(_InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
   }) {
@@ -364,6 +402,8 @@ class _$_EmailAlreadyInUser implements _EmailAlreadyInUser {
     TResult Function(_CancelledByUser value)? cancelledByUser,
     TResult Function(_ServerError value)? serverError,
     TResult Function(_EmailAlreadyInUser value)? emailAlreadyInUser,
+    TResult Function(_WeakPassword value)? weakPassword,
+    TResult Function(_InvalidEmail value)? invalidEmail,
     TResult Function(_InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     required TResult orElse(),
@@ -377,6 +417,212 @@ class _$_EmailAlreadyInUser implements _EmailAlreadyInUser {
 
 abstract class _EmailAlreadyInUser implements AuthFailure {
   const factory _EmailAlreadyInUser() = _$_EmailAlreadyInUser;
+}
+
+/// @nodoc
+abstract class _$WeakPasswordCopyWith<$Res> {
+  factory _$WeakPasswordCopyWith(
+          _WeakPassword value, $Res Function(_WeakPassword) then) =
+      __$WeakPasswordCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$WeakPasswordCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$WeakPasswordCopyWith<$Res> {
+  __$WeakPasswordCopyWithImpl(
+      _WeakPassword _value, $Res Function(_WeakPassword) _then)
+      : super(_value, (v) => _then(v as _WeakPassword));
+
+  @override
+  _WeakPassword get _value => super._value as _WeakPassword;
+}
+
+/// @nodoc
+
+class _$_WeakPassword implements _WeakPassword {
+  const _$_WeakPassword();
+
+  @override
+  String toString() {
+    return 'AuthFailure.weakPassword()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _WeakPassword);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function() serverError,
+    required TResult Function() emailAlreadyInUser,
+    required TResult Function() weakPassword,
+    required TResult Function() invalidEmail,
+    required TResult Function() invalidEmailAndPasswordCombination,
+  }) {
+    return weakPassword();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? emailAlreadyInUser,
+    TResult Function()? weakPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    required TResult orElse(),
+  }) {
+    if (weakPassword != null) {
+      return weakPassword();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CancelledByUser value) cancelledByUser,
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_EmailAlreadyInUser value) emailAlreadyInUser,
+    required TResult Function(_WeakPassword value) weakPassword,
+    required TResult Function(_InvalidEmail value) invalidEmail,
+    required TResult Function(_InvalidEmailAndPasswordCombination value)
+        invalidEmailAndPasswordCombination,
+  }) {
+    return weakPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_EmailAlreadyInUser value)? emailAlreadyInUser,
+    TResult Function(_WeakPassword value)? weakPassword,
+    TResult Function(_InvalidEmail value)? invalidEmail,
+    TResult Function(_InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    required TResult orElse(),
+  }) {
+    if (weakPassword != null) {
+      return weakPassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _WeakPassword implements AuthFailure {
+  const factory _WeakPassword() = _$_WeakPassword;
+}
+
+/// @nodoc
+abstract class _$InvalidEmailCopyWith<$Res> {
+  factory _$InvalidEmailCopyWith(
+          _InvalidEmail value, $Res Function(_InvalidEmail) then) =
+      __$InvalidEmailCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$InvalidEmailCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+    implements _$InvalidEmailCopyWith<$Res> {
+  __$InvalidEmailCopyWithImpl(
+      _InvalidEmail _value, $Res Function(_InvalidEmail) _then)
+      : super(_value, (v) => _then(v as _InvalidEmail));
+
+  @override
+  _InvalidEmail get _value => super._value as _InvalidEmail;
+}
+
+/// @nodoc
+
+class _$_InvalidEmail implements _InvalidEmail {
+  const _$_InvalidEmail();
+
+  @override
+  String toString() {
+    return 'AuthFailure.invalidEmail()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InvalidEmail);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function() serverError,
+    required TResult Function() emailAlreadyInUser,
+    required TResult Function() weakPassword,
+    required TResult Function() invalidEmail,
+    required TResult Function() invalidEmailAndPasswordCombination,
+  }) {
+    return invalidEmail();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? emailAlreadyInUser,
+    TResult Function()? weakPassword,
+    TResult Function()? invalidEmail,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    required TResult orElse(),
+  }) {
+    if (invalidEmail != null) {
+      return invalidEmail();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CancelledByUser value) cancelledByUser,
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_EmailAlreadyInUser value) emailAlreadyInUser,
+    required TResult Function(_WeakPassword value) weakPassword,
+    required TResult Function(_InvalidEmail value) invalidEmail,
+    required TResult Function(_InvalidEmailAndPasswordCombination value)
+        invalidEmailAndPasswordCombination,
+  }) {
+    return invalidEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CancelledByUser value)? cancelledByUser,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_EmailAlreadyInUser value)? emailAlreadyInUser,
+    TResult Function(_WeakPassword value)? weakPassword,
+    TResult Function(_InvalidEmail value)? invalidEmail,
+    TResult Function(_InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    required TResult orElse(),
+  }) {
+    if (invalidEmail != null) {
+      return invalidEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidEmail implements AuthFailure {
+  const factory _InvalidEmail() = _$_InvalidEmail;
 }
 
 /// @nodoc
@@ -427,6 +673,8 @@ class _$_InvalidEmailAndPasswordCombination
     required TResult Function() cancelledByUser,
     required TResult Function() serverError,
     required TResult Function() emailAlreadyInUser,
+    required TResult Function() weakPassword,
+    required TResult Function() invalidEmail,
     required TResult Function() invalidEmailAndPasswordCombination,
   }) {
     return invalidEmailAndPasswordCombination();
@@ -438,6 +686,8 @@ class _$_InvalidEmailAndPasswordCombination
     TResult Function()? cancelledByUser,
     TResult Function()? serverError,
     TResult Function()? emailAlreadyInUser,
+    TResult Function()? weakPassword,
+    TResult Function()? invalidEmail,
     TResult Function()? invalidEmailAndPasswordCombination,
     required TResult orElse(),
   }) {
@@ -453,6 +703,8 @@ class _$_InvalidEmailAndPasswordCombination
     required TResult Function(_CancelledByUser value) cancelledByUser,
     required TResult Function(_ServerError value) serverError,
     required TResult Function(_EmailAlreadyInUser value) emailAlreadyInUser,
+    required TResult Function(_WeakPassword value) weakPassword,
+    required TResult Function(_InvalidEmail value) invalidEmail,
     required TResult Function(_InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
   }) {
@@ -465,6 +717,8 @@ class _$_InvalidEmailAndPasswordCombination
     TResult Function(_CancelledByUser value)? cancelledByUser,
     TResult Function(_ServerError value)? serverError,
     TResult Function(_EmailAlreadyInUser value)? emailAlreadyInUser,
+    TResult Function(_WeakPassword value)? weakPassword,
+    TResult Function(_InvalidEmail value)? invalidEmail,
     TResult Function(_InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     required TResult orElse(),

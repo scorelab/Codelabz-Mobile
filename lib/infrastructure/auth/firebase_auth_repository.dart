@@ -49,6 +49,33 @@ class FirebaseAuthRepository extends AuthRepository {
   }
 
   @override
+  Future<Either<AuthFailure, Unit>> signUpWithEmailAndPassword(
+      {required Email email, required Password password}) async {
+    final emailAddress = email.value.getOrElse(() => "Invalid Email");
+    final passwordStr = password.value.getOrElse(() => "Invalid Password");
+
+    try {
+      return await _firebaseAuth
+          .createUserWithEmailAndPassword(
+            email: emailAddress,
+            password: passwordStr,
+          )
+          .then((_) => right(unit));
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "email-already-in-use") {
+        return left(const AuthFailure.emailAlreadyInUser());
+      }
+      if (e.code == "invalid-email") {
+        return left(const AuthFailure.invalidEmail());
+      }
+      if (e.code == "weak-password") {
+        return left(const AuthFailure.weakPassword());
+      }
+      return left(const AuthFailure.serverError());
+    }
+  }
+
+  @override
   Future<Either<AuthFailure, Unit>> signInWithFacebook(String url) async {
     // TODO: implement signInWithFacebook
     throw UnimplementedError();
@@ -92,12 +119,5 @@ class FirebaseAuthRepository extends AuthRepository {
   Future<void> signout() async {
     await _googleSignIn.signOut();
     await _firebaseAuth.signOut();
-  }
-
-  @override
-  Future<Either<AuthFailure, Unit>> signUpWithEmailAndPassword(
-      {required Email email, required Password password}) {
-    // TODO: implement signUpWithEmailAndPassword
-    throw UnimplementedError();
   }
 }
