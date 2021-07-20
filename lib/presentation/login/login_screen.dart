@@ -124,6 +124,10 @@ class LoginScreen extends StatelessWidget {
                               ),
                         ),
                         const SizedBox(height: 20),
+                        Opacity(
+                          opacity: state.isSubmitting ? 1.0 : 0.0,
+                          child: const LinearProgressIndicator(),
+                        ),
                         SizedBox(
                           width: double.maxFinite,
                           child: TextButton(
@@ -159,29 +163,37 @@ class LoginScreen extends StatelessWidget {
                                 width: MediaQuery.of(context).size.width * 0.4),
                           ],
                         ),
-                        LoginButton(
-                          assetName: "assets/icons/google.png",
-                          text: "Signin with Google",
-                          onPress: () => _signInWithGoogle(context),
-                          disabled: state.isSubmitting,
-                        ),
-                        LoginButton(
-                          assetName: "assets/icons/facebook.png",
-                          text: "Signin with Facebook",
-                          onPress: () => _signInwithFacebook(context),
-                          disabled: state.isSubmitting,
-                        ),
-                        LoginButton(
-                          assetName: "assets/icons/github.png",
-                          text: "Signin with Github",
-                          onPress: () => _signInwithFacebook(context),
-                          disabled: state.isSubmitting,
-                        ),
-                        LoginButton(
-                          assetName: "assets/icons/twitter.png",
-                          text: "Signin with Twitter",
-                          onPress: () => _signInwithFacebook(context),
-                          disabled: state.isSubmitting,
+                        const SizedBox(height: 10),
+                        const Text("Sign in with Social account"),
+                        const SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            LoginButton(
+                              assetName: "assets/icons/google.png",
+                              onPress: () => _signInWithGoogle(context),
+                              disabled: state.isSubmitting,
+                              type: const LoginButtons.google(),
+                            ),
+                            LoginButton(
+                              assetName: "assets/icons/facebook.png",
+                              onPress: () => _signInwithFacebook(context),
+                              disabled: state.isSubmitting,
+                              type: const LoginButtons.facebook(),
+                            ),
+                            LoginButton(
+                              assetName: "assets/icons/github.png",
+                              onPress: () => _signInwithFacebook(context),
+                              disabled: state.isSubmitting,
+                              type: const LoginButtons.github(),
+                            ),
+                            LoginButton(
+                              assetName: "assets/icons/twitter.png",
+                              onPress: () => _signInwithFacebook(context),
+                              disabled: state.isSubmitting,
+                              type: const LoginButtons.twitter(),
+                            ),
+                          ],
                         ),
                       ],
                     ),
