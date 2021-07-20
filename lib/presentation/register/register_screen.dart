@@ -12,6 +12,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
 class RegisterScreen extends StatelessWidget {
+  final FocusNode _passwordNode = FocusNode();
+  final FocusNode _confirmPasswordNode = FocusNode();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,6 +79,8 @@ class RegisterScreen extends StatelessWidget {
                             labelText: 'Email',
                           ),
                           autocorrect: false,
+                          textInputAction: TextInputAction.next,
+                          onEditingComplete: () => _passwordNode.requestFocus(),
                           onChanged: (text) =>
                               Provider.of<RegisterBloc>(context, listen: false)
                                   .add(RegisterEvent.emailChanged(text)),
@@ -94,6 +99,10 @@ class RegisterScreen extends StatelessWidget {
                         const SizedBox(height: 5),
                         TextFormField(
                           obscureText: !state.showPassword,
+                          textInputAction: TextInputAction.next,
+                          focusNode: _passwordNode,
+                          onEditingComplete: () =>
+                              _confirmPasswordNode.requestFocus(),
                           decoration: InputDecoration(
                             border: const OutlineInputBorder(),
                             prefixIcon:
@@ -130,6 +139,10 @@ class RegisterScreen extends StatelessWidget {
                         const SizedBox(height: 5),
                         TextFormField(
                           obscureText: !state.showConfirmPassword,
+                          textInputAction: TextInputAction.done,
+                          focusNode: _confirmPasswordNode,
+                          onFieldSubmitted: (_) =>
+                              _onClickCreateAccount(context),
                           decoration: InputDecoration(
                             border: const OutlineInputBorder(),
                             prefixIcon:

@@ -67,6 +67,9 @@ class LoginScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         TextFormField(
+                          textInputAction: TextInputAction.next,
+                          onEditingComplete: () =>
+                              FocusScope.of(context).nextFocus(),
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             prefixIcon: Icon(Icons.email, color: Colors.grey),
@@ -91,6 +94,8 @@ class LoginScreen extends StatelessWidget {
                         const SizedBox(height: 5),
                         TextFormField(
                           obscureText: !state.showPassword,
+                          textInputAction: TextInputAction.done,
+                          onFieldSubmitted: (_) => _onClickLogin(context),
                           decoration: InputDecoration(
                             border: const OutlineInputBorder(),
                             prefixIcon:
