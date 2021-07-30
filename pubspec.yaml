@@ -38,6 +38,7 @@ dependencies:
   kt_dart: ^0.9.1
   provider: ^5.0.0
   rxdart: ^0.27.1
+  persistent_bottom_nav_bar: ^4.0.2
 
 dev_dependencies:
   flutter_test:
