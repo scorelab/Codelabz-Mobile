@@ -15,7 +15,7 @@ class SplashScreen extends StatelessWidget {
           // initial state, nothing to do with this
           initial: (_) {},
           authenticated: (_) => CodeLabzApp.router
-              .navigateTo(context, Routes.home, clearStack: true),
+              .navigateTo(context, Routes.main, clearStack: true),
           unauthenticated: (_) => CodeLabzApp.router
               .navigateTo(context, Routes.login, clearStack: true),
         );

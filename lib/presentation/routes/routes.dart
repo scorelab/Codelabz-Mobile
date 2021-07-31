@@ -5,14 +5,14 @@ class Routes {
   static const splash = "/";
   static const login = "/login";
   static const register = "/register";
-  static const home = "/home";
+  static const main = "/main";
 
   /// function assign routes to rotuesHandlers in [router]
   static void configureRouter(FluroRouter router) {
-    router.define(splash, handler: mainHandler);
+    router.define(splash, handler: splashHandler);
     router.define(login, handler: loginHandler);
     router.define(register, handler: registerHandler);
-    router.define(home, handler: homeHandler);
+    router.define(main, handler: mainHandler);
   }
 
   Routes._();
