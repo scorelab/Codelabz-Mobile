@@ -1,8 +1,8 @@
 import 'package:codelabz/application/login/login_bloc.dart';
 import 'package:codelabz/application/register/register_bloc.dart';
 import 'package:codelabz/di/injection.dart';
-import 'package:codelabz/presentation/home/home_screen.dart';
 import 'package:codelabz/presentation/login/login_screen.dart';
+import 'package:codelabz/presentation/main/main_screen.dart';
 import 'package:codelabz/presentation/register/register_screen.dart';
 import 'package:codelabz/presentation/splash/splash_screen.dart';
 import 'package:fluro/fluro.dart';
@@ -36,5 +36,5 @@ Handler registerHandler = Handler(
 // route => home[/home]
 Handler homeHandler = Handler(
     handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-  return HomeScreen();
+  return MainScreen();
 });
