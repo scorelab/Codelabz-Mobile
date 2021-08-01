@@ -16,8 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ProfileEventTearOff {
   const _$ProfileEventTearOff();
 
-  _GetProfile getProfile() {
-    return const _GetProfile();
+  _GetProfile getProfile(String uid) {
+    return _GetProfile(
+      uid,
+    );
   }
 }
 
@@ -26,14 +28,16 @@ const $ProfileEvent = _$ProfileEventTearOff();
 
 /// @nodoc
 mixin _$ProfileEvent {
+  String get uid => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getProfile,
+    required TResult Function(String uid) getProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getProfile,
+    TResult Function(String uid)? getProfile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +52,10 @@ mixin _$ProfileEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ProfileEventCopyWith<ProfileEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -55,6 +63,7 @@ abstract class $ProfileEventCopyWith<$Res> {
   factory $ProfileEventCopyWith(
           ProfileEvent value, $Res Function(ProfileEvent) then) =
       _$ProfileEventCopyWithImpl<$Res>;
+  $Res call({String uid});
 }
 
 /// @nodoc
@@ -64,13 +73,28 @@ class _$ProfileEventCopyWithImpl<$Res> implements $ProfileEventCopyWith<$Res> {
   final ProfileEvent _value;
   // ignore: unused_field
   final $Res Function(ProfileEvent) _then;
+
+  @override
+  $Res call({
+    Object? uid = freezed,
+  }) {
+    return _then(_value.copyWith(
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract class _$GetProfileCopyWith<$Res> {
+abstract class _$GetProfileCopyWith<$Res>
+    implements $ProfileEventCopyWith<$Res> {
   factory _$GetProfileCopyWith(
           _GetProfile value, $Res Function(_GetProfile) then) =
       __$GetProfileCopyWithImpl<$Res>;
+  @override
+  $Res call({String uid});
 }
 
 /// @nodoc
@@ -82,42 +106,66 @@ class __$GetProfileCopyWithImpl<$Res> extends _$ProfileEventCopyWithImpl<$Res>
 
   @override
   _GetProfile get _value => super._value as _GetProfile;
+
+  @override
+  $Res call({
+    Object? uid = freezed,
+  }) {
+    return _then(_GetProfile(
+      uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_GetProfile implements _GetProfile {
-  const _$_GetProfile();
+  const _$_GetProfile(this.uid);
+
+  @override
+  final String uid;
 
   @override
   String toString() {
-    return 'ProfileEvent.getProfile()';
+    return 'ProfileEvent.getProfile(uid: $uid)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _GetProfile);
+    return identical(this, other) ||
+        (other is _GetProfile &&
+            (identical(other.uid, uid) ||
+                const DeepCollectionEquality().equals(other.uid, uid)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(uid);
+
+  @JsonKey(ignore: true)
+  @override
+  _$GetProfileCopyWith<_GetProfile> get copyWith =>
+      __$GetProfileCopyWithImpl<_GetProfile>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getProfile,
+    required TResult Function(String uid) getProfile,
   }) {
-    return getProfile();
+    return getProfile(uid);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getProfile,
+    TResult Function(String uid)? getProfile,
     required TResult orElse(),
   }) {
     if (getProfile != null) {
-      return getProfile();
+      return getProfile(uid);
     }
     return orElse();
   }
@@ -144,7 +192,14 @@ class _$_GetProfile implements _GetProfile {
 }
 
 abstract class _GetProfile implements ProfileEvent {
-  const factory _GetProfile() = _$_GetProfile;
+  const factory _GetProfile(String uid) = _$_GetProfile;
+
+  @override
+  String get uid => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$GetProfileCopyWith<_GetProfile> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -160,6 +215,12 @@ class _$ProfileStateTearOff {
       user,
     );
   }
+
+  _ProfileFailure profileFailure(ProfileFailure failure) {
+    return _ProfileFailure(
+      failure,
+    );
+  }
 }
 
 /// @nodoc
@@ -171,12 +232,14 @@ mixin _$ProfileState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(User user) profile,
+    required TResult Function(ProfileFailure failure) profileFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(User user)? profile,
+    TResult Function(ProfileFailure failure)? profileFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -184,12 +247,14 @@ mixin _$ProfileState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Profile value) profile,
+    required TResult Function(_ProfileFailure value) profileFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Profile value)? profile,
+    TResult Function(_ProfileFailure value)? profileFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -250,6 +315,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(User user) profile,
+    required TResult Function(ProfileFailure failure) profileFailure,
   }) {
     return initial();
   }
@@ -259,6 +325,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(User user)? profile,
+    TResult Function(ProfileFailure failure)? profileFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -272,6 +339,7 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Profile value) profile,
+    required TResult Function(_ProfileFailure value) profileFailure,
   }) {
     return initial(this);
   }
@@ -281,6 +349,7 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Profile value)? profile,
+    TResult Function(_ProfileFailure value)? profileFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -367,6 +436,7 @@ class _$_Profile implements _Profile {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(User user) profile,
+    required TResult Function(ProfileFailure failure) profileFailure,
   }) {
     return profile(user);
   }
@@ -376,6 +446,7 @@ class _$_Profile implements _Profile {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(User user)? profile,
+    TResult Function(ProfileFailure failure)? profileFailure,
     required TResult orElse(),
   }) {
     if (profile != null) {
@@ -389,6 +460,7 @@ class _$_Profile implements _Profile {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Profile value) profile,
+    required TResult Function(_ProfileFailure value) profileFailure,
   }) {
     return profile(this);
   }
@@ -398,6 +470,7 @@ class _$_Profile implements _Profile {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Profile value)? profile,
+    TResult Function(_ProfileFailure value)? profileFailure,
     required TResult orElse(),
   }) {
     if (profile != null) {
@@ -413,5 +486,134 @@ abstract class _Profile implements ProfileState {
   User get user => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$ProfileCopyWith<_Profile> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ProfileFailureCopyWith<$Res> {
+  factory _$ProfileFailureCopyWith(
+          _ProfileFailure value, $Res Function(_ProfileFailure) then) =
+      __$ProfileFailureCopyWithImpl<$Res>;
+  $Res call({ProfileFailure failure});
+
+  $ProfileFailureCopyWith<$Res> get failure;
+}
+
+/// @nodoc
+class __$ProfileFailureCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res>
+    implements _$ProfileFailureCopyWith<$Res> {
+  __$ProfileFailureCopyWithImpl(
+      _ProfileFailure _value, $Res Function(_ProfileFailure) _then)
+      : super(_value, (v) => _then(v as _ProfileFailure));
+
+  @override
+  _ProfileFailure get _value => super._value as _ProfileFailure;
+
+  @override
+  $Res call({
+    Object? failure = freezed,
+  }) {
+    return _then(_ProfileFailure(
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as ProfileFailure,
+    ));
+  }
+
+  @override
+  $ProfileFailureCopyWith<$Res> get failure {
+    return $ProfileFailureCopyWith<$Res>(_value.failure, (value) {
+      return _then(_value.copyWith(failure: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_ProfileFailure implements _ProfileFailure {
+  const _$_ProfileFailure(this.failure);
+
+  @override
+  final ProfileFailure failure;
+
+  @override
+  String toString() {
+    return 'ProfileState.profileFailure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ProfileFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ProfileFailureCopyWith<_ProfileFailure> get copyWith =>
+      __$ProfileFailureCopyWithImpl<_ProfileFailure>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(User user) profile,
+    required TResult Function(ProfileFailure failure) profileFailure,
+  }) {
+    return profileFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(User user)? profile,
+    TResult Function(ProfileFailure failure)? profileFailure,
+    required TResult orElse(),
+  }) {
+    if (profileFailure != null) {
+      return profileFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Profile value) profile,
+    required TResult Function(_ProfileFailure value) profileFailure,
+  }) {
+    return profileFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Profile value)? profile,
+    TResult Function(_ProfileFailure value)? profileFailure,
+    required TResult orElse(),
+  }) {
+    if (profileFailure != null) {
+      return profileFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ProfileFailure implements ProfileState {
+  const factory _ProfileFailure(ProfileFailure failure) = _$_ProfileFailure;
+
+  ProfileFailure get failure => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ProfileFailureCopyWith<_ProfileFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
