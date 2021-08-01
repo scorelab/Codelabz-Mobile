@@ -16,8 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ProfileEventTearOff {
   const _$ProfileEventTearOff();
 
-  _GetProfile getProfile(String uid) {
-    return _GetProfile(
+  _GetMyProfile getMyProfile(String uid) {
+    return _GetMyProfile(
       uid,
     );
   }
@@ -32,23 +32,23 @@ mixin _$ProfileEvent {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String uid) getProfile,
+    required TResult Function(String uid) getMyProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String uid)? getProfile,
+    TResult Function(String uid)? getMyProfile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetProfile value) getProfile,
+    required TResult Function(_GetMyProfile value) getMyProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetProfile value)? getProfile,
+    TResult Function(_GetMyProfile value)? getMyProfile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -88,30 +88,30 @@ class _$ProfileEventCopyWithImpl<$Res> implements $ProfileEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$GetProfileCopyWith<$Res>
+abstract class _$GetMyProfileCopyWith<$Res>
     implements $ProfileEventCopyWith<$Res> {
-  factory _$GetProfileCopyWith(
-          _GetProfile value, $Res Function(_GetProfile) then) =
-      __$GetProfileCopyWithImpl<$Res>;
+  factory _$GetMyProfileCopyWith(
+          _GetMyProfile value, $Res Function(_GetMyProfile) then) =
+      __$GetMyProfileCopyWithImpl<$Res>;
   @override
   $Res call({String uid});
 }
 
 /// @nodoc
-class __$GetProfileCopyWithImpl<$Res> extends _$ProfileEventCopyWithImpl<$Res>
-    implements _$GetProfileCopyWith<$Res> {
-  __$GetProfileCopyWithImpl(
-      _GetProfile _value, $Res Function(_GetProfile) _then)
-      : super(_value, (v) => _then(v as _GetProfile));
+class __$GetMyProfileCopyWithImpl<$Res> extends _$ProfileEventCopyWithImpl<$Res>
+    implements _$GetMyProfileCopyWith<$Res> {
+  __$GetMyProfileCopyWithImpl(
+      _GetMyProfile _value, $Res Function(_GetMyProfile) _then)
+      : super(_value, (v) => _then(v as _GetMyProfile));
 
   @override
-  _GetProfile get _value => super._value as _GetProfile;
+  _GetMyProfile get _value => super._value as _GetMyProfile;
 
   @override
   $Res call({
     Object? uid = freezed,
   }) {
-    return _then(_GetProfile(
+    return _then(_GetMyProfile(
       uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -122,21 +122,21 @@ class __$GetProfileCopyWithImpl<$Res> extends _$ProfileEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GetProfile implements _GetProfile {
-  const _$_GetProfile(this.uid);
+class _$_GetMyProfile implements _GetMyProfile {
+  const _$_GetMyProfile(this.uid);
 
   @override
   final String uid;
 
   @override
   String toString() {
-    return 'ProfileEvent.getProfile(uid: $uid)';
+    return 'ProfileEvent.getMyProfile(uid: $uid)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _GetProfile &&
+        (other is _GetMyProfile &&
             (identical(other.uid, uid) ||
                 const DeepCollectionEquality().equals(other.uid, uid)));
   }
@@ -147,25 +147,25 @@ class _$_GetProfile implements _GetProfile {
 
   @JsonKey(ignore: true)
   @override
-  _$GetProfileCopyWith<_GetProfile> get copyWith =>
-      __$GetProfileCopyWithImpl<_GetProfile>(this, _$identity);
+  _$GetMyProfileCopyWith<_GetMyProfile> get copyWith =>
+      __$GetMyProfileCopyWithImpl<_GetMyProfile>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String uid) getProfile,
+    required TResult Function(String uid) getMyProfile,
   }) {
-    return getProfile(uid);
+    return getMyProfile(uid);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String uid)? getProfile,
+    TResult Function(String uid)? getMyProfile,
     required TResult orElse(),
   }) {
-    if (getProfile != null) {
-      return getProfile(uid);
+    if (getMyProfile != null) {
+      return getMyProfile(uid);
     }
     return orElse();
   }
@@ -173,32 +173,32 @@ class _$_GetProfile implements _GetProfile {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetProfile value) getProfile,
+    required TResult Function(_GetMyProfile value) getMyProfile,
   }) {
-    return getProfile(this);
+    return getMyProfile(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetProfile value)? getProfile,
+    TResult Function(_GetMyProfile value)? getMyProfile,
     required TResult orElse(),
   }) {
-    if (getProfile != null) {
-      return getProfile(this);
+    if (getMyProfile != null) {
+      return getMyProfile(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetProfile implements ProfileEvent {
-  const factory _GetProfile(String uid) = _$_GetProfile;
+abstract class _GetMyProfile implements ProfileEvent {
+  const factory _GetMyProfile(String uid) = _$_GetMyProfile;
 
   @override
   String get uid => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$GetProfileCopyWith<_GetProfile> get copyWith =>
+  _$GetMyProfileCopyWith<_GetMyProfile> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

@@ -21,7 +21,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     ProfileEvent event,
   ) async* {
     yield* event.map(
-      getProfile: (_) async* {
+      getMyProfile: (_) async* {
         final profileOption = await _profileRepository.getProfile(_.uid);
         yield profileOption.fold(
           (failure) => ProfileState.profileFailure(failure),
