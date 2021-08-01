@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:codelabz/domain/auth/auth_repository.dart';
-import 'package:codelabz/domain/models/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -24,7 +23,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         final userOption = await _authRepository.getSignedInUser();
         yield userOption.fold(
           () => const AuthState.unauthenticated(),
-          (user) => AuthState.authenticated(user),
+          (user) => const AuthState.authenticated(),
         );
       },
       signedOut: (e) async* {

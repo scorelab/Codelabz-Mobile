@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:codelabz/presentation/main/home/home_screen.dart';
 import 'package:codelabz/presentation/main/organizations/organizations_screen.dart';
 import 'package:codelabz/presentation/main/settings/settings_screen.dart';
@@ -23,6 +24,13 @@ class MainScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(getBrandName()),
         actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Badge(
+              badgeContent: const Text("2"),
+              child: const Icon(FontAwesomeIcons.solidBell),
+            ),
+          ),
           IconButton(
             onPressed: () {},
             icon: const CircleAvatar(
