@@ -17,7 +17,7 @@ class _$UserTearOff {
   const _$UserTearOff();
 
   _User call(
-      {required UniqueId uid,
+      {required UniqueId id,
       required DisplayName displayName,
       required Email email,
       required PhotoUrl photoUrl,
@@ -33,7 +33,7 @@ class _$UserTearOff {
       required CreatedAt createdAt,
       required UpdatedAt updatedAt}) {
     return _User(
-      uid: uid,
+      id: id,
       displayName: displayName,
       email: email,
       photoUrl: photoUrl,
@@ -57,7 +57,7 @@ const $User = _$UserTearOff();
 
 /// @nodoc
 mixin _$User {
-  UniqueId get uid => throw _privateConstructorUsedError;
+  UniqueId get id => throw _privateConstructorUsedError;
   DisplayName get displayName => throw _privateConstructorUsedError;
   Email get email => throw _privateConstructorUsedError;
   PhotoUrl get photoUrl => throw _privateConstructorUsedError;
@@ -82,7 +82,7 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
   $Res call(
-      {UniqueId uid,
+      {UniqueId id,
       DisplayName displayName,
       Email email,
       PhotoUrl photoUrl,
@@ -109,7 +109,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? uid = freezed,
+    Object? id = freezed,
     Object? displayName = freezed,
     Object? email = freezed,
     Object? photoUrl = freezed,
@@ -126,9 +126,9 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object? updatedAt = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: uid == freezed
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as UniqueId,
       displayName: displayName == freezed
           ? _value.displayName
@@ -196,7 +196,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       __$UserCopyWithImpl<$Res>;
   @override
   $Res call(
-      {UniqueId uid,
+      {UniqueId id,
       DisplayName displayName,
       Email email,
       PhotoUrl photoUrl,
@@ -224,7 +224,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? uid = freezed,
+    Object? id = freezed,
     Object? displayName = freezed,
     Object? email = freezed,
     Object? photoUrl = freezed,
@@ -241,9 +241,9 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object? updatedAt = freezed,
   }) {
     return _then(_User(
-      uid: uid == freezed
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as UniqueId,
       displayName: displayName == freezed
           ? _value.displayName
@@ -309,7 +309,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 
 class _$_User implements _User {
   const _$_User(
-      {required this.uid,
+      {required this.id,
       required this.displayName,
       required this.email,
       required this.photoUrl,
@@ -326,7 +326,7 @@ class _$_User implements _User {
       required this.updatedAt});
 
   @override
-  final UniqueId uid;
+  final UniqueId id;
   @override
   final DisplayName displayName;
   @override
@@ -358,15 +358,15 @@ class _$_User implements _User {
 
   @override
   String toString() {
-    return 'User(uid: $uid, displayName: $displayName, email: $email, photoUrl: $photoUrl, country: $country, description: $description, handle: $handle, linkFacebook: $linkFacebook, linkGithub: $linkGithub, linkLinkedIn: $linkLinkedIn, linkTwitter: $linkTwitter, organizations: $organizations, website: $website, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'User(id: $id, displayName: $displayName, email: $email, photoUrl: $photoUrl, country: $country, description: $description, handle: $handle, linkFacebook: $linkFacebook, linkGithub: $linkGithub, linkLinkedIn: $linkLinkedIn, linkTwitter: $linkTwitter, organizations: $organizations, website: $website, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _User &&
-            (identical(other.uid, uid) ||
-                const DeepCollectionEquality().equals(other.uid, uid)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.displayName, displayName) ||
                 const DeepCollectionEquality()
                     .equals(other.displayName, displayName)) &&
@@ -412,7 +412,7 @@ class _$_User implements _User {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(uid) ^
+      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(displayName) ^
       const DeepCollectionEquality().hash(email) ^
       const DeepCollectionEquality().hash(photoUrl) ^
@@ -436,7 +436,7 @@ class _$_User implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {required UniqueId uid,
+      {required UniqueId id,
       required DisplayName displayName,
       required Email email,
       required PhotoUrl photoUrl,
@@ -453,7 +453,7 @@ abstract class _User implements User {
       required UpdatedAt updatedAt}) = _$_User;
 
   @override
-  UniqueId get uid => throw _privateConstructorUsedError;
+  UniqueId get id => throw _privateConstructorUsedError;
   @override
   DisplayName get displayName => throw _privateConstructorUsedError;
   @override

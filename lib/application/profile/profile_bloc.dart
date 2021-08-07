@@ -11,7 +11,7 @@ part 'profile_bloc.freezed.dart';
 part 'profile_event.dart';
 part 'profile_state.dart';
 
-@Injectable()
+@LazySingleton()
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   final ProfileRepository _profileRepository;
   ProfileBloc(this._profileRepository) : super(const ProfileState.initial());
@@ -22,7 +22,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ) async* {
     yield* event.map(
       getMyProfile: (_) async* {
-        final profileOption = await _profileRepository.getProfile(_.uid);
+        final profileOption = await _profileRepository.getProfile();
         yield profileOption.fold(
           (failure) => ProfileState.profileFailure(failure),
           (profile) => ProfileState.profile(profile),

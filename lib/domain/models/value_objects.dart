@@ -6,6 +6,8 @@ import 'package:codelabz/domain/models/value_validators.dart';
 import 'package:dartz/dartz.dart';
 
 class DisplayName extends ValueObject<String> {
+  String get getTwoLetter => value.getOrElse(() => "CL").substring(0, 2);
+
   @override
   final Either<ValueFailure<String>, String> value;
 
@@ -51,11 +53,12 @@ class ConfirmPassword extends ValueObject<String> {
   const ConfirmPassword._(this.value);
 }
 
-class Country extends ValueObject<String> {
+class Country extends ValueObject<Option<String>> {
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Either<ValueFailure<Option<String>>, Option<String>> value;
 
-  factory Country(String input) => Country._(right(input));
+  factory Country(String? input) =>
+      Country._(right(input != null ? some(input) : none()));
 
   const Country._(this.value);
 }
@@ -77,65 +80,72 @@ class CreatedAt extends ValueObject<DateTime> {
   const CreatedAt._(this.value);
 }
 
-class Description extends ValueObject<String> {
+class Description extends ValueObject<Option<String>> {
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Either<ValueFailure<Option<String>>, Option<String>> value;
 
-  factory Description(String input) => Description._(right(input));
+  factory Description(String? input) =>
+      Description._(right(input != null ? some(input) : none()));
 
   const Description._(this.value);
 }
 
-class Handle extends ValueObject<String> {
+class Handle extends ValueObject<Option<String>> {
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Either<ValueFailure<Option<String>>, Option<String>> value;
 
-  factory Handle(String input) => Handle._(right(input));
+  factory Handle(String? input) =>
+      Handle._(right(input != null ? some(input) : none()));
 
   const Handle._(this.value);
 }
 
-class LinkFacebook extends ValueObject<String> {
+class LinkFacebook extends ValueObject<Option<String>> {
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Either<ValueFailure<Option<String>>, Option<String>> value;
 
-  factory LinkFacebook(String input) => LinkFacebook._(right(input));
+  factory LinkFacebook(String? input) =>
+      LinkFacebook._(right(input != null ? some(input) : none()));
 
   const LinkFacebook._(this.value);
 }
 
-class LinkGithub extends ValueObject<String> {
+class LinkGithub extends ValueObject<Option<String>> {
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Either<ValueFailure<Option<String>>, Option<String>> value;
 
-  factory LinkGithub(String input) => LinkGithub._(right(input));
+  factory LinkGithub(String? input) =>
+      LinkGithub._(right(input != null ? some(input) : none()));
 
   const LinkGithub._(this.value);
 }
 
-class LinkLinkedIn extends ValueObject<String> {
+class LinkLinkedIn extends ValueObject<Option<String>> {
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Either<ValueFailure<Option<String>>, Option<String>> value;
 
-  factory LinkLinkedIn(String input) => LinkLinkedIn._(right(input));
+  factory LinkLinkedIn(String? input) =>
+      LinkLinkedIn._(right(input != null ? some(input) : none()));
 
   const LinkLinkedIn._(this.value);
 }
 
-class LinkTwitter extends ValueObject<String> {
+class LinkTwitter extends ValueObject<Option<String>> {
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Either<ValueFailure<Option<String>>, Option<String>> value;
 
-  factory LinkTwitter(String input) => LinkTwitter._(right(input));
+  factory LinkTwitter(String? input) =>
+      LinkTwitter._(right(input != null ? some(input) : none()));
 
   const LinkTwitter._(this.value);
 }
 
-class Website extends ValueObject<String> {
+class Website extends ValueObject<Option<String>> {
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Either<ValueFailure<Option<String>>, Option<String>> value;
 
-  factory Website(String input) => Website._(right(input));
+  factory Website(String? input) =>
+      Website._(right(input != null ? some(input) : none()));
 
   const Website._(this.value);
 }

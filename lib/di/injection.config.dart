@@ -31,14 +31,14 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i4.FirebaseFirestore>(() => registerModules.firestore);
   gh.lazySingleton<_i5.FirebaseUserMapper>(() => _i5.FirebaseUserMapper());
   gh.lazySingleton<_i6.GoogleSignIn>(() => registerModules.googleSignIn);
-  gh.lazySingleton<_i7.ProfileRepository>(
-      () => _i8.FirebaseProfileRepository(get<_i4.FirebaseFirestore>()));
+  gh.lazySingleton<_i7.ProfileRepository>(() => _i8.FirebaseProfileRepository(
+      get<_i4.FirebaseFirestore>(), get<_i3.FirebaseAuth>()));
   gh.lazySingleton<_i9.AuthRepository>(() => _i10.FirebaseAuthRepository(
       get<_i3.FirebaseAuth>(),
       get<_i6.GoogleSignIn>(),
       get<_i5.FirebaseUserMapper>()));
   gh.factory<_i11.LoginBloc>(() => _i11.LoginBloc(get<_i9.AuthRepository>()));
-  gh.factory<_i12.ProfileBloc>(
+  gh.lazySingleton<_i12.ProfileBloc>(
       () => _i12.ProfileBloc(get<_i7.ProfileRepository>()));
   gh.factory<_i13.RegisterBloc>(
       () => _i13.RegisterBloc(get<_i9.AuthRepository>()));

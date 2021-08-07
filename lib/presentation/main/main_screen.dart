@@ -3,6 +3,7 @@ import 'package:codelabz/presentation/main/home/home_screen.dart';
 import 'package:codelabz/presentation/main/organizations/organizations_screen.dart';
 import 'package:codelabz/presentation/main/settings/settings_screen.dart';
 import 'package:codelabz/presentation/main/tutorials/tutorials_screen.dart';
+import 'package:codelabz/presentation/main/widgets/profile_action.dart';
 import 'package:codelabz/utils/common.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -33,9 +34,7 @@ class MainScreen extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {},
-            icon: const CircleAvatar(
-              child: Text("HR"),
-            ),
+            icon: ProfileAction(),
           ),
         ],
       ),

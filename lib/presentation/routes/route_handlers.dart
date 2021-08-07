@@ -1,4 +1,5 @@
 import 'package:codelabz/application/login/login_bloc.dart';
+import 'package:codelabz/application/profile/profile_bloc.dart';
 import 'package:codelabz/application/register/register_bloc.dart';
 import 'package:codelabz/di/injection.dart';
 import 'package:codelabz/presentation/login/login_screen.dart';
@@ -36,5 +37,13 @@ Handler registerHandler = Handler(
 // route => main[/main]
 Handler mainHandler = Handler(
     handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-  return MainScreen();
+  return MultiBlocProvider(
+    providers: [
+      BlocProvider<ProfileBloc>(
+        create: (context) =>
+            getIt<ProfileBloc>()..add(const ProfileEvent.getMyProfile()),
+      ),
+    ],
+    child: MainScreen(),
+  );
 });

@@ -8,23 +8,27 @@ class FirestoreMappters {
     // ignore: cast_nullable_to_non_nullable
     final data = snapshot.data() as Map<String, dynamic>;
     return User(
-      uid: UniqueId.fromUniqueString(data["uid"] as String),
+      id: UniqueId.fromUniqueString(data["uid"] as String),
       displayName: DisplayName(data["displayName"] as String),
       email: Email(data["email"] as String),
-      photoUrl: PhotoUrl(data["photoUrl"] as String),
-      country: Country(data["country"] as String),
-      description: Description(data["description"] as String),
-      handle: Handle(data["handle"] as String),
-      linkFacebook: LinkFacebook(data["link_facebook"] as String),
-      linkGithub: LinkGithub(data["link_github"] as String),
-      linkLinkedIn: LinkLinkedIn(data["link_linkedin"] as String),
-      linkTwitter: LinkTwitter(data["link_twitter"] as String),
-      organizations: (data["organizations"] as List<String>)
-          .map((org) => Organization(org))
-          .toList(),
-      website: Website(data["website"] as String),
-      createdAt: CreatedAt(data["createdAt"] as int),
-      updatedAt: UpdatedAt(data["updatedAt"] as int),
+      photoUrl: PhotoUrl(data["photoURL"] as String),
+      country: Country(data["country"] as String?),
+      description: Description(data["description"] as String?),
+      handle: Handle(data["handle"] as String?),
+      linkFacebook: LinkFacebook(data["link_facebook"] as String?),
+      linkGithub: LinkGithub(data["link_github"] as String?),
+      linkLinkedIn: LinkLinkedIn(data["link_linkedin"] as String?),
+      linkTwitter: LinkTwitter(data["link_twitter"] as String?),
+      organizations: (data["organizations"] as List<String>?) != null
+          ? (data["organizations"] as List<String>)
+              .map((org) => Organization(org))
+              .toList()
+          : [],
+      website: Website(data["website"] as String?),
+      createdAt:
+          CreatedAt((data["createdAt"] as Timestamp).millisecondsSinceEpoch),
+      updatedAt:
+          UpdatedAt((data["updatedAt"] as Timestamp).millisecondsSinceEpoch),
     );
   }
 }
