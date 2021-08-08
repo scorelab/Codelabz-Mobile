@@ -13,7 +13,7 @@ abstract class Organization with _$Organization implements Entity {
     required String email,
     required String image,
     required String country,
-    required String published,
+    required bool published,
     required String website,
     required DateTime createdAt,
     required DateTime updatedAt,

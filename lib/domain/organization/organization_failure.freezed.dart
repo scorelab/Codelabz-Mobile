@@ -19,6 +19,10 @@ class _$OrganizationFailureTearOff {
   Unexpected unexpected() {
     return const Unexpected();
   }
+
+  InsufficientPermissions insufficientPermissions() {
+    return const InsufficientPermissions();
+  }
 }
 
 /// @nodoc
@@ -29,22 +33,27 @@ mixin _$OrganizationFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
+    required TResult Function() insufficientPermissions,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? insufficientPermissions,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Unexpected value) unexpected,
+    required TResult Function(InsufficientPermissions value)
+        insufficientPermissions,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
+    TResult Function(InsufficientPermissions value)? insufficientPermissions,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +116,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
+    required TResult Function() insufficientPermissions,
   }) {
     return unexpected();
   }
@@ -115,6 +125,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? insufficientPermissions,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -127,6 +138,8 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Unexpected value) unexpected,
+    required TResult Function(InsufficientPermissions value)
+        insufficientPermissions,
   }) {
     return unexpected(this);
   }
@@ -135,6 +148,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
+    TResult Function(InsufficientPermissions value)? insufficientPermissions,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -146,4 +160,91 @@ class _$Unexpected implements Unexpected {
 
 abstract class Unexpected implements OrganizationFailure {
   const factory Unexpected() = _$Unexpected;
+}
+
+/// @nodoc
+abstract class $InsufficientPermissionsCopyWith<$Res> {
+  factory $InsufficientPermissionsCopyWith(InsufficientPermissions value,
+          $Res Function(InsufficientPermissions) then) =
+      _$InsufficientPermissionsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$InsufficientPermissionsCopyWithImpl<$Res>
+    extends _$OrganizationFailureCopyWithImpl<$Res>
+    implements $InsufficientPermissionsCopyWith<$Res> {
+  _$InsufficientPermissionsCopyWithImpl(InsufficientPermissions _value,
+      $Res Function(InsufficientPermissions) _then)
+      : super(_value, (v) => _then(v as InsufficientPermissions));
+
+  @override
+  InsufficientPermissions get _value => super._value as InsufficientPermissions;
+}
+
+/// @nodoc
+
+class _$InsufficientPermissions implements InsufficientPermissions {
+  const _$InsufficientPermissions();
+
+  @override
+  String toString() {
+    return 'OrganizationFailure.insufficientPermissions()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is InsufficientPermissions);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() insufficientPermissions,
+  }) {
+    return insufficientPermissions();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPermissions,
+    required TResult orElse(),
+  }) {
+    if (insufficientPermissions != null) {
+      return insufficientPermissions();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Unexpected value) unexpected,
+    required TResult Function(InsufficientPermissions value)
+        insufficientPermissions,
+  }) {
+    return insufficientPermissions(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Unexpected value)? unexpected,
+    TResult Function(InsufficientPermissions value)? insufficientPermissions,
+    required TResult orElse(),
+  }) {
+    if (insufficientPermissions != null) {
+      return insufficientPermissions(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InsufficientPermissions implements OrganizationFailure {
+  const factory InsufficientPermissions() = _$InsufficientPermissions;
 }

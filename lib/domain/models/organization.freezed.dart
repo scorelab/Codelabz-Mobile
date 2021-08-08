@@ -23,7 +23,7 @@ class _$OrganizationTearOff {
       required String email,
       required String image,
       required String country,
-      required String published,
+      required bool published,
       required String website,
       required DateTime createdAt,
       required DateTime updatedAt,
@@ -55,7 +55,7 @@ mixin _$Organization {
   String get email => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
   String get country => throw _privateConstructorUsedError;
-  String get published => throw _privateConstructorUsedError;
+  bool get published => throw _privateConstructorUsedError;
   String get website => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
@@ -78,7 +78,7 @@ abstract class $OrganizationCopyWith<$Res> {
       String email,
       String image,
       String country,
-      String published,
+      bool published,
       String website,
       DateTime createdAt,
       DateTime updatedAt,
@@ -135,7 +135,7 @@ class _$OrganizationCopyWithImpl<$Res> implements $OrganizationCopyWith<$Res> {
       published: published == freezed
           ? _value.published
           : published // ignore: cast_nullable_to_non_nullable
-              as String,
+              as bool,
       website: website == freezed
           ? _value.website
           : website // ignore: cast_nullable_to_non_nullable
@@ -170,7 +170,7 @@ abstract class _$OrganizationCopyWith<$Res>
       String email,
       String image,
       String country,
-      String published,
+      bool published,
       String website,
       DateTime createdAt,
       DateTime updatedAt,
@@ -229,7 +229,7 @@ class __$OrganizationCopyWithImpl<$Res> extends _$OrganizationCopyWithImpl<$Res>
       published: published == freezed
           ? _value.published
           : published // ignore: cast_nullable_to_non_nullable
-              as String,
+              as bool,
       website: website == freezed
           ? _value.website
           : website // ignore: cast_nullable_to_non_nullable
@@ -279,7 +279,7 @@ class _$_Organization implements _Organization {
   @override
   final String country;
   @override
-  final String published;
+  final bool published;
   @override
   final String website;
   @override
@@ -357,7 +357,7 @@ abstract class _Organization implements Organization {
       required String email,
       required String image,
       required String country,
-      required String published,
+      required bool published,
       required String website,
       required DateTime createdAt,
       required DateTime updatedAt,
@@ -376,7 +376,7 @@ abstract class _Organization implements Organization {
   @override
   String get country => throw _privateConstructorUsedError;
   @override
-  String get published => throw _privateConstructorUsedError;
+  bool get published => throw _privateConstructorUsedError;
   @override
   String get website => throw _privateConstructorUsedError;
   @override
