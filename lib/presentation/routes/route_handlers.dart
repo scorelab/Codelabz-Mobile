@@ -1,4 +1,5 @@
 import 'package:codelabz/application/login/login_bloc.dart';
+import 'package:codelabz/application/organization/organization_bloc.dart';
 import 'package:codelabz/application/profile/profile_bloc.dart';
 import 'package:codelabz/application/register/register_bloc.dart';
 import 'package:codelabz/di/injection.dart';
@@ -42,6 +43,10 @@ Handler mainHandler = Handler(
       BlocProvider<ProfileBloc>(
         create: (context) =>
             getIt<ProfileBloc>()..add(const ProfileEvent.getMyProfile()),
+      ),
+      BlocProvider<OrganizationBloc>(
+        create: (context) => getIt<OrganizationBloc>()
+          ..add(const OrganizationEvent.fetchOrganizations()),
       ),
     ],
     child: MainScreen(),

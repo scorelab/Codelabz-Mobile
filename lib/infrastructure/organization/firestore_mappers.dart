@@ -13,6 +13,7 @@ class FirestoreMappters {
       email: data["org_email"] as String,
       image: data["org_image"] as String,
       country: data["org_country"] as String,
+      descrption: data["org_description"] as String? ?? "",
       published: data["org_published"] as bool,
       website: data["org_website"] as String,
       createdAt: (data["createdAt"] as Timestamp).toDate(),

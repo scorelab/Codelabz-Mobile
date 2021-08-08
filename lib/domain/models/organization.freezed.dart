@@ -23,6 +23,7 @@ class _$OrganizationTearOff {
       required String email,
       required String image,
       required String country,
+      required String descrption,
       required bool published,
       required String website,
       required DateTime createdAt,
@@ -35,6 +36,7 @@ class _$OrganizationTearOff {
       email: email,
       image: image,
       country: country,
+      descrption: descrption,
       published: published,
       website: website,
       createdAt: createdAt,
@@ -55,6 +57,7 @@ mixin _$Organization {
   String get email => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
   String get country => throw _privateConstructorUsedError;
+  String get descrption => throw _privateConstructorUsedError;
   bool get published => throw _privateConstructorUsedError;
   String get website => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
@@ -78,6 +81,7 @@ abstract class $OrganizationCopyWith<$Res> {
       String email,
       String image,
       String country,
+      String descrption,
       bool published,
       String website,
       DateTime createdAt,
@@ -101,6 +105,7 @@ class _$OrganizationCopyWithImpl<$Res> implements $OrganizationCopyWith<$Res> {
     Object? email = freezed,
     Object? image = freezed,
     Object? country = freezed,
+    Object? descrption = freezed,
     Object? published = freezed,
     Object? website = freezed,
     Object? createdAt = freezed,
@@ -131,6 +136,10 @@ class _$OrganizationCopyWithImpl<$Res> implements $OrganizationCopyWith<$Res> {
       country: country == freezed
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
+              as String,
+      descrption: descrption == freezed
+          ? _value.descrption
+          : descrption // ignore: cast_nullable_to_non_nullable
               as String,
       published: published == freezed
           ? _value.published
@@ -170,6 +179,7 @@ abstract class _$OrganizationCopyWith<$Res>
       String email,
       String image,
       String country,
+      String descrption,
       bool published,
       String website,
       DateTime createdAt,
@@ -195,6 +205,7 @@ class __$OrganizationCopyWithImpl<$Res> extends _$OrganizationCopyWithImpl<$Res>
     Object? email = freezed,
     Object? image = freezed,
     Object? country = freezed,
+    Object? descrption = freezed,
     Object? published = freezed,
     Object? website = freezed,
     Object? createdAt = freezed,
@@ -225,6 +236,10 @@ class __$OrganizationCopyWithImpl<$Res> extends _$OrganizationCopyWithImpl<$Res>
       country: country == freezed
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
+              as String,
+      descrption: descrption == freezed
+          ? _value.descrption
+          : descrption // ignore: cast_nullable_to_non_nullable
               as String,
       published: published == freezed
           ? _value.published
@@ -260,6 +275,7 @@ class _$_Organization implements _Organization {
       required this.email,
       required this.image,
       required this.country,
+      required this.descrption,
       required this.published,
       required this.website,
       required this.createdAt,
@@ -279,6 +295,8 @@ class _$_Organization implements _Organization {
   @override
   final String country;
   @override
+  final String descrption;
+  @override
   final bool published;
   @override
   final String website;
@@ -291,7 +309,7 @@ class _$_Organization implements _Organization {
 
   @override
   String toString() {
-    return 'Organization(id: $id, name: $name, handle: $handle, email: $email, image: $image, country: $country, published: $published, website: $website, createdAt: $createdAt, updatedAt: $updatedAt, createdDate: $createdDate)';
+    return 'Organization(id: $id, name: $name, handle: $handle, email: $email, image: $image, country: $country, descrption: $descrption, published: $published, website: $website, createdAt: $createdAt, updatedAt: $updatedAt, createdDate: $createdDate)';
   }
 
   @override
@@ -311,6 +329,9 @@ class _$_Organization implements _Organization {
             (identical(other.country, country) ||
                 const DeepCollectionEquality()
                     .equals(other.country, country)) &&
+            (identical(other.descrption, descrption) ||
+                const DeepCollectionEquality()
+                    .equals(other.descrption, descrption)) &&
             (identical(other.published, published) ||
                 const DeepCollectionEquality()
                     .equals(other.published, published)) &&
@@ -337,6 +358,7 @@ class _$_Organization implements _Organization {
       const DeepCollectionEquality().hash(email) ^
       const DeepCollectionEquality().hash(image) ^
       const DeepCollectionEquality().hash(country) ^
+      const DeepCollectionEquality().hash(descrption) ^
       const DeepCollectionEquality().hash(published) ^
       const DeepCollectionEquality().hash(website) ^
       const DeepCollectionEquality().hash(createdAt) ^
@@ -357,6 +379,7 @@ abstract class _Organization implements Organization {
       required String email,
       required String image,
       required String country,
+      required String descrption,
       required bool published,
       required String website,
       required DateTime createdAt,
@@ -375,6 +398,8 @@ abstract class _Organization implements Organization {
   String get image => throw _privateConstructorUsedError;
   @override
   String get country => throw _privateConstructorUsedError;
+  @override
+  String get descrption => throw _privateConstructorUsedError;
   @override
   bool get published => throw _privateConstructorUsedError;
   @override
