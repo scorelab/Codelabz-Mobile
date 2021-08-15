@@ -27,6 +27,10 @@ class MainScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
+            icon: const Icon(FontAwesomeIcons.search),
+          ),
+          IconButton(
+            onPressed: () {},
             icon: Badge(
               badgeContent: const Text("2"),
               child: const Icon(FontAwesomeIcons.solidBell),

@@ -8,8 +8,7 @@ class OrganizationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.maxFinite,
-      margin: const EdgeInsets.all(8),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 3),
       child: Card(
         elevation: 10,
         child: Column(
@@ -17,21 +16,15 @@ class OrganizationCard extends StatelessWidget {
             Image.network(
               _organization.image,
               fit: BoxFit.cover,
-              height: 200,
-              width: double.maxFinite,
+              height: 150,
+              width: 150,
             ),
+            const SizedBox(height: 10),
             Text(
               _organization.name,
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: Text(
-                _organization.descrption,
-                overflow: TextOverflow.ellipsis,
-                maxLines: 3,
-              ),
-            ),
+            const SizedBox(height: 10),
           ],
         ),
       ),
