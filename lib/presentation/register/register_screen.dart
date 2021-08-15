@@ -1,5 +1,5 @@
 import 'package:codelabz/application/auth/auth_bloc.dart';
-import 'package:codelabz/application/login/login_bloc.dart';
+import 'package:codelabz/application/register/register_bloc.dart';
 import 'package:codelabz/di/injection.dart';
 import 'package:codelabz/presentation/codelabz_app.dart';
 import 'package:codelabz/presentation/routes/routes.dart';
@@ -11,7 +11,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
-class LoginScreen extends StatelessWidget {
+class RegisterScreen extends StatelessWidget {
+  final FocusNode _passwordNode = FocusNode();
+  final FocusNode _confirmPasswordNode = FocusNode();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,12 +28,12 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: Container(
+        child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
-              const SizedBox(height: 50),
-              BlocConsumer<LoginBloc, LoginState>(
+              const SizedBox(height: 10),
+              BlocConsumer<RegisterBloc, RegisterState>(
                 listener: (context, state) {
                   state.authFailureOrSuccessOption.fold(
                     () => {},
@@ -42,8 +45,11 @@ class LoginScreen extends StatelessWidget {
                               failure.maybeMap(
                                 cancelledByUser: (_) => "Cancelled!",
                                 serverError: (_) => "Server Error!",
-                                invalidEmailAndPasswordCombination: (_) =>
-                                    "Invalid email and password combination",
+                                invalidEmail: (_) => "Invalid email!",
+                                weakPassword: (_) =>
+                                    "Password is not strong enough!",
+                                emailAlreadyInUser: (_) =>
+                                    "Email already in use. Try to login!",
                                 orElse: () => "",
                               ),
                             ),
@@ -67,19 +73,18 @@ class LoginScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         TextFormField(
-                          textInputAction: TextInputAction.next,
-                          onEditingComplete: () =>
-                              FocusScope.of(context).nextFocus(),
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             prefixIcon: Icon(Icons.email, color: Colors.grey),
                             labelText: 'Email',
                           ),
                           autocorrect: false,
+                          textInputAction: TextInputAction.next,
+                          onEditingComplete: () => _passwordNode.requestFocus(),
                           onChanged: (text) =>
-                              Provider.of<LoginBloc>(context, listen: false)
-                                  .add(LoginEvent.emailChanged(text)),
-                          validator: (_) => Provider.of<LoginBloc>(context)
+                              Provider.of<RegisterBloc>(context, listen: false)
+                                  .add(RegisterEvent.emailChanged(text)),
+                          validator: (_) => Provider.of<RegisterBloc>(context)
                               .state
                               .emailAddress
                               .value
@@ -94,17 +99,20 @@ class LoginScreen extends StatelessWidget {
                         const SizedBox(height: 5),
                         TextFormField(
                           obscureText: !state.showPassword,
-                          textInputAction: TextInputAction.done,
-                          onFieldSubmitted: (_) => _onClickLogin(context),
+                          textInputAction: TextInputAction.next,
+                          focusNode: _passwordNode,
+                          onEditingComplete: () =>
+                              _confirmPasswordNode.requestFocus(),
                           decoration: InputDecoration(
                             border: const OutlineInputBorder(),
                             prefixIcon:
                                 const Icon(Icons.lock, color: Colors.grey),
                             suffixIcon: IconButton(
-                              onPressed: () =>
-                                  Provider.of<LoginBloc>(context, listen: false)
-                                      .add(const LoginEvent
-                                          .togglePasswordVisibility()),
+                              onPressed: () => Provider.of<RegisterBloc>(
+                                      context,
+                                      listen: false)
+                                  .add(const RegisterEvent
+                                      .togglePasswordVisibility()),
                               icon: Icon(
                                 state.showPassword
                                     ? FontAwesomeIcons.eye
@@ -114,9 +122,9 @@ class LoginScreen extends StatelessWidget {
                             labelText: 'Password',
                           ),
                           onChanged: (text) =>
-                              Provider.of<LoginBloc>(context, listen: false)
-                                  .add(LoginEvent.passwordChanged(text)),
-                          validator: (_) => Provider.of<LoginBloc>(context)
+                              Provider.of<RegisterBloc>(context, listen: false)
+                                  .add(RegisterEvent.passwordChanged(text)),
+                          validator: (_) => Provider.of<RegisterBloc>(context)
                               .state
                               .password
                               .value
@@ -128,17 +136,61 @@ class LoginScreen extends StatelessWidget {
                                 (_) => null,
                               ),
                         ),
-                        const SizedBox(height: 20),
-                        Opacity(
-                          opacity: state.isSubmitting ? 1.0 : 0.0,
-                          child: const LinearProgressIndicator(),
+                        const SizedBox(height: 5),
+                        TextFormField(
+                          obscureText: !state.showConfirmPassword,
+                          textInputAction: TextInputAction.done,
+                          focusNode: _confirmPasswordNode,
+                          onFieldSubmitted: (_) =>
+                              _onClickCreateAccount(context),
+                          decoration: InputDecoration(
+                            border: const OutlineInputBorder(),
+                            prefixIcon:
+                                const Icon(Icons.lock, color: Colors.grey),
+                            suffixIcon: IconButton(
+                              onPressed: () => Provider.of<RegisterBloc>(
+                                      context,
+                                      listen: false)
+                                  .add(const RegisterEvent
+                                      .toggleConfirmPasswordVisibility()),
+                              icon: Icon(
+                                state.showConfirmPassword
+                                    ? FontAwesomeIcons.eye
+                                    : FontAwesomeIcons.eyeSlash,
+                              ),
+                            ),
+                            labelText: 'Confirm password',
+                          ),
+                          onChanged: (text) =>
+                              Provider.of<RegisterBloc>(context, listen: false)
+                                  .add(
+                            RegisterEvent.confirmPasswordChanged(text),
+                          ),
+                          validator: (_) => Provider.of<RegisterBloc>(context)
+                              .state
+                              .confirmPassword
+                              .value
+                              .fold(
+                                (f) => f.maybeMap(
+                                  unmatchPasswords: (_) =>
+                                      "Passwords are not matching!",
+                                  orElse: () => null,
+                                ),
+                                (_) => null,
+                              ),
                         ),
+                        const SizedBox(height: 15),
+                        Text(
+                          "By creating an account, you agree to our terms and conditions.",
+                          style: TextStyle(color: Colors.grey[800]),
+                        ),
+                        const SizedBox(height: 5),
                         SizedBox(
                           width: double.maxFinite,
                           child: TextButton(
                             onPressed: state.isSubmitting
                                 ? null
-                                : () => _onClickLogin(context),
+                                : () => _onClickCreateAccount(context),
                             style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(
                                   state.isSubmitting
@@ -147,7 +199,7 @@ class LoginScreen extends StatelessWidget {
                               foregroundColor:
                                   MaterialStateProperty.all(Colors.white),
                             ),
-                            child: const Text("Log in"),
+                            child: const Text("Create an account"),
                           ),
                         ),
                         Row(
@@ -169,7 +221,7 @@ class LoginScreen extends StatelessWidget {
                           ],
                         ),
                         const SizedBox(height: 10),
-                        const Text("Sign in with Social account"),
+                        const Text("Sign up with Social account"),
                         const SizedBox(height: 10),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -210,22 +262,20 @@ class LoginScreen extends StatelessWidget {
                 text: TextSpan(
                   children: <TextSpan>[
                     const TextSpan(
-                        text: "New to ",
+                        text: "Already have a ",
                         style: TextStyle(color: Colors.black87)),
                     const TextSpan(
-                        text: "CodeLabz",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        )),
-                    const TextSpan(
-                        text: "? ", style: TextStyle(color: Colors.black87)),
-                    TextSpan(
-                      text: "Create an account",
-                      style: const TextStyle(color: Colors.black87),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () => _onClickCreateAccount(context),
+                      text: "CodeLabz",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
+                    TextSpan(
+                        text: " account? Log In",
+                        style: const TextStyle(color: Colors.black87),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () => _onClickLogin(context)),
                   ],
                 ),
               ),
@@ -236,19 +286,19 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  void _onClickLogin(BuildContext context) {
+  void _onClickCreateAccount(BuildContext context) {
     FocusScope.of(context).unfocus();
-    Provider.of<LoginBloc>(context, listen: false)
-        .add(const LoginEvent.signInWithEmailAndPasswordPressed());
+    Provider.of<RegisterBloc>(context, listen: false)
+        .add(const RegisterEvent.signUpWithEmailAndPasswordPressed());
   }
 
-  void _onClickCreateAccount(BuildContext context) {
-    CodeLabzApp.router.navigateTo(context, Routes.register);
+  void _onClickLogin(BuildContext context) {
+    CodeLabzApp.router.pop(context);
   }
 
   void _signInWithGoogle(BuildContext context) {
-    Provider.of<LoginBloc>(context, listen: false)
-        .add(const LoginEvent.signInWithGoogle());
+    Provider.of<RegisterBloc>(context, listen: false)
+        .add(const RegisterEvent.signUpWithGoogle());
   }
 
   void _signInwithFacebook(BuildContext context) {}

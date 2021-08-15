@@ -8,21 +8,21 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-part 'login_bloc.freezed.dart';
-part 'login_event.dart';
-part 'login_state.dart';
+part 'register_bloc.freezed.dart';
+part 'register_event.dart';
+part 'register_state.dart';
 
 @Injectable()
-class LoginBloc extends Bloc<LoginEvent, LoginState> {
+class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   final AuthRepository _authRepository;
-  LoginBloc(this._authRepository) : super(LoginState.initial());
+  RegisterBloc(this._authRepository) : super(RegisterState.initial());
 
   @override
-  Stream<LoginState> mapEventToState(
-    LoginEvent event,
+  Stream<RegisterState> mapEventToState(
+    RegisterEvent event,
   ) async* {
     yield* event.map(
-      signInWithGoogle: (_) async* {
+      signUpWithGoogle: (_) async* {
         yield state.copyWith.call(
           isSubmitting: true,
           authFailureOrSuccessOption: none(),
@@ -45,13 +45,26 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           authFailureOrSuccessOption: none(),
         );
       },
+      confirmPasswordChanged: (e) async* {
+        yield state.copyWith(
+          confirmPassword: ConfirmPassword(
+              e.passwordStr, state.password.value.getOrElse(() => '')),
+          authFailureOrSuccessOption: none(),
+        );
+      },
       togglePasswordVisibility: (_) async* {
         yield state.copyWith(
           showPassword: !state.showPassword,
           authFailureOrSuccessOption: none(),
         );
       },
-      signInWithEmailAndPasswordPressed: (_) async* {
+      toggleConfirmPasswordVisibility: (_) async* {
+        yield state.copyWith(
+          showConfirmPassword: !state.showConfirmPassword,
+          authFailureOrSuccessOption: none(),
+        );
+      },
+      signUpWithEmailAndPasswordPressed: (_) async* {
         Option<Either<AuthFailure, Unit>> failureOrSuccess = none();
 
         final isEmailValid = state.emailAddress.isValid();
@@ -64,7 +77,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           );
 
           failureOrSuccess = some(
-            await _authRepository.signInWithEmailAndPassword(
+            await _authRepository.signUpWithEmailAndPassword(
               email: state.emailAddress,
               password: state.password,
             ),

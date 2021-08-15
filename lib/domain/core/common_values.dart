@@ -2,6 +2,7 @@ import 'package:codelabz/domain/core/value_failure.dart';
 import 'package:codelabz/domain/core/value_object.dart';
 import 'package:dartz/dartz.dart';
 
+/// use as UniqueId
 class UniqueId extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;

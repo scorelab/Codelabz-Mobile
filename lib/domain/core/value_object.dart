@@ -4,6 +4,7 @@ import 'package:codelabz/domain/core/value_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 
+// hold values in a wrapper level,
 @immutable
 abstract class ValueObject<T> implements Validatable {
   const ValueObject();

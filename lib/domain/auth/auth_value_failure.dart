@@ -13,4 +13,7 @@ abstract class AuthValueFailure<T>
   const factory AuthValueFailure.shortPassword({
     required T failedValue,
   }) = _ShortPassword<T>;
+  const factory AuthValueFailure.unmatchPasswords({
+    required T failedValue,
+  }) = _UnmatchPasswords<T>;
 }

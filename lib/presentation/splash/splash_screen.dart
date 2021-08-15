@@ -10,7 +10,9 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) {
+        // listen to state and navigate to login or home
         state.map(
+          // initial state, nothing to do with this
           initial: (_) {},
           authenticated: (_) => CodeLabzApp.router
               .navigateTo(context, Routes.home, clearStack: true),
