@@ -58,7 +58,7 @@ class RegisterScreen extends StatelessWidget {
                       },
                       (_) => {
                         CodeLabzApp.router
-                            .navigateTo(context, Routes.home, clearStack: true),
+                            .navigateTo(context, Routes.main, clearStack: true),
                         getIt<AuthBloc>()
                             .add(const AuthEvent.authCheckRequested())
                       },
