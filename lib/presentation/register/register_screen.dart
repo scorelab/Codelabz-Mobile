@@ -240,7 +240,7 @@ class RegisterScreen extends StatelessWidget {
                             ),
                             LoginButton(
                               assetName: "assets/icons/github.png",
-                              onPress: () => _signInwithFacebook(context),
+                              onPress: () => _signInWithGithub(context),
                               disabled: state.isSubmitting,
                               type: const LoginButtons.github(),
                             ),
@@ -302,4 +302,9 @@ class RegisterScreen extends StatelessWidget {
   }
 
   void _signInwithFacebook(BuildContext context) {}
+
+  void _signInWithGithub(BuildContext context) {
+    Provider.of<RegisterBloc>(context, listen: false)
+        .add(RegisterEvent.signInWithGithub(context));
+  }
 }

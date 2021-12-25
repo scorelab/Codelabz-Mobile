@@ -36,6 +36,12 @@ class _$LoginEventTearOff {
     return const _SignInWithGoogle();
   }
 
+  _SighInWithGithub signInWithGithub(BuildContext context) {
+    return _SighInWithGithub(
+      context,
+    );
+  }
+
   _TogglePasswordVisibility togglePasswordVisibility() {
     return const _TogglePasswordVisibility();
   }
@@ -52,6 +58,7 @@ mixin _$LoginEvent {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGoogle,
+    required TResult Function(BuildContext context) signInWithGithub,
     required TResult Function() togglePasswordVisibility,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,6 +68,7 @@ mixin _$LoginEvent {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGoogle,
+    TResult Function(BuildContext context)? signInWithGithub,
     TResult Function()? togglePasswordVisibility,
     required TResult orElse(),
   }) =>
@@ -72,6 +80,7 @@ mixin _$LoginEvent {
     required TResult Function(_SignInWithEmailAndPasswordPressed value)
         signInWithEmailAndPasswordPressed,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SighInWithGithub value) signInWithGithub,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
   }) =>
@@ -83,6 +92,7 @@ mixin _$LoginEvent {
     TResult Function(_SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SighInWithGithub value)? signInWithGithub,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     required TResult orElse(),
   }) =>
@@ -174,6 +184,7 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGoogle,
+    required TResult Function(BuildContext context) signInWithGithub,
     required TResult Function() togglePasswordVisibility,
   }) {
     return emailChanged(emailStr);
@@ -186,6 +197,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGoogle,
+    TResult Function(BuildContext context)? signInWithGithub,
     TResult Function()? togglePasswordVisibility,
     required TResult orElse(),
   }) {
@@ -203,6 +215,7 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(_SignInWithEmailAndPasswordPressed value)
         signInWithEmailAndPasswordPressed,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SighInWithGithub value) signInWithGithub,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
   }) {
@@ -217,6 +230,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SighInWithGithub value)? signInWithGithub,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     required TResult orElse(),
   }) {
@@ -306,6 +320,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGoogle,
+    required TResult Function(BuildContext context) signInWithGithub,
     required TResult Function() togglePasswordVisibility,
   }) {
     return passwordChanged(passwordStr);
@@ -318,6 +333,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGoogle,
+    TResult Function(BuildContext context)? signInWithGithub,
     TResult Function()? togglePasswordVisibility,
     required TResult orElse(),
   }) {
@@ -335,6 +351,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(_SignInWithEmailAndPasswordPressed value)
         signInWithEmailAndPasswordPressed,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SighInWithGithub value) signInWithGithub,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
   }) {
@@ -349,6 +366,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(_SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SighInWithGithub value)? signInWithGithub,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     required TResult orElse(),
   }) {
@@ -417,6 +435,7 @@ class _$_SignInWithEmailAndPasswordPressed
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGoogle,
+    required TResult Function(BuildContext context) signInWithGithub,
     required TResult Function() togglePasswordVisibility,
   }) {
     return signInWithEmailAndPasswordPressed();
@@ -429,6 +448,7 @@ class _$_SignInWithEmailAndPasswordPressed
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGoogle,
+    TResult Function(BuildContext context)? signInWithGithub,
     TResult Function()? togglePasswordVisibility,
     required TResult orElse(),
   }) {
@@ -446,6 +466,7 @@ class _$_SignInWithEmailAndPasswordPressed
     required TResult Function(_SignInWithEmailAndPasswordPressed value)
         signInWithEmailAndPasswordPressed,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SighInWithGithub value) signInWithGithub,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
   }) {
@@ -460,6 +481,7 @@ class _$_SignInWithEmailAndPasswordPressed
     TResult Function(_SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SighInWithGithub value)? signInWithGithub,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     required TResult orElse(),
   }) {
@@ -519,6 +541,7 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGoogle,
+    required TResult Function(BuildContext context) signInWithGithub,
     required TResult Function() togglePasswordVisibility,
   }) {
     return signInWithGoogle();
@@ -531,6 +554,7 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGoogle,
+    TResult Function(BuildContext context)? signInWithGithub,
     TResult Function()? togglePasswordVisibility,
     required TResult orElse(),
   }) {
@@ -548,6 +572,7 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
     required TResult Function(_SignInWithEmailAndPasswordPressed value)
         signInWithEmailAndPasswordPressed,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SighInWithGithub value) signInWithGithub,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
   }) {
@@ -562,6 +587,7 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
     TResult Function(_SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SighInWithGithub value)? signInWithGithub,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     required TResult orElse(),
   }) {
@@ -574,6 +600,141 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
 
 abstract class _SignInWithGoogle implements LoginEvent {
   const factory _SignInWithGoogle() = _$_SignInWithGoogle;
+}
+
+/// @nodoc
+abstract class _$SighInWithGithubCopyWith<$Res> {
+  factory _$SighInWithGithubCopyWith(
+          _SighInWithGithub value, $Res Function(_SighInWithGithub) then) =
+      __$SighInWithGithubCopyWithImpl<$Res>;
+  $Res call({BuildContext context});
+}
+
+/// @nodoc
+class __$SighInWithGithubCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res>
+    implements _$SighInWithGithubCopyWith<$Res> {
+  __$SighInWithGithubCopyWithImpl(
+      _SighInWithGithub _value, $Res Function(_SighInWithGithub) _then)
+      : super(_value, (v) => _then(v as _SighInWithGithub));
+
+  @override
+  _SighInWithGithub get _value => super._value as _SighInWithGithub;
+
+  @override
+  $Res call({
+    Object? context = freezed,
+  }) {
+    return _then(_SighInWithGithub(
+      context == freezed
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SighInWithGithub implements _SighInWithGithub {
+  const _$_SighInWithGithub(this.context);
+
+  @override
+  final BuildContext context;
+
+  @override
+  String toString() {
+    return 'LoginEvent.signInWithGithub(context: $context)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SighInWithGithub &&
+            (identical(other.context, context) ||
+                const DeepCollectionEquality().equals(other.context, context)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(context);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SighInWithGithubCopyWith<_SighInWithGithub> get copyWith =>
+      __$SighInWithGithubCopyWithImpl<_SighInWithGithub>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function() signInWithEmailAndPasswordPressed,
+    required TResult Function() signInWithGoogle,
+    required TResult Function(BuildContext context) signInWithGithub,
+    required TResult Function() togglePasswordVisibility,
+  }) {
+    return signInWithGithub(context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signInWithEmailAndPasswordPressed,
+    TResult Function()? signInWithGoogle,
+    TResult Function(BuildContext context)? signInWithGithub,
+    TResult Function()? togglePasswordVisibility,
+    required TResult orElse(),
+  }) {
+    if (signInWithGithub != null) {
+      return signInWithGithub(context);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_SignInWithEmailAndPasswordPressed value)
+        signInWithEmailAndPasswordPressed,
+    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SighInWithGithub value) signInWithGithub,
+    required TResult Function(_TogglePasswordVisibility value)
+        togglePasswordVisibility,
+  }) {
+    return signInWithGithub(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_SignInWithEmailAndPasswordPressed value)?
+        signInWithEmailAndPasswordPressed,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SighInWithGithub value)? signInWithGithub,
+    TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
+    required TResult orElse(),
+  }) {
+    if (signInWithGithub != null) {
+      return signInWithGithub(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SighInWithGithub implements LoginEvent {
+  const factory _SighInWithGithub(BuildContext context) = _$_SighInWithGithub;
+
+  BuildContext get context => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SighInWithGithubCopyWith<_SighInWithGithub> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -621,6 +782,7 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function() signInWithEmailAndPasswordPressed,
     required TResult Function() signInWithGoogle,
+    required TResult Function(BuildContext context) signInWithGithub,
     required TResult Function() togglePasswordVisibility,
   }) {
     return togglePasswordVisibility();
@@ -633,6 +795,7 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function()? signInWithEmailAndPasswordPressed,
     TResult Function()? signInWithGoogle,
+    TResult Function(BuildContext context)? signInWithGithub,
     TResult Function()? togglePasswordVisibility,
     required TResult orElse(),
   }) {
@@ -650,6 +813,7 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
     required TResult Function(_SignInWithEmailAndPasswordPressed value)
         signInWithEmailAndPasswordPressed,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SighInWithGithub value) signInWithGithub,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
   }) {
@@ -664,6 +828,7 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
     TResult Function(_SignInWithEmailAndPasswordPressed value)?
         signInWithEmailAndPasswordPressed,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SighInWithGithub value)? signInWithGithub,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     required TResult orElse(),
   }) {

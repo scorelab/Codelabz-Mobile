@@ -40,6 +40,7 @@ dependencies:
   rxdart: ^0.27.1
   persistent_bottom_nav_bar: ^4.0.2
   badges: ^2.0.1
+  github_sign_in: ^0.0.1
 
 dev_dependencies:
   flutter_test:

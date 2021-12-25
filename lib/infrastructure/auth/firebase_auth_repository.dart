@@ -4,9 +4,13 @@ import 'package:codelabz/domain/models/value_objects.dart';
 import 'package:codelabz/infrastructure/auth/firebase_user_mapper.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide User;
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
+import 'package:github_sign_in/github_sign_in.dart';
+import 'secrets.dart' as secrets;
+
 
 @LazySingleton(as: AuthRepository)
 class FirebaseAuthRepository extends AuthRepository {
@@ -103,9 +107,31 @@ class FirebaseAuthRepository extends AuthRepository {
   }
 
   @override
-  Future<Either<AuthFailure, Unit>> signInWithGithub() {
-    // TODO: implement signInWithGithub
-    throw UnimplementedError();
+  Future<Either<AuthFailure, Unit>> signInWithGithub(BuildContext context) async {
+    try {
+      // Create a GitHubSignIn instance
+      final GitHubSignIn gitHubSignIn = GitHubSignIn(
+          clientId: secrets.github_client_id,
+          clientSecret: secrets.github_client_secret,
+          redirectUrl: secrets.github_redirect_url);
+
+      // Trigger the sign-in flow
+      final result = await gitHubSignIn.signIn(context);
+
+      // Create a credential from the access token
+      final githubAuthCredential = GithubAuthProvider.credential(result.token);
+
+      // Once signed in, return the UserCredential
+      return FirebaseAuth.instance
+          .signInWithCredential(githubAuthCredential)
+          .then((r) => right(unit));
+    } on PlatformException catch (_) {
+      print(_);
+      return left(const AuthFailure.serverError());
+    } on Exception catch(_) {
+      print(_);
+      return left(const AuthFailure.serverError());
+    }
   }
 
   @override
