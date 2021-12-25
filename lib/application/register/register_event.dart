@@ -10,6 +10,7 @@ class RegisterEvent with _$RegisterEvent {
   const factory RegisterEvent.signUpWithEmailAndPasswordPressed() =
       _SignUpWithEmailAndPasswordPressed;
   const factory RegisterEvent.signUpWithGoogle() = _SignUpWithGoogle;
+  const factory RegisterEvent.signInWithGithub(BuildContext context) = _SighInWithGithub;
   const factory RegisterEvent.togglePasswordVisibility() =
       _TogglePasswordVisibility;
   const factory RegisterEvent.toggleConfirmPasswordVisibility() =

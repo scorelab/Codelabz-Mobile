@@ -188,7 +188,7 @@ class LoginScreen extends StatelessWidget {
                             ),
                             LoginButton(
                               assetName: "assets/icons/github.png",
-                              onPress: () => _signInwithFacebook(context),
+                              onPress: () => _signInWithGithub(context),
                               disabled: state.isSubmitting,
                               type: const LoginButtons.github(),
                             ),
@@ -252,4 +252,9 @@ class LoginScreen extends StatelessWidget {
   }
 
   void _signInwithFacebook(BuildContext context) {}
+
+  void _signInWithGithub(BuildContext context) {
+    Provider.of<LoginBloc>(context, listen: false)
+        .add(LoginEvent.signInWithGithub(context));
+  }
 }

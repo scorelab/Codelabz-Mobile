@@ -42,6 +42,12 @@ class _$RegisterEventTearOff {
     return const _SignUpWithGoogle();
   }
 
+  _SighInWithGithub signInWithGithub(BuildContext context) {
+    return _SighInWithGithub(
+      context,
+    );
+  }
+
   _TogglePasswordVisibility togglePasswordVisibility() {
     return const _TogglePasswordVisibility();
   }
@@ -63,6 +69,7 @@ mixin _$RegisterEvent {
     required TResult Function(String passwordStr) confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
+    required TResult Function(BuildContext context) signInWithGithub,
     required TResult Function() togglePasswordVisibility,
     required TResult Function() toggleConfirmPasswordVisibility,
   }) =>
@@ -74,6 +81,7 @@ mixin _$RegisterEvent {
     TResult Function(String passwordStr)? confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
+    TResult Function(BuildContext context)? signInWithGithub,
     TResult Function()? togglePasswordVisibility,
     TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
@@ -88,6 +96,7 @@ mixin _$RegisterEvent {
     required TResult Function(_SignUpWithEmailAndPasswordPressed value)
         signUpWithEmailAndPasswordPressed,
     required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
+    required TResult Function(_SighInWithGithub value) signInWithGithub,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
     required TResult Function(_ToggleConfirmPasswordVisibility value)
@@ -102,6 +111,7 @@ mixin _$RegisterEvent {
     TResult Function(_SignUpWithEmailAndPasswordPressed value)?
         signUpWithEmailAndPasswordPressed,
     TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
+    TResult Function(_SighInWithGithub value)? signInWithGithub,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     TResult Function(_ToggleConfirmPasswordVisibility value)?
         toggleConfirmPasswordVisibility,
@@ -198,6 +208,7 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(String passwordStr) confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
+    required TResult Function(BuildContext context) signInWithGithub,
     required TResult Function() togglePasswordVisibility,
     required TResult Function() toggleConfirmPasswordVisibility,
   }) {
@@ -212,6 +223,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(String passwordStr)? confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
+    TResult Function(BuildContext context)? signInWithGithub,
     TResult Function()? togglePasswordVisibility,
     TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
@@ -232,6 +244,7 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(_SignUpWithEmailAndPasswordPressed value)
         signUpWithEmailAndPasswordPressed,
     required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
+    required TResult Function(_SighInWithGithub value) signInWithGithub,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
     required TResult Function(_ToggleConfirmPasswordVisibility value)
@@ -249,6 +262,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_SignUpWithEmailAndPasswordPressed value)?
         signUpWithEmailAndPasswordPressed,
     TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
+    TResult Function(_SighInWithGithub value)? signInWithGithub,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     TResult Function(_ToggleConfirmPasswordVisibility value)?
         toggleConfirmPasswordVisibility,
@@ -341,6 +355,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(String passwordStr) confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
+    required TResult Function(BuildContext context) signInWithGithub,
     required TResult Function() togglePasswordVisibility,
     required TResult Function() toggleConfirmPasswordVisibility,
   }) {
@@ -355,6 +370,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(String passwordStr)? confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
+    TResult Function(BuildContext context)? signInWithGithub,
     TResult Function()? togglePasswordVisibility,
     TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
@@ -375,6 +391,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(_SignUpWithEmailAndPasswordPressed value)
         signUpWithEmailAndPasswordPressed,
     required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
+    required TResult Function(_SighInWithGithub value) signInWithGithub,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
     required TResult Function(_ToggleConfirmPasswordVisibility value)
@@ -392,6 +409,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(_SignUpWithEmailAndPasswordPressed value)?
         signUpWithEmailAndPasswordPressed,
     TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
+    TResult Function(_SighInWithGithub value)? signInWithGithub,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     TResult Function(_ToggleConfirmPasswordVisibility value)?
         toggleConfirmPasswordVisibility,
@@ -485,6 +503,7 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
     required TResult Function(String passwordStr) confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
+    required TResult Function(BuildContext context) signInWithGithub,
     required TResult Function() togglePasswordVisibility,
     required TResult Function() toggleConfirmPasswordVisibility,
   }) {
@@ -499,6 +518,7 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
     TResult Function(String passwordStr)? confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
+    TResult Function(BuildContext context)? signInWithGithub,
     TResult Function()? togglePasswordVisibility,
     TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
@@ -519,6 +539,7 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
     required TResult Function(_SignUpWithEmailAndPasswordPressed value)
         signUpWithEmailAndPasswordPressed,
     required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
+    required TResult Function(_SighInWithGithub value) signInWithGithub,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
     required TResult Function(_ToggleConfirmPasswordVisibility value)
@@ -536,6 +557,7 @@ class _$_ConfirmPasswordChanged implements _ConfirmPasswordChanged {
     TResult Function(_SignUpWithEmailAndPasswordPressed value)?
         signUpWithEmailAndPasswordPressed,
     TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
+    TResult Function(_SighInWithGithub value)? signInWithGithub,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     TResult Function(_ToggleConfirmPasswordVisibility value)?
         toggleConfirmPasswordVisibility,
@@ -608,6 +630,7 @@ class _$_SignUpWithEmailAndPasswordPressed
     required TResult Function(String passwordStr) confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
+    required TResult Function(BuildContext context) signInWithGithub,
     required TResult Function() togglePasswordVisibility,
     required TResult Function() toggleConfirmPasswordVisibility,
   }) {
@@ -622,6 +645,7 @@ class _$_SignUpWithEmailAndPasswordPressed
     TResult Function(String passwordStr)? confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
+    TResult Function(BuildContext context)? signInWithGithub,
     TResult Function()? togglePasswordVisibility,
     TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
@@ -642,6 +666,7 @@ class _$_SignUpWithEmailAndPasswordPressed
     required TResult Function(_SignUpWithEmailAndPasswordPressed value)
         signUpWithEmailAndPasswordPressed,
     required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
+    required TResult Function(_SighInWithGithub value) signInWithGithub,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
     required TResult Function(_ToggleConfirmPasswordVisibility value)
@@ -659,6 +684,7 @@ class _$_SignUpWithEmailAndPasswordPressed
     TResult Function(_SignUpWithEmailAndPasswordPressed value)?
         signUpWithEmailAndPasswordPressed,
     TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
+    TResult Function(_SighInWithGithub value)? signInWithGithub,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     TResult Function(_ToggleConfirmPasswordVisibility value)?
         toggleConfirmPasswordVisibility,
@@ -721,6 +747,7 @@ class _$_SignUpWithGoogle implements _SignUpWithGoogle {
     required TResult Function(String passwordStr) confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
+    required TResult Function(BuildContext context) signInWithGithub,
     required TResult Function() togglePasswordVisibility,
     required TResult Function() toggleConfirmPasswordVisibility,
   }) {
@@ -735,6 +762,7 @@ class _$_SignUpWithGoogle implements _SignUpWithGoogle {
     TResult Function(String passwordStr)? confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
+    TResult Function(BuildContext context)? signInWithGithub,
     TResult Function()? togglePasswordVisibility,
     TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
@@ -755,6 +783,7 @@ class _$_SignUpWithGoogle implements _SignUpWithGoogle {
     required TResult Function(_SignUpWithEmailAndPasswordPressed value)
         signUpWithEmailAndPasswordPressed,
     required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
+    required TResult Function(_SighInWithGithub value) signInWithGithub,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
     required TResult Function(_ToggleConfirmPasswordVisibility value)
@@ -772,6 +801,7 @@ class _$_SignUpWithGoogle implements _SignUpWithGoogle {
     TResult Function(_SignUpWithEmailAndPasswordPressed value)?
         signUpWithEmailAndPasswordPressed,
     TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
+    TResult Function(_SighInWithGithub value)? signInWithGithub,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     TResult Function(_ToggleConfirmPasswordVisibility value)?
         toggleConfirmPasswordVisibility,
@@ -786,6 +816,152 @@ class _$_SignUpWithGoogle implements _SignUpWithGoogle {
 
 abstract class _SignUpWithGoogle implements RegisterEvent {
   const factory _SignUpWithGoogle() = _$_SignUpWithGoogle;
+}
+
+/// @nodoc
+abstract class _$SighInWithGithubCopyWith<$Res> {
+  factory _$SighInWithGithubCopyWith(
+          _SighInWithGithub value, $Res Function(_SighInWithGithub) then) =
+      __$SighInWithGithubCopyWithImpl<$Res>;
+  $Res call({BuildContext context});
+}
+
+/// @nodoc
+class __$SighInWithGithubCopyWithImpl<$Res>
+    extends _$RegisterEventCopyWithImpl<$Res>
+    implements _$SighInWithGithubCopyWith<$Res> {
+  __$SighInWithGithubCopyWithImpl(
+      _SighInWithGithub _value, $Res Function(_SighInWithGithub) _then)
+      : super(_value, (v) => _then(v as _SighInWithGithub));
+
+  @override
+  _SighInWithGithub get _value => super._value as _SighInWithGithub;
+
+  @override
+  $Res call({
+    Object? context = freezed,
+  }) {
+    return _then(_SighInWithGithub(
+      context == freezed
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SighInWithGithub implements _SighInWithGithub {
+  const _$_SighInWithGithub(this.context);
+
+  @override
+  final BuildContext context;
+
+  @override
+  String toString() {
+    return 'RegisterEvent.signInWithGithub(context: $context)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SighInWithGithub &&
+            (identical(other.context, context) ||
+                const DeepCollectionEquality().equals(other.context, context)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(context);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SighInWithGithubCopyWith<_SighInWithGithub> get copyWith =>
+      __$SighInWithGithubCopyWithImpl<_SighInWithGithub>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String passwordStr) confirmPasswordChanged,
+    required TResult Function() signUpWithEmailAndPasswordPressed,
+    required TResult Function() signUpWithGoogle,
+    required TResult Function(BuildContext context) signInWithGithub,
+    required TResult Function() togglePasswordVisibility,
+    required TResult Function() toggleConfirmPasswordVisibility,
+  }) {
+    return signInWithGithub(context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String passwordStr)? confirmPasswordChanged,
+    TResult Function()? signUpWithEmailAndPasswordPressed,
+    TResult Function()? signUpWithGoogle,
+    TResult Function(BuildContext context)? signInWithGithub,
+    TResult Function()? togglePasswordVisibility,
+    TResult Function()? toggleConfirmPasswordVisibility,
+    required TResult orElse(),
+  }) {
+    if (signInWithGithub != null) {
+      return signInWithGithub(context);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_ConfirmPasswordChanged value)
+        confirmPasswordChanged,
+    required TResult Function(_SignUpWithEmailAndPasswordPressed value)
+        signUpWithEmailAndPasswordPressed,
+    required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
+    required TResult Function(_SighInWithGithub value) signInWithGithub,
+    required TResult Function(_TogglePasswordVisibility value)
+        togglePasswordVisibility,
+    required TResult Function(_ToggleConfirmPasswordVisibility value)
+        toggleConfirmPasswordVisibility,
+  }) {
+    return signInWithGithub(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(_SignUpWithEmailAndPasswordPressed value)?
+        signUpWithEmailAndPasswordPressed,
+    TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
+    TResult Function(_SighInWithGithub value)? signInWithGithub,
+    TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
+    TResult Function(_ToggleConfirmPasswordVisibility value)?
+        toggleConfirmPasswordVisibility,
+    required TResult orElse(),
+  }) {
+    if (signInWithGithub != null) {
+      return signInWithGithub(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SighInWithGithub implements RegisterEvent {
+  const factory _SighInWithGithub(BuildContext context) = _$_SighInWithGithub;
+
+  BuildContext get context => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SighInWithGithubCopyWith<_SighInWithGithub> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -834,6 +1010,7 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
     required TResult Function(String passwordStr) confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
+    required TResult Function(BuildContext context) signInWithGithub,
     required TResult Function() togglePasswordVisibility,
     required TResult Function() toggleConfirmPasswordVisibility,
   }) {
@@ -848,6 +1025,7 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
     TResult Function(String passwordStr)? confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
+    TResult Function(BuildContext context)? signInWithGithub,
     TResult Function()? togglePasswordVisibility,
     TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
@@ -868,6 +1046,7 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
     required TResult Function(_SignUpWithEmailAndPasswordPressed value)
         signUpWithEmailAndPasswordPressed,
     required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
+    required TResult Function(_SighInWithGithub value) signInWithGithub,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
     required TResult Function(_ToggleConfirmPasswordVisibility value)
@@ -885,6 +1064,7 @@ class _$_TogglePasswordVisibility implements _TogglePasswordVisibility {
     TResult Function(_SignUpWithEmailAndPasswordPressed value)?
         signUpWithEmailAndPasswordPressed,
     TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
+    TResult Function(_SighInWithGithub value)? signInWithGithub,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     TResult Function(_ToggleConfirmPasswordVisibility value)?
         toggleConfirmPasswordVisibility,
@@ -951,6 +1131,7 @@ class _$_ToggleConfirmPasswordVisibility
     required TResult Function(String passwordStr) confirmPasswordChanged,
     required TResult Function() signUpWithEmailAndPasswordPressed,
     required TResult Function() signUpWithGoogle,
+    required TResult Function(BuildContext context) signInWithGithub,
     required TResult Function() togglePasswordVisibility,
     required TResult Function() toggleConfirmPasswordVisibility,
   }) {
@@ -965,6 +1146,7 @@ class _$_ToggleConfirmPasswordVisibility
     TResult Function(String passwordStr)? confirmPasswordChanged,
     TResult Function()? signUpWithEmailAndPasswordPressed,
     TResult Function()? signUpWithGoogle,
+    TResult Function(BuildContext context)? signInWithGithub,
     TResult Function()? togglePasswordVisibility,
     TResult Function()? toggleConfirmPasswordVisibility,
     required TResult orElse(),
@@ -985,6 +1167,7 @@ class _$_ToggleConfirmPasswordVisibility
     required TResult Function(_SignUpWithEmailAndPasswordPressed value)
         signUpWithEmailAndPasswordPressed,
     required TResult Function(_SignUpWithGoogle value) signUpWithGoogle,
+    required TResult Function(_SighInWithGithub value) signInWithGithub,
     required TResult Function(_TogglePasswordVisibility value)
         togglePasswordVisibility,
     required TResult Function(_ToggleConfirmPasswordVisibility value)
@@ -1002,6 +1185,7 @@ class _$_ToggleConfirmPasswordVisibility
     TResult Function(_SignUpWithEmailAndPasswordPressed value)?
         signUpWithEmailAndPasswordPressed,
     TResult Function(_SignUpWithGoogle value)? signUpWithGoogle,
+    TResult Function(_SighInWithGithub value)? signInWithGithub,
     TResult Function(_TogglePasswordVisibility value)? togglePasswordVisibility,
     TResult Function(_ToggleConfirmPasswordVisibility value)?
         toggleConfirmPasswordVisibility,

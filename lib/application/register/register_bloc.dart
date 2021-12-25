@@ -7,6 +7,7 @@ import 'package:codelabz/domain/models/value_objects.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:flutter/material.dart';
 
 part 'register_bloc.freezed.dart';
 part 'register_event.dart';
@@ -28,6 +29,17 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
           authFailureOrSuccessOption: none(),
         );
         final failureOrSuccess = await _authRepository.signInWithGoogle();
+        yield state.copyWith.call(
+          isSubmitting: false,
+          authFailureOrSuccessOption: some(failureOrSuccess),
+        );
+      },
+      signInWithGithub: (e) async* {
+        yield state.copyWith.call(
+          isSubmitting: true,
+          authFailureOrSuccessOption: none(),
+        );
+        final failureOrSuccess = await _authRepository.signInWithGithub(e.context);
         yield state.copyWith.call(
           isSubmitting: false,
           authFailureOrSuccessOption: some(failureOrSuccess),

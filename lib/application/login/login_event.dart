@@ -8,6 +8,7 @@ class LoginEvent with _$LoginEvent {
   const factory LoginEvent.signInWithEmailAndPasswordPressed() =
       _SignInWithEmailAndPasswordPressed;
   const factory LoginEvent.signInWithGoogle() = _SignInWithGoogle;
+  const factory LoginEvent.signInWithGithub(BuildContext context) = _SighInWithGithub;
   const factory LoginEvent.togglePasswordVisibility() =
       _TogglePasswordVisibility;
 }

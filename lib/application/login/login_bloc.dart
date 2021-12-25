@@ -5,6 +5,7 @@ import 'package:codelabz/domain/auth/auth_failure.dart';
 import 'package:codelabz/domain/auth/auth_repository.dart';
 import 'package:codelabz/domain/models/value_objects.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -28,6 +29,17 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           authFailureOrSuccessOption: none(),
         );
         final failureOrSuccess = await _authRepository.signInWithGoogle();
+        yield state.copyWith.call(
+          isSubmitting: false,
+          authFailureOrSuccessOption: some(failureOrSuccess),
+        );
+      },
+      signInWithGithub: (e) async* {
+        yield state.copyWith.call(
+          isSubmitting: true,
+          authFailureOrSuccessOption: none(),
+        );
+        final failureOrSuccess = await _authRepository.signInWithGithub(e.context);
         yield state.copyWith.call(
           isSubmitting: false,
           authFailureOrSuccessOption: some(failureOrSuccess),
